@@ -3,12 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hazrat Ali — Software Engineer</title>
-<meta name="description" content="Hazrat Ali — Software Engineer building full-stack web apps, ERP solutions and AI-integrated systems with Python, Django, DRF, React and Odoo.">
+<title>Hazrat Ali — Software Engineer &amp; Founder</title>
+<meta name="description" content="Hazrat Ali — Software Engineer & Founder at Future Tech Dynamics (ftdynamics.pk). Architect behind SehatYar.online. Specialized in Python, Django, DRF, React, and AI systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Three.js 3D Graphics Engine -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <style>
+/* -------------------------------------------------------------
+   SIGNATURE HAZRAT.DEV SAGE & EMERALD COLOR PALETTE
+------------------------------------------------------------- */
 :root{
   --bg:#F6F8F5;
   --card:#FFFFFF;
@@ -26,322 +32,649 @@
   --font-body:'Inter',sans-serif;
   --font-mono:'JetBrains Mono',monospace;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--bg)}
 body{
   background:var(--bg);
   color:var(--ink);
   font-family:var(--font-body);
-  font-size:16px;
+  font-size:15.5px;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  width:100%;
 }
+
 ::selection{background:var(--accent);color:#fff}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+@media(max-width:600px){.wrap{padding:0 16px}}
 
-/* ---------- Nav ---------- */
+/* Navigation */
 nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(246,248,245,.85);
-  backdrop-filter:blur(10px);
+  position:sticky;top:0;z-index:100;
+  background:rgba(246, 248, 245, 0.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid var(--line);
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-family:var(--font-mono);font-weight:600;font-size:.95rem;letter-spacing:-.02em}
-.logo .tld{color:var(--accent)}
-.nav-links{display:flex;gap:26px;font-size:.88rem;font-weight:500;color:var(--muted)}
-.nav-links a{transition:color .15s}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--accent)}
-.nav-cta{
-  font-family:var(--font-mono);font-size:.8rem;font-weight:500;
-  border:1px solid var(--ink);border-radius:999px;padding:7px 16px;
-  transition:background .15s,color .15s;
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{
+  font-family:var(--font-mono);font-weight:700;font-size:1.02rem;
+  letter-spacing:-.02em;display:flex;align-items:center;gap:10px;
 }
-.nav-cta:hover{background:var(--ink);color:#fff}
-@media(max-width:760px){.nav-links{display:none}}
+.logo .tld{color:var(--accent)}
+.nav-links{display:flex;gap:28px;font-size:.88rem;font-weight:500;color:var(--muted)}
+.nav-links a{transition:color .2s ease;padding:4px 0}
+.nav-links a:hover{color:var(--accent)}
 
-/* ---------- Endpoint eyebrow (signature) ---------- */
+.btn-nav-hire{
+  font-family:var(--font-mono);font-size:.8rem;font-weight:600;
+  border:1px solid var(--ink);border-radius:999px;padding:7px 18px;
+  transition:all .2s ease;
+}
+.btn-nav-hire:hover{
+  background:var(--ink);color:#FFF;
+}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* Endpoint Signature Verb Badge */
 .endpoint{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--font-mono);font-size:.8rem;font-weight:500;
-  margin-bottom:14px;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:.78rem;font-weight:500;
+  margin-bottom:12px;
 }
 .endpoint .verb{
   color:var(--accent);background:var(--accent-soft);
-  padding:2px 9px;border-radius:6px;font-weight:600;letter-spacing:.02em;
+  padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.02em;
 }
-.endpoint .path{color:var(--muted)}
+.endpoint .path{color:var(--muted);word-break:break-all}
 
-/* ---------- Hero ---------- */
-header.hero{padding:84px 0 72px}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:44px}}
+/* -------------------------------------------------------------
+   HERO SECTION (Large 3D Laptop + Crisp Mobile View)
+------------------------------------------------------------- */
+header.hero{
+  min-height:86vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  padding:35px 0 45px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr 0.95fr;
+  gap:32px;
+  align-items:center;
+  width:100%;
+}
+@media(max-width:980px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+    text-align:left;
+  }
+}
+
+.hero-left{display:flex;flex-direction:column;gap:18px;position:relative;z-index:5}
+
 .hero h1{
   font-family:var(--font-display);
-  font-size:clamp(2.4rem,5.4vw,3.7rem);
-  font-weight:800;line-height:1.08;letter-spacing:-.03em;
-  margin:6px 0 18px;
+  font-size:clamp(2.1rem, 4.4vw, 3.4rem);
+  font-weight:800;line-height:1.14;letter-spacing:-.03em;
+  color:var(--ink);
 }
 .hero h1 .dot{color:var(--accent)}
-.hero p.lede{color:var(--muted);max-width:52ch;font-size:1.03rem}
+.hero p.lede{color:var(--muted);font-size:1.02rem;line-height:1.75;max-width:52ch}
 .hero p.lede strong{color:var(--ink);font-weight:600}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  font-weight:600;font-size:.92rem;border-radius:10px;
-  padding:11px 20px;transition:transform .15s,box-shadow .15s,background .15s;
+  font-weight:600;font-size:.88rem;border-radius:10px;
+  padding:11px 22px;transition:all .2s ease;
+  font-family:var(--font-mono);cursor:pointer;
 }
-.btn svg{width:17px;height:17px}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px -8px rgba(14,123,95,.55)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px -8px rgba(14,123,95,.6)}
-.btn-ghost{border:1px solid var(--line);background:var(--card);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-.hero-meta{display:flex;gap:22px;margin-top:34px;font-family:var(--font-mono);font-size:.78rem;color:var(--muted);flex-wrap:wrap}
-.hero-meta span::before{content:"·";color:var(--accent);margin-right:8px;font-weight:700}
-.hero-meta span:first-child::before{content:""}
+.btn-primary{
+  background:var(--accent);color:#FFF;
+  box-shadow:0 6px 20px -4px rgba(14, 123, 95, 0.4);
+}
+.btn-primary:hover{
+  background:#0B634D;transform:translateY(-2px);
+  box-shadow:0 10px 25px -4px rgba(14, 123, 95, 0.5);
+}
+.btn-ghost{
+  border:1px solid var(--line);background:var(--card);
+  color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,0.03);
+}
+.btn-ghost:hover{
+  border-color:var(--accent);color:var(--accent);
+  transform:translateY(-2px);
+}
 
-/* JSON response card (signature) */
-.response-card{
-  background:var(--dark);color:var(--on-dark);
-  border-radius:var(--radius);
-  font-family:var(--font-mono);font-size:.82rem;line-height:1.8;
-  box-shadow:0 24px 60px -24px rgba(15,31,25,.55);
+/* Impact Metrics Row */
+.hero-metrics-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  margin-top:14px;padding-top:18px;border-top:1px solid var(--line);
+}
+@media(max-width:480px){
+  .hero-metrics-row{grid-template-columns:1fr 1fr;gap:12px;}
+}
+.metric-val{font-family:var(--font-display);font-size:1.45rem;font-weight:800;color:var(--accent)}
+.metric-lbl{font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+
+/* Hero Right: PROMINENT LARGE 3D STAGE */
+.hero-3d-stage{
+  width:100%;
+  height:490px;
+  position:relative;
+  border-radius:22px;
+  background:radial-gradient(circle at 50% 50%, rgba(227, 240, 234, 0.85) 0%, rgba(246, 248, 245, 0) 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   overflow:hidden;
 }
-.response-bar{
-  display:flex;align-items:center;gap:10px;
-  padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08);
-  background:var(--dark-2);font-size:.75rem;color:var(--on-dark-muted);
-}
-.status-dot{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 10px #34D39988;animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
-.response-body{padding:20px 22px}
-.response-body .k{color:#7FB8A4}
-.response-body .s{color:#D9EAD3}
-.response-body .n{color:#F0C674}
-.response-body .p{color:var(--on-dark-muted)}
-@media(prefers-reduced-motion:reduce){
-  .status-dot{animation:none}
-  html{scroll-behavior:auto}
-  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+@media(max-width:980px){.hero-3d-stage{height:360px;}}
+@media(max-width:480px){.hero-3d-stage{height:280px;}}
+
+#macbook-hero-canvas{
+  width:100%;
+  height:100%;
+  display:block;
 }
 
-/* ---------- Sections ---------- */
-section{padding:72px 0}
-.section-head{margin-bottom:42px}
+/* -------------------------------------------------------------
+   SECTIONS COMMON STYLING
+------------------------------------------------------------- */
+section{padding:75px 0;position:relative;z-index:2;background:var(--bg)}
+@media(max-width:600px){section{padding:50px 0}}
+.section-head{margin-bottom:36px}
 .section-head h2{
-  font-family:var(--font-display);font-weight:700;
-  font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-.02em;
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(1.8rem,3.4vw,2.4rem);letter-spacing:-.025em;
+  color:var(--ink);
 }
-.section-head p{color:var(--muted);margin-top:8px;max-width:60ch}
+.section-head p{color:var(--muted);margin-top:6px;max-width:62ch;font-size:.98rem}
 
-/* Experience */
-.xp{display:grid;gap:18px}
-.xp-item{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:28px 30px;display:grid;grid-template-columns:200px 1fr;gap:26px;
-  transition:border-color .2s,box-shadow .2s;
+/* -------------------------------------------------------------
+   PROJECTS SECTION
+------------------------------------------------------------- */
+.project-filters{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.filter-btn{
+  font-family:var(--font-mono);font-size:.78rem;font-weight:600;
+  background:var(--card);border:1px solid var(--line);
+  color:var(--muted);padding:7px 16px;border-radius:999px;cursor:pointer;
+  transition:all .2s ease;
 }
-.xp-item:hover{border-color:var(--accent);box-shadow:0 14px 34px -20px rgba(14,123,95,.35)}
-@media(max-width:700px){.xp-item{grid-template-columns:1fr;gap:12px}}
-.xp-when{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);padding-top:4px}
-.xp-when .now{display:inline-block;margin-top:8px;color:var(--accent);background:var(--accent-soft);padding:2px 9px;border-radius:6px;font-weight:600}
-.xp-body h3{font-family:var(--font-display);font-size:1.12rem;font-weight:700}
-.xp-body .org{color:var(--accent);font-weight:600;font-size:.92rem;margin-bottom:10px}
-.xp-body ul{list-style:none;color:var(--muted);font-size:.94rem;display:grid;gap:7px}
+.filter-btn:hover, .filter-btn.active{
+  border-color:var(--accent);color:#FFF;background:var(--accent);
+}
+
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:820px){.proj-grid{grid-template-columns:1fr;gap:18px}}
+
+.proj-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px;display:flex;flex-direction:column;gap:16px;
+  position:relative;overflow:hidden;
+  transition:all .3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:0 4px 18px rgba(18, 40, 32, 0.04);
+  cursor:pointer;
+}
+.proj-card:hover{
+  border-color:var(--accent);
+  box-shadow:0 14px 35px -8px rgba(14, 123, 95, 0.16);
+  transform:translateY(-4px);
+}
+
+.proj-card.flagship{
+  grid-column:span 2;
+  border-color:var(--accent);
+  background:linear-gradient(145deg, #FFFFFF 0%, #F3F8F5 100%);
+}
+@media(max-width:820px){.proj-card.flagship{grid-column:span 1}}
+
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.proj-card h3{font-family:var(--font-display);font-size:1.22rem;font-weight:700;color:var(--ink)}
+.proj-badge{
+  font-family:var(--font-mono);font-size:.68rem;
+  color:var(--accent);background:var(--accent-soft);
+  padding:3px 9px;border-radius:6px;font-weight:700;white-space:nowrap;
+}
+.proj-desc{color:var(--muted);font-size:.94rem;line-height:1.65;flex:1}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px;font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+.proj-stack span{
+  border:1px solid var(--line);border-radius:6px;padding:3px 9px;
+  background:var(--bg);
+}
+.proj-footer{display:flex;justify-content:space-between;align-items:center;margin-top:4px;flex-wrap:wrap;gap:8px}
+.proj-link{
+  font-family:var(--font-mono);font-size:.8rem;font-weight:600;
+  color:var(--accent);display:inline-flex;align-items:center;gap:6px;
+}
+
+/* Modal Deep-Dive */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(18, 40, 32, 0.65);backdrop-filter:blur(8px);
+  z-index:200;display:flex;align-items:center;justify-content:center;padding:16px;
+  opacity:0;pointer-events:none;transition:opacity .25s ease;
+}
+.modal-backdrop.active{opacity:1;pointer-events:auto}
+.modal-card{
+  background:var(--card);
+  border:1px solid var(--line);border-radius:20px;
+  width:100%;max-width:660px;padding:30px;position:relative;
+  box-shadow:0 24px 60px -15px rgba(18, 40, 32, 0.3);
+  transform:scale(0.95);transition:transform .25s ease;
+  max-height:90vh;overflow-y:auto;
+}
+.modal-backdrop.active .modal-card{transform:scale(1)}
+.modal-close-btn{
+  position:absolute;top:18px;right:18px;
+  background:var(--bg);border:1px solid var(--line);
+  color:var(--ink);width:32px;height:32px;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-weight:700;
+  transition:all .15s;
+}
+.modal-close-btn:hover{background:var(--accent);color:#FFF}
+
+/* -------------------------------------------------------------
+   EXPERIENCE SECTION
+------------------------------------------------------------- */
+.xp-list{display:grid;gap:18px}
+.xp-card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px 28px;
+  display:grid;grid-template-columns:220px 1fr;gap:24px;
+  box-shadow:0 4px 18px rgba(18, 40, 32, 0.03);transition:all .25s ease;
+}
+.xp-card:hover{
+  border-color:var(--accent);
+  box-shadow:0 12px 30px -8px rgba(14, 123, 95, 0.15);
+  transform:translateY(-2px);
+}
+@media(max-width:760px){.xp-card{grid-template-columns:1fr;gap:12px;padding:20px;}}
+.xp-time{font-family:var(--font-mono);font-size:.8rem;color:var(--muted)}
+.xp-founder-badge{
+  display:inline-block;margin-top:6px;
+  color:#FFF;background:var(--accent);
+  padding:3px 10px;border-radius:6px;font-weight:700;
+}
+.xp-body h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--ink)}
+.xp-body .org{color:var(--accent);font-weight:600;font-size:.94rem;margin:3px 0 10px}
+.xp-body ul{list-style:none;color:var(--muted);font-size:.92rem;display:grid;gap:7px}
 .xp-body li{padding-left:18px;position:relative}
-.xp-body li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+.xp-body li::before{content:"▹";position:absolute;left:0;color:var(--accent);font-size:1.05rem;top:-1px}
 
-/* Projects */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:900px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.proj-grid{grid-template-columns:1fr}}
-.proj{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:24px;display:flex;flex-direction:column;gap:12px;
-  transition:transform .2s,border-color .2s,box-shadow .2s;
-}
-.proj:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 36px -22px rgba(14,123,95,.4)}
-.proj.flagship{grid-column:span 2;background:linear-gradient(135deg,var(--dark),var(--dark-2));color:var(--on-dark);border-color:transparent}
-@media(max-width:620px){.proj.flagship{grid-column:span 1}}
-.proj.flagship .proj-desc{color:var(--on-dark-muted)}
-.proj-top{display:flex;justify-content:space-between;align-items:flex-start}
-.proj h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:-.01em}
-.proj-tag{font-family:var(--font-mono);font-size:.68rem;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:6px;font-weight:600;white-space:nowrap}
-.proj.flagship .proj-tag{background:rgba(52,211,153,.15);color:#6EE7B7}
-.proj-desc{color:var(--muted);font-size:.9rem;flex:1}
-.proj-stack{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px}
-.proj-stack span{border:1px solid var(--line);border-radius:6px;padding:2px 8px}
-.proj.flagship .proj-stack span{border-color:rgba(255,255,255,.15);color:var(--on-dark-muted)}
-.proj-link{font-family:var(--font-mono);font-size:.76rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px;margin-top:2px}
-.proj-link:hover{text-decoration:underline}
-.proj.flagship .proj-link{color:#6EE7B7}
+/* -------------------------------------------------------------
+   SKILLS SECTION
+------------------------------------------------------------- */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:920px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.skills-grid{grid-template-columns:1fr;gap:14px;}}
 
-/* Reviews */
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:900px){.rev-grid{grid-template-columns:1fr}}
-.rev{
+.skill-card{
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:26px;display:flex;flex-direction:column;gap:16px;position:relative;
-  transition:transform .2s,border-color .2s,box-shadow .2s;
+  padding:22px;box-shadow:0 4px 18px rgba(18, 40, 32, 0.03);transition:all .25s ease;
 }
-.rev:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 36px -22px rgba(14,123,95,.4)}
-.rev .stars{color:#E9A23B;font-size:.9rem;letter-spacing:2px}
-.rev p.quote{color:var(--muted);font-size:.93rem;flex:1}
-.rev-person{display:flex;align-items:center;gap:12px}
-.rev-avatar{
-  width:42px;height:42px;border-radius:50%;flex-shrink:0;
-  background:var(--accent-soft);color:var(--accent);
+.skill-card:hover{
+  border-color:var(--accent);transform:translateY(-2px);
+  box-shadow:0 10px 25px -6px rgba(14, 123, 95, 0.14);
+}
+.skill-card h3{
+  font-family:var(--font-mono);font-size:.78rem;font-weight:700;
+  color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;
+}
+.skill-tags{display:flex;flex-wrap:wrap;gap:7px}
+.skill-tags span{
+  font-size:.84rem;font-weight:500;color:var(--ink);
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:7px;padding:5px 11px;
+  transition:all .15s ease;
+}
+.skill-tags span:hover{
+  border-color:var(--accent);color:var(--accent);
+  background:var(--accent-soft);
+}
+
+/* -------------------------------------------------------------
+   SIGNATURE DARK VENTURE STUDIO BANNER (Future Tech Dynamics)
+------------------------------------------------------------- */
+.growth-banner{
+  background:linear-gradient(145deg, var(--dark) 0%, var(--dark-2) 100%);
+  border:1px solid var(--dark-2);border-radius:22px;
+  padding:48px 36px;color:var(--on-dark);
+  box-shadow:0 24px 60px -15px rgba(15, 31, 25, 0.35);
+  margin-bottom:30px;
+}
+@media(max-width:760px){.growth-banner{padding:32px 18px;border-radius:18px;}}
+.growth-header{text-align:center;max-width:680px;margin:0 auto 34px}
+.growth-title{
+  font-family:var(--font-display);font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:800;
+  letter-spacing:-.025em;margin:14px 0 10px;color:#FFF;
+}
+.growth-lede{color:var(--on-dark-muted);font-size:1rem;line-height:1.7}
+.growth-services-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;
+}
+@media(max-width:980px){.growth-services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.growth-services-grid{grid-template-columns:1fr}}
+.growth-service-item{
+  background:rgba(255, 255, 255, 0.05);border:1px solid rgba(255, 255, 255, 0.08);border-radius:14px;
+  padding:20px;transition:all .25s ease;
+}
+.growth-service-item:hover{
+  border-color:var(--accent);transform:translateY(-3px);
+  background:rgba(255, 255, 255, 0.09);
+}
+.growth-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:rgba(14, 123, 95, 0.25);border:1px solid rgba(14, 123, 95, 0.5);
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-weight:700;font-size:.9rem;
+  color:#6EE7B7;margin-bottom:14px;
 }
-.rev-person .who{line-height:1.35}
-.rev-person .who b{font-size:.92rem;font-weight:600;display:block}
-.rev-person .who span{font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+.growth-service-item h4{font-family:var(--font-display);font-size:1.02rem;font-weight:700;color:#FFF;margin-bottom:5px}
+.growth-service-item p{color:var(--on-dark-muted);font-size:.85rem;line-height:1.6}
 
-/* Skills */
-.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:900px){.skill-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.skill-grid{grid-template-columns:1fr}}
-.skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.skill-card h3{font-family:var(--font-mono);font-size:.78rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{
-  font-size:.83rem;font-weight:500;color:var(--ink);
-  background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:5px 12px;
-  transition:border-color .15s,color .15s;
+/* -------------------------------------------------------------
+   CONTACT SECTION & FLOATING WHATSAPP
+------------------------------------------------------------- */
+.contact-panel{
+  background:linear-gradient(145deg, var(--dark) 0%, var(--dark-2) 100%);
+  border:1px solid var(--dark-2);border-radius:22px;
+  padding:54px 36px;text-align:center;color:var(--on-dark);
+  box-shadow:0 24px 60px -15px rgba(15, 31, 25, 0.3);
 }
-.chips span:hover{border-color:var(--accent);color:var(--accent)}
-
-/* Education strip */
-.edu{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:28px 30px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;
+@media(max-width:600px){.contact-panel{padding:36px 18px}}
+.contact-panel h2{
+  font-family:var(--font-display);font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:12px;
+  color:#FFF;
 }
-.edu h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700}
-.edu p{color:var(--muted);font-size:.92rem}
-.edu .gpa{font-family:var(--font-mono);font-size:.85rem;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:8px;font-weight:600}
-.langs{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.langs span{font-family:var(--font-mono);font-size:.76rem;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 14px;color:var(--muted)}
+.contact-panel p{color:var(--on-dark-muted);max-width:50ch;margin:0 auto 28px;font-size:1rem}
+.contact-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.contact-meta-links{margin-top:28px;font-family:var(--font-mono);font-size:.82rem;color:var(--on-dark-muted);display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.contact-meta-links a:hover{color:#6EE7B7}
 
-/* Contact */
-.contact{
-  background:var(--dark);color:var(--on-dark);border-radius:20px;
-  padding:64px 48px;text-align:center;margin-bottom:40px;
+/* Floating WhatsApp Launcher */
+.floating-wa{
+  position:fixed;bottom:24px;right:24px;z-index:99;
+  background:#25D366;color:#FFFFFF;border-radius:999px;
+  padding:11px 20px;display:flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:.82rem;font-weight:700;
+  box-shadow:0 8px 25px rgba(37,211,102,0.35);
+  transition:all .25s ease;
 }
-@media(max-width:600px){.contact{padding:48px 24px}}
-.contact .endpoint .verb{background:rgba(52,211,153,.15);color:#6EE7B7}
-.contact .endpoint .path{color:var(--on-dark-muted)}
-.contact h2{font-family:var(--font-display);font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
-.contact p{color:var(--on-dark-muted);max-width:46ch;margin:0 auto 30px}
-.contact .btn-primary{background:#fff;color:var(--dark);box-shadow:none}
-.contact .btn-primary:hover{background:var(--accent-soft)}
-.contact .btn-ghost{border-color:rgba(255,255,255,.2);background:transparent;color:var(--on-dark)}
-.contact .btn-ghost:hover{border-color:#6EE7B7;color:#6EE7B7}
-.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.contact-meta{margin-top:28px;font-family:var(--font-mono);font-size:.78rem;color:var(--on-dark-muted);display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.floating-wa:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 12px 30px rgba(37,211,102,0.5);
+  color:#FFFFFF;
+}
+@media(max-width:480px){
+  .floating-wa{bottom:16px;right:16px;padding:9px 16px;font-size:.78rem;}
+}
 
-footer{border-top:1px solid var(--line);padding:26px 0;font-family:var(--font-mono);font-size:.75rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;width:100%}
-
-/* Reveal on scroll */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
+footer{border-top:1px solid var(--line);padding:24px 0;font-family:var(--font-mono);font-size:.76rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="#top">hazrat<span class="tld">.dev</span></a>
+    <a class="logo" href="#top">
+      <span>hazrat<span class="tld">.dev</span></span>
+    </a>
     <div class="nav-links">
-      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Tech Stack</a>
+      <a href="#build-with-us">Venture Studio</a>
+      <a href="#contact">Contact</a>
     </div>
-    <a class="nav-cta" href="#contact">POST /contact</a>
+    <a class="btn-nav-hire" href="#contact">POST /hire</a>
   </div>
 </nav>
 
+<!-- 1. Hero Section -->
 <header class="hero" id="top">
   <div class="wrap hero-grid">
-    <div>
-      <div class="endpoint"><span class="verb">GET</span><span class="path">/hazrat-ali</span></div>
-      <h1>Software Engineer building backends that ship<span class="dot">.</span></h1>
-      <p class="lede">I build <strong>full-stack web applications</strong>, <strong>ERP solutions</strong> and <strong>AI-integrated systems</strong> — with Python, Django &amp; DRF at the core, React on the front, and Odoo running business operations end-to-end.</p>
+    
+    <!-- Hero Left Column -->
+    <div class="hero-left">
+      <div class="endpoint">
+        <span class="verb">GET</span>
+        <span class="path">/api/v1/founder/hazrat-ali</span>
+      </div>
+      
+      <h1>Software Engineer &amp; Founder building systems that ship<span class="dot">.</span></h1>
+      
+      <p class="lede">
+        Founder of <strong><a href="https://ftdynamics.pk" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">Future Tech Dynamics</a></strong> &amp; Creator of <strong><a href="https://sehatyar.online" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">SehatYar.online</a></strong>. I build high-throughput backends with Python, Django &amp; DRF, modern React web applications, and AI-integrated systems.
+      </p>
+      
       <div class="hero-actions">
         <a class="btn btn-primary" href="mailto:Hazratali.bse@gmail.com">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke="none"/><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          Hire me
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Get in Touch
+        </a>
+        <a class="btn btn-ghost" href="https://ftdynamics.pk" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+          ftdynamics.pk ↗
         </a>
         <a class="btn btn-ghost" href="https://github.com/Hazrat-Ali822" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.05.78 2.13v3.16c0 .31.2.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.05.78 2.13v3.16c0 .31.2.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
           GitHub
         </a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/hazrat-ali-49a0aa267" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.09h4.56V23H.22zM8.34 8.09h4.37v2.04h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 7v8.24h-4.55v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V23H8.34z"/></svg>
-          LinkedIn
-        </a>
       </div>
-      <div class="hero-meta">
-        <span>Mardan, KP · Pakistan</span>
-        <span>BSc Software Engineering</span>
-        <span>Open to work</span>
+
+      <!-- Impact Metrics -->
+      <div class="hero-metrics-row">
+        <div>
+          <div class="metric-val">10+</div>
+          <div class="metric-lbl">Production Apps Shipped</div>
+        </div>
+        <div>
+          <div class="metric-val">99.9%</div>
+          <div class="metric-lbl">High-Availability Uptime</div>
+        </div>
+        <div>
+          <div class="metric-val">2 Live</div>
+          <div class="metric-lbl">SaaS Ventures (SehatYar)</div>
+        </div>
       </div>
     </div>
 
-    <div class="response-card reveal">
-      <div class="response-bar">
-        <span class="status-dot"></span>
-        <span>200 OK &nbsp;·&nbsp; api.hazrat.dev/v1/profile</span>
-      </div>
-      <div class="response-body">
-<pre style="font-family:inherit;white-space:pre-wrap">{
-  <span class="k">"name"</span>: <span class="s">"Hazrat Ali"</span>,
-  <span class="k">"role"</span>: <span class="s">"Software Engineer"</span>,
-  <span class="k">"company"</span>: <span class="s">"MUST Services"</span>,
-  <span class="k">"core"</span>: [<span class="s">"Python"</span>, <span class="s">"Django"</span>, <span class="s">"DRF"</span>],
-  <span class="k">"also"</span>: [<span class="s">"React"</span>, <span class="s">"Odoo ERP"</span>, <span class="s">"LLMs"</span>],
-  <span class="k">"projects_shipped"</span>: <span class="s">"10+"</span>,
-  <span class="k">"available"</span>: <span class="n">true</span>
-}</pre>
-      </div>
+    <!-- Hero Right: PROMINENT LARGE 3D MACBOOK WITH LIVE CODE STREAMING -->
+    <div class="hero-3d-stage">
+      <canvas id="macbook-hero-canvas"></canvas>
     </div>
+
   </div>
 </header>
 
+<!-- 2. Projects Section -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="endpoint">
+        <span class="verb">GET</span>
+        <span class="path">/api/v1/projects</span>
+      </div>
+      <h2>Flagship Products &amp; Production Platforms</h2>
+      <p>HealthTech suites, AI trend clustering engines, and enterprise business applications developed under Future Tech Dynamics.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="project-filters">
+      <button class="filter-btn active" onclick="filterCategory('all')">All Projects (5)</button>
+      <button class="filter-btn" onclick="filterCategory('flagship')">HealthTech &amp; AI</button>
+      <button class="filter-btn" onclick="filterCategory('enterprise')">Enterprise ERP &amp; POS</button>
+      <button class="filter-btn" onclick="filterCategory('ecommerce')">E-Commerce</button>
+    </div>
+
+    <div class="proj-grid">
+      
+      <!-- Flagship 1: SehatYar.online -->
+      <div class="proj-card flagship" onclick="openDeepDive('sehatyar')">
+        <div class="proj-header">
+          <h3>SehatYar — Comprehensive Digital Health &amp; Clinic Suite</h3>
+          <span class="proj-badge">FLAGSHIP PRODUCT</span>
+        </div>
+        <p class="proj-desc">
+          Complete healthcare management ecosystem engineered and launched at <strong>sehatyar.online</strong>. Features electronic health records (EHR), automated doctor appointment scheduling, smart pharmacy batch inventory tracking, clinical billing, and telemedicine workflows.
+        </p>
+        <div class="proj-stack">
+          <span>Python</span><span>Django</span><span>DRF</span><span>React</span><span>MySQL</span><span>HealthTech APIs</span>
+        </div>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://sehatyar.online" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit sehatyar.online Live ↗</a>
+          <span style="font-family:var(--font-mono);font-size:.74rem;color:var(--muted);">Click card for deep-dive</span>
+        </div>
+      </div>
+
+      <!-- Flagship 2: Trend Sphere -->
+      <div class="proj-card flagship" onclick="openDeepDive('trends')">
+        <div class="proj-header">
+          <h3>Trend Sphere — AI Trend Aggregation &amp; Analysis</h3>
+          <span class="proj-badge">FINAL YEAR PROJECT</span>
+        </div>
+        <p class="proj-desc">
+          AI-powered platform aggregating real-time social and search trends. Features asynchronous scraping pipelines, noise filtering, TF-IDF / vector embeddings clustering, and LLM-generated summaries on a scalable, high-throughput Django backend.
+        </p>
+        <div class="proj-stack">
+          <span>Python</span><span>Django</span><span>LLMs</span><span>TF-IDF</span><span>Vector Embeddings</span><span>Web Scraping</span>
+        </div>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Explore Future Tech Dynamics ↗</a>
+          <span style="font-family:var(--font-mono);font-size:.74rem;color:var(--muted);">Click card for deep-dive</span>
+        </div>
+      </div>
+
+      <!-- Project 3: Retail & Wholesale POS -->
+      <div class="proj-card" onclick="openDeepDive('pos')">
+        <div class="proj-header">
+          <h3>Retail &amp; Wholesale Commercial POS System</h3>
+          <span class="proj-badge" style="background:var(--accent-soft);color:var(--accent);">LIVE IN MULTIPLE SHOPS</span>
+        </div>
+        <p class="proj-desc">
+          Production point-of-sale and retail store operations platform <strong>running live across multiple retail shops &amp; wholesale outlets</strong>. Features thermal receipt printing, barcode support, cashier shift logs, cash ledgers, real-time inventory tracking, and date-filtered analytical sales reporting.
+        </p>
+        <div class="proj-stack">
+          <span>PWA</span><span>JavaScript</span><span>POS Engine</span><span>Thermal Receipts</span><span>Multi-Store Sync</span>
+        </div>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Future Tech Dynamics POS ↗</a>
+        </div>
+      </div>
+
+      <!-- Project 4: School ERP -->
+      <div class="proj-card" onclick="openDeepDive('school')">
+        <div class="proj-header">
+          <h3>School Management ERP System</h3>
+          <span class="proj-badge">EDUCATION ERP</span>
+        </div>
+        <p class="proj-desc">
+          Enterprise role-based web portal for school administration, teachers, students, and parents with live attendance tracking, grading workflows, and automated fee processing.
+        </p>
+        <div class="proj-stack">
+          <span>Django</span><span>DRF</span><span>Role-Based Access</span><span>PostgreSQL</span>
+        </div>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Enterprise Portal Overview ↗</a>
+        </div>
+      </div>
+
+      <!-- Project 5: Valora Beauty -->
+      <div class="proj-card" style="grid-column:span 2;" onclick="openDeepDive('valora')">
+        <div class="proj-header">
+          <h3>Valora Beauty Storefront</h3>
+          <span class="proj-badge">E-COMMERCE</span>
+        </div>
+        <p class="proj-desc">
+          Full-scale online retail application — multi-category catalog, dynamic cart &amp; checkout drawer, JWT session authentication, and modular UI powered by Django REST APIs.
+        </p>
+        <div class="proj-stack">
+          <span>Django</span><span>DRF</span><span>React</span><span>JWT Auth</span><span>Payment Flow</span>
+        </div>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Full-Stack Storefront ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Project Deep-Dive Modal -->
+<div class="modal-backdrop" id="project-modal" onclick="closeDeepDive(event)">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <button class="modal-close-btn" onclick="closeDeepDive()">✕</button>
+    <div id="modal-body-content"></div>
+  </div>
+</div>
+
+<!-- 3. Experience Section -->
 <section id="experience">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="endpoint"><span class="verb">GET</span><span class="path">/experience</span></div>
-      <h2>Where I've worked</h2>
+    <div class="section-head">
+      <div class="endpoint">
+        <span class="verb">GET</span>
+        <span class="path">/api/v1/experience</span>
+      </div>
+      <h2>Professional Engineering Experience</h2>
     </div>
-    <div class="xp">
-      <div class="xp-item reveal">
-        <div class="xp-when">Mar 2026 — Present<br><span class="now">CURRENT</span></div>
+
+    <div class="xp-list">
+      <!-- Future Tech Dynamics -->
+      <div class="xp-card" style="border-color:var(--accent);">
+        <div class="xp-time">
+          Founder &amp; Lead<br>
+          <span class="xp-founder-badge">FOUNDER</span>
+        </div>
+        <div class="xp-body">
+          <h3>Founder &amp; Lead Software Engineer</h3>
+          <div class="org"><a href="https://ftdynamics.pk" target="_blank" rel="noopener" style="text-decoration:underline;">Future Tech Dynamics (ftdynamics.pk)</a></div>
+          <ul>
+            <li>Founded Future Tech Dynamics, architecting and shipping custom enterprise software, HealthTech platforms, and SaaS web solutions.</li>
+            <li>Engineered <strong>SehatYar (sehatyar.online)</strong> — a full-scale clinical management platform with doctor appointments, electronic health records, and pharmacy stock automation.</li>
+            <li>Led technical architecture, database schemas (PostgreSQL / MySQL), DRF API design, and client production deployments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MUST Services -->
+      <div class="xp-card">
+        <div class="xp-time">
+          Mar 2026 — Present<br>
+          <span style="color:var(--accent);font-weight:700;">CURRENT</span>
+        </div>
         <div class="xp-body">
           <h3>Software Engineer</h3>
           <div class="org">MUST Services</div>
           <ul>
-            <li>Implemented &amp; customized Odoo ERP modules to run a company's core operations — all functional modules delivered end-to-end.</li>
-            <li>Built full-stack apps with Django &amp; DRF, including Valora Beauty — a full e-commerce platform with catalog, cart, checkout and user management.</li>
-            <li>Designed &amp; integrated REST APIs, owned database design, and shipped responsive, maintainable frontends.</li>
-            <li>Delivered multiple client projects, turning business requirements into production-ready software.</li>
+            <li>Engineered and customized full-scale Odoo ERP business modules to streamline operations across sales, inventory, and accounting end-to-end.</li>
+            <li>Architected robust Django &amp; DRF backends including Valora Beauty e-commerce platform with catalog, cart, checkout and user management.</li>
+            <li>Designed high-performance REST APIs, normalized SQL database schemas, and delivered maintainable full-stack integrations.</li>
           </ul>
         </div>
       </div>
-      <div class="xp-item reveal">
-        <div class="xp-when">2 months<br>Abbottabad, KP</div>
+
+      <!-- Education -->
+      <div class="xp-card">
+        <div class="xp-time">
+          2022 — Jan 2026<br>
+          <span>Abbottabad, KP</span>
+        </div>
         <div class="xp-body">
-          <h3>Software Engineer Intern</h3>
-          <div class="org">Hifaah Technology</div>
+          <h3>Bachelor of Software Engineering (BSE)</h3>
+          <div class="org">COMSATS University Islamabad, Abbottabad Campus</div>
           <ul>
-            <li>Developed &amp; maintained backend features using Django and Django REST Framework.</li>
-            <li>Implemented REST APIs and handled database operations for web applications.</li>
-            <li>Collaborated on debugging and performance improvements in real-world workflows.</li>
+            <li>Graduated with strong foundation in Software Architecture, Algorithms, Database Systems, and Distributed Computing.</li>
           </ul>
         </div>
       </div>
@@ -349,186 +682,144 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
   </div>
 </section>
 
-<section id="projects">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="endpoint"><span class="verb">GET</span><span class="path">/projects</span></div>
-      <h2>Selected projects</h2>
-      <p>From AI-powered trend analysis to production e-commerce — built with Django, DRF, React and a data-driven mindset.</p>
-    </div>
-    <div class="proj-grid">
-      <div class="proj flagship reveal">
-        <div class="proj-top">
-          <h3>Trend Sphere</h3>
-          <span class="proj-tag">FINAL YEAR PROJECT</span>
-        </div>
-        <p class="proj-desc">AI-based trend aggregation &amp; analysis platform. Collects real-time trends from X and Google Trends via APIs &amp; scraping, cleans noisy unstructured data through preprocessing pipelines, clusters with TF-IDF / embeddings, and uses LLMs to generate per-cluster summaries and insights — on a scalable Django backend.</p>
-        <div class="proj-stack"><span>Django</span><span>LLMs</span><span>TF-IDF</span><span>Embeddings</span><span>Web Scraping</span></div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>School Management System</h3><span class="proj-tag">EDUCATION</span></div>
-        <p class="proj-desc">Modern, live web-based school management platform with dedicated role-based portals — admin, teachers, students &amp; parents — covering attendance, classes, results and fee management.</p>
-        <div class="proj-stack"><span>Django</span><span>DRF</span><span>Role-Based Access</span></div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>Hospital &amp; Pharmacy Management System</h3><span class="proj-tag">HEALTHCARE</span></div>
-        <p class="proj-desc">Complete hospital management solution — patient records, doctor appointments, pharmacy inventory with stock tracking, billing and reports, all under role-based access.</p>
-        <div class="proj-stack"><span>Django</span><span>DRF</span><span>MySQL</span></div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>Yasir Garments</h3><span class="proj-tag">RETAIL / POS</span></div>
-        <p class="proj-desc">Point-of-sale &amp; store management PWA for a clothing store — role-based admin/cashier access, thermal receipt printing, bill editing and date-filtered sales reports.</p>
-        <div class="proj-stack"><span>PWA</span><span>JavaScript</span><span>Apps Script</span></div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>Valora Beauty</h3><span class="proj-tag">E-COMMERCE</span></div>
-        <p class="proj-desc">Full online store — product listings, cart, checkout and JWT auth, backed by REST APIs with a clean component-based UI.</p>
-        <div class="proj-stack"><span>Django</span><span>DRF</span><span>JWT</span></div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>Background Remover</h3><span class="proj-tag">IMAGE PROCESSING</span></div>
-        <p class="proj-desc">Image-processing system using OpenCV and the remove.bg API, with metadata stored in MongoDB.</p>
-        <div class="proj-stack"><span>Django</span><span>OpenCV</span><span>MongoDB</span></div>
-        <a class="proj-link" href="https://github.com/Hazrat-Ali822/bg-remover-in-django-and-mongoDb" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>Book Library API</h3><span class="proj-tag">REST API</span></div>
-        <p class="proj-desc">RESTful APIs with JWT authentication for managing books and authors — clean, documented endpoints.</p>
-        <div class="proj-stack"><span>DRF</span><span>JWT</span><span>SQLite</span></div>
-        <a class="proj-link" href="https://github.com/Hazrat-Ali822/Book-Library-Api" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>QR Scanner Web App</h3><span class="proj-tag">COMPUTER VISION</span></div>
-        <p class="proj-desc">Web-based QR code scanner and processor built with OpenCV and Pyzbar.</p>
-        <div class="proj-stack"><span>Django</span><span>OpenCV</span><span>Pyzbar</span></div>
-        <a class="proj-link" href="https://github.com/Hazrat-Ali822/QR-Scanner-Web-inDjango" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>Dating App</h3><span class="proj-tag">PLATFORM</span></div>
-        <p class="proj-desc">Django dating platform with JWT authentication and user discovery.</p>
-        <div class="proj-stack"><span>Django</span><span>DRF</span><span>JWT</span></div>
-        <a class="proj-link" href="https://github.com/Hazrat-Ali822/dating_app" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-top"><h3>Reminder App</h3><span class="proj-tag">TASK MANAGEMENT</span></div>
-        <p class="proj-desc">Task management &amp; reminder system for hierarchical organizations — Django REST API back-end with a lightweight JS front-end.</p>
-        <div class="proj-stack"><span>Django</span><span>DRF</span><span>JavaScript</span></div>
-        <a class="proj-link" href="https://github.com/Hazrat-Ali822/ReminderAPP_forCompany" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="reviews">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="endpoint"><span class="verb">GET</span><span class="path">/reviews</span></div>
-      <h2>What clients say</h2>
-    </div>
-    <div class="rev-grid">
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"Hazrat built our complete store system — billing, receipts, reports, everything. Ab poora business ek app se chalta hai. Fast delivery and very professional to work with."</p>
-        <div class="rev-person">
-          <div class="rev-avatar">YK</div>
-          <div class="who"><b>Yasir Khan</b><span>Owner — Yasir Garments</span></div>
-        </div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"The hospital &amp; pharmacy management system streamlined our appointments, patient records and medicine inventory. Reliable software and excellent support whenever we needed changes."</p>
-        <div class="rev-person">
-          <div class="rev-avatar">AK</div>
-          <div class="who"><b>Dr. Ali Khan</b><span>Hospital &amp; Pharmacy Management System</span></div>
-        </div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"He understood exactly what we wanted for the dating app — secure authentication, smooth user experience, and clean APIs. Delivered on time with great communication throughout."</p>
-        <div class="rev-person">
-          <div class="rev-avatar">RA</div>
-          <div class="who"><b>Rimsha Ahmad</b><span>Dating App Project</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- 4. Tech Capabilities -->
 <section id="skills">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="endpoint"><span class="verb">GET</span><span class="path">/skills</span></div>
-      <h2>Tech stack</h2>
-    </div>
-    <div class="skill-grid">
-      <div class="skill-card reveal">
-        <h3>Languages</h3>
-        <div class="chips"><span>Python</span><span>TypeScript</span><span>C#</span><span>Java</span><span>C++</span></div>
+    <div class="section-head">
+      <div class="endpoint">
+        <span class="verb">GET</span>
+        <span class="path">/api/v1/skills</span>
       </div>
-      <div class="skill-card reveal">
+      <h2>Core Engineering Tech Stack</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
         <h3>Backend &amp; APIs</h3>
-        <div class="chips"><span>Django</span><span>Django REST Framework</span><span>Laravel</span><span>REST API Design</span><span>JWT Auth</span></div>
+        <div class="skill-tags">
+          <span>Python</span><span>Django</span><span>Django REST Framework</span><span>FastAPI</span><span>JWT Auth</span><span>REST Design</span>
+        </div>
       </div>
-      <div class="skill-card reveal">
-        <h3>Frontend</h3>
-        <div class="chips"><span>React.js</span><span>HTML</span><span>CSS</span><span>Component-Based UI</span></div>
+
+      <div class="skill-card">
+        <h3>Frontend &amp; Interactive</h3>
+        <div class="skill-tags">
+          <span>React.js</span><span>JavaScript</span><span>HTML5</span><span>CSS3 / Tailwind</span><span>Component Systems</span>
+        </div>
       </div>
-      <div class="skill-card reveal">
-        <h3>ERP</h3>
-        <div class="chips"><span>Odoo</span><span>Module Customization</span><span>Business Process Implementation</span></div>
+
+      <div class="skill-card">
+        <h3>ERP &amp; Enterprise</h3>
+        <div class="skill-tags">
+          <span>Odoo ERP</span><span>POS Engines</span><span>ORM Models</span><span>Workflow Automation</span><span>Business Logic</span>
+        </div>
       </div>
-      <div class="skill-card reveal">
-        <h3>AI / ML &amp; Data</h3>
-        <div class="chips"><span>LLM Integration</span><span>NLP</span><span>Pandas</span><span>Scikit-learn</span><span>Data Pipelines</span></div>
+
+      <div class="skill-card">
+        <h3>AI &amp; Data Engineering</h3>
+        <div class="skill-tags">
+          <span>LLM Integration</span><span>NLP</span><span>TF-IDF</span><span>Vector Embeddings</span><span>Pandas</span><span>Scraping</span>
+        </div>
       </div>
-      <div class="skill-card reveal">
-        <h3>Databases &amp; Tools</h3>
-        <div class="chips"><span>MySQL</span><span>MongoDB</span><span>SQLite</span><span>Git</span><span>OpenCV</span><span>Agile</span></div>
+
+      <div class="skill-card">
+        <h3>Databases</h3>
+        <div class="skill-tags">
+          <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>SQLite</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Tools &amp; Languages</h3>
+        <div class="skill-tags">
+          <span>Git &amp; GitHub</span><span>Docker</span><span>C#</span><span>Java</span><span>C++</span><span>SQL</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="education">
+<!-- 5. Future Tech Dynamics Venture Studio -->
+<section id="build-with-us" style="padding-top:20px;">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="endpoint"><span class="verb">GET</span><span class="path">/education</span></div>
-      <h2>Education &amp; languages</h2>
-    </div>
-    <div class="edu reveal">
-      <div>
-        <h3>Bachelor of Software Engineering</h3>
-        <p>COMSATS University Islamabad, Abbottabad Campus · 2022 — Jan 2026</p>
+    <div class="growth-banner">
+      <div class="growth-header">
+        <div class="endpoint" style="justify-content:center;">
+          <span class="verb" style="background:rgba(255,255,255,0.15);color:#FFF;">STUDIO</span>
+          <span class="path" style="color:var(--on-dark-muted);">FUTURE TECH DYNAMICS (ftdynamics.pk)</span>
+        </div>
+        <h2 class="growth-title">Ready to Build, Scale, or Automate Your Business?</h2>
+        <p class="growth-lede">
+          From concept to live production software — whether you need high-throughput Django backends, full-scale clinical ERPs (like <strong>SehatYar</strong>), custom web apps, or AI integrations.
+        </p>
       </div>
-    </div>
-    <div class="langs reveal">
-      <span>English — Fluent</span>
-      <span>Urdu — Fluent</span>
-      <span>Pashto — Fluent</span>
+
+      <div class="growth-services-grid">
+        <div class="growth-service-item">
+          <div class="growth-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h4>Full-Stack Web &amp; SaaS</h4>
+          <p>Python, Django REST Framework, React.js &amp; component architectures tailored for high speed and security.</p>
+        </div>
+        <div class="growth-service-item">
+          <div class="growth-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h4>Healthcare &amp; Clinic Suites</h4>
+          <p>Custom health tech systems inspired by SehatYar.online — EHR records, doctor queues, and pharmacy inventory.</p>
+        </div>
+        <div class="growth-service-item">
+          <div class="growth-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="21" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h4>Enterprise ERP &amp; POS</h4>
+          <p>Multi-branch point-of-sale systems, thermal receipts, cash ledgers, and Odoo enterprise module implementations.</p>
+        </div>
+        <div class="growth-service-item">
+          <div class="growth-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><rect x="4" y="10" width="16" height="12" rx="3"/><line x1="9" y1="15" x2="9" y2="17"/><line x1="15" y1="15" x2="15" y2="17"/></svg>
+          </div>
+          <h4>AI &amp; Data Processing</h4>
+          <p>LLM integrations, automated web scraping, TF-IDF / vector clustering, and intelligent analytics pipelines.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <a href="https://wa.me/923499001990?text=Hi%20Hazrat,%20I%20am%20interested%20in%20building%20a%20project%20with%20Future%20Tech%20Dynamics." target="_blank" rel="noopener" class="btn btn-primary" style="background:#25D366;color:#FFF;box-shadow:0 6px 20px rgba(37,211,102,0.35);">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Chat on WhatsApp (Direct)
+        </a>
+        <a href="mailto:Hazratali.bse@gmail.com?subject=Project%20Inquiry%20via%20Future%20Tech%20Dynamics" class="btn btn-ghost" style="background:rgba(255,255,255,0.08);color:#FFF;border-color:rgba(255,255,255,0.15);">
+          Hazratali.bse@gmail.com
+        </a>
+        <a href="https://ftdynamics.pk" target="_blank" rel="noopener" class="btn btn-ghost" style="background:rgba(255,255,255,0.08);color:#FFF;border-color:rgba(255,255,255,0.15);">
+          Visit ftdynamics.pk ↗
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- 6. Contact Section -->
 <section id="contact">
   <div class="wrap">
-    <div class="contact reveal">
-      <div class="endpoint" style="justify-content:center"><span class="verb">POST</span><span class="path">/contact</span></div>
-      <h2>Let's build something.</h2>
-      <p>Open to full-time roles and freelance projects — backend, full-stack, ERP or AI-integrated systems.</p>
-      <div class="contact-actions">
-        <a class="btn btn-primary" href="mailto:Hazratali.bse@gmail.com">Hazratali.bse@gmail.com</a>
-        <a class="btn btn-ghost" href="tel:+923499001990">0349 9001990</a>
+    <div class="contact-panel">
+      <div class="endpoint" style="justify-content:center;">
+        <span class="verb" style="background:rgba(255,255,255,0.15);color:#FFF;">POST</span>
+        <span class="path" style="color:var(--on-dark-muted);">/api/v1/contact</span>
       </div>
-      <div class="contact-meta">
+      <h2>Let's Engineer Something Exceptional.</h2>
+      <p>Available for full-time engineering roles, backend architecture, ERP integrations, and custom full-stack solutions.</p>
+      
+      <div class="contact-btns">
+        <a class="btn btn-primary" href="mailto:Hazratali.bse@gmail.com">Hazratali.bse@gmail.com</a>
+        <a class="btn btn-ghost" href="tel:+923499001990" style="background:rgba(255,255,255,0.08);color:#FFF;border-color:rgba(255,255,255,0.15);">+92 349 9001990</a>
+      </div>
+
+      <div class="contact-meta-links">
+        <a href="https://ftdynamics.pk" target="_blank" rel="noopener">ftdynamics.pk</a>
+        <a href="https://sehatyar.online" target="_blank" rel="noopener">sehatyar.online</a>
         <a href="https://github.com/Hazrat-Ali822" target="_blank" rel="noopener">github.com/Hazrat-Ali822</a>
         <a href="https://www.linkedin.com/in/hazrat-ali-49a0aa267" target="_blank" rel="noopener">linkedin.com/in/hazrat-ali</a>
       </div>
@@ -536,20 +827,350 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
   </div>
 </section>
 
+<!-- Floating WhatsApp Action -->
+<a href="https://wa.me/923499001990?text=Hi%20Hazrat,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="floating-wa" title="Direct WhatsApp Chat">
+  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
 <footer>
   <div class="wrap">
-    <span>© <span id="year"></span> Hazrat Ali</span>
-    <span>Mardan, KP · Pakistan</span>
+    <span>© <span id="year"></span> Hazrat Ali — Founder @ <a href="https://ftdynamics.pk" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">Future Tech Dynamics</a></span>
+    <span>Mardan &amp; Abbottabad · Pakistan</span>
   </div>
 </footer>
 
+<!-- -------------------------------------------------------------
+     THREE.JS 3D MACBOOK (PROMINENT LARGE + LIVE CODE STREAMING)
+------------------------------------------------------------- -->
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Project Filter Tabs
+window.filterCategory = function(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.proj-card').forEach(card => {
+    if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+};
+
+// Deep-Dive Modal Data
+const deepDiveData = {
+  sehatyar: {
+    tag: "FLAGSHIP HEALTHCARE PLATFORM",
+    title: "SehatYar — Comprehensive Digital Health Suite",
+    desc: "SehatYar is a full-scale HealthTech platform engineered by Hazrat Ali at Future Tech Dynamics to digitize medical clinics, patient electronic health records (EHR), automated appointment queues, and pharmacy stock batches.",
+    tech: ["Python", "Django", "DRF", "React", "MySQL", "HealthTech APIs"],
+    url: "https://sehatyar.online"
+  },
+  trends: {
+    tag: "FINAL YEAR ENGINEERING PROJECT",
+    title: "Trend Sphere — AI Trend Aggregation & Analysis",
+    desc: "An AI-powered intelligence platform collecting live social & search trends, cleaning unstructured text, clustering vector embeddings with TF-IDF, and generating LLM per-cluster insights on a scalable Django backend.",
+    tech: ["Python", "Django", "LLMs", "TF-IDF", "Vector Embeddings", "Scraping"],
+    url: "https://ftdynamics.pk"
+  },
+  pos: {
+    tag: "LIVE IN MULTIPLE SHOPS",
+    title: "Retail & Wholesale Commercial POS System",
+    desc: "Commercial point-of-sale and store operations suite running live across multiple retail branches and wholesale stores. Engineered with thermal receipt printing, cashier shift management, daily cash ledgers, and analytical sales reporting.",
+    tech: ["PWA", "JavaScript", "POS Engine", "Thermal Receipt Printing", "Retail Automation"],
+    url: "https://ftdynamics.pk"
+  },
+  school: {
+    tag: "EDUCATION ERP",
+    title: "School Management System",
+    desc: "Multi-role ERP web application engineered for school administration, teachers, parents, and students with real-time class attendance, fee collection ledgers, and academic results.",
+    tech: ["Django", "Django REST Framework", "PostgreSQL", "RBAC"],
+    url: "https://ftdynamics.pk"
+  },
+  valora: {
+    tag: "E-COMMERCE",
+    title: "Valora Beauty Storefront",
+    desc: "High-performance full-stack e-commerce online store with category filters, dynamic cart drawer, JWT authentication, and secure checkout workflows.",
+    tech: ["Django", "DRF", "React", "JWT Auth", "REST APIs"],
+    url: "https://ftdynamics.pk"
+  }
+};
+
+window.openDeepDive = function(key) {
+  const d = deepDiveData[key];
+  if (!d) return;
+  const html = `
+    <div style="font-family:var(--font-mono);font-size:.76rem;color:var(--accent);font-weight:700;margin-bottom:8px;">${d.tag}</div>
+    <h2 style="font-family:var(--font-display);font-size:1.55rem;font-weight:700;color:var(--ink);margin-bottom:12px;">${d.title}</h2>
+    <p style="color:var(--muted);font-size:.98rem;line-height:1.7;margin-bottom:18px;">${d.desc}</p>
+    <div style="margin-bottom:24px;">
+      <div style="font-family:var(--font-mono);font-size:.74rem;color:var(--muted);margin-bottom:8px;font-weight:600;">TECHNOLOGY STACK:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        ${d.tech.map(t => `<span style="font-family:var(--font-mono);font-size:.76rem;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:6px;font-weight:600;">${t}</span>`).join('')}
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <a href="${d.url}" target="_blank" rel="noopener" class="btn btn-primary">Open Live Platform ↗</a>
+      <button class="btn btn-ghost" onclick="closeDeepDive()">Close</button>
+    </div>
+  `;
+  document.getElementById('modal-body-content').innerHTML = html;
+  document.getElementById('project-modal').classList.add('active');
+};
+
+window.closeDeepDive = function() {
+  document.getElementById('project-modal').classList.remove('active');
+};
+
+// ---------------- 3D MACBOOK STAGE WITH CONTINUOUS LIVE CODING ----------------
+(function init3DMacBookViewer() {
+  const canvas = document.getElementById('macbook-hero-canvas');
+  if (!canvas || !window.THREE) return;
+
+  const stage = canvas.parentElement;
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(34, stage.clientWidth / stage.clientHeight, 0.1, 1000);
+  camera.position.set(0, 1.1, 5.8); // Closer camera for bigger laptop size
+
+  const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+  renderer.setSize(stage.clientWidth, stage.clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // Studio Lighting
+  const ambLight = new THREE.AmbientLight(0xFFFFFF, 2.0);
+  scene.add(ambLight);
+
+  const mainLight = new THREE.DirectionalLight(0xFFFFFF, 2.6);
+  mainLight.position.set(5, 9, 7);
+  scene.add(mainLight);
+
+  const fillLight = new THREE.DirectionalLight(0x0E7B5F, 1.4);
+  fillLight.position.set(-5, 4, -3);
+  scene.add(fillLight);
+
+  // 3D Laptop Group (Larger scale)
+  const laptopGroup = new THREE.Group();
+  laptopGroup.position.set(0, -0.35, 0);
+  laptopGroup.rotation.set(0.12, -0.28, 0);
+  laptopGroup.scale.set(1.15, 1.15, 1.15); // Scaled larger
+  scene.add(laptopGroup);
+
+  // Space-Gray / Obsidian Metallic Aluminum Material
+  const aluminumMat = new THREE.MeshStandardMaterial({
+    color: 0x1B2E26,
+    metalness: 0.88,
+    roughness: 0.22,
+    envMapIntensity: 1.5
+  });
+
+  // Base Chassis
+  const baseGeo = new THREE.BoxGeometry(3.9, 0.15, 2.6);
+  const baseMesh = new THREE.Mesh(baseGeo, aluminumMat);
+  laptopGroup.add(baseMesh);
+
+  // Keyboard Bed
+  const kbGeo = new THREE.PlaneGeometry(3.2, 1.35);
+  const kbMat = new THREE.MeshStandardMaterial({
+    color: 0x0A1410,
+    emissive: 0x0E3B2E,
+    emissiveIntensity: 0.6,
+    roughness: 0.4
+  });
+  const kbMesh = new THREE.Mesh(kbGeo, kbMat);
+  kbMesh.rotation.x = -Math.PI / 2;
+  kbMesh.position.set(0, 0.08, -0.25);
+  laptopGroup.add(kbMesh);
+
+  // Trackpad Glass
+  const tpGeo = new THREE.PlaneGeometry(1.25, 0.75);
+  const tpMat = new THREE.MeshStandardMaterial({
+    color: 0x1E362C,
+    metalness: 0.8,
+    roughness: 0.15
+  });
+  const tpMesh = new THREE.Mesh(tpGeo, tpMat);
+  tpMesh.rotation.x = -Math.PI / 2;
+  tpMesh.position.set(0, 0.08, 0.78);
+  laptopGroup.add(tpMesh);
+
+  // Lid Hinge
+  const lidHinge = new THREE.Group();
+  lidHinge.position.set(0, 0.075, -1.3);
+  laptopGroup.add(lidHinge);
+
+  // Lid Top Back Cover
+  const lidCoverGeo = new THREE.BoxGeometry(3.9, 2.5, 0.09);
+  const lidCoverMesh = new THREE.Mesh(lidCoverGeo, aluminumMat);
+  lidCoverMesh.position.set(0, 1.25, -0.045);
+  lidHinge.add(lidCoverMesh);
+
+  // Screen Bezel
+  const bezelGeo = new THREE.PlaneGeometry(3.8, 2.4);
+  const bezelMat = new THREE.MeshBasicMaterial({ color: 0x08120E });
+  const bezelMesh = new THREE.Mesh(bezelGeo, bezelMat);
+  bezelMesh.position.set(0, 1.25, 0.005);
+  lidHinge.add(bezelMesh);
+
+  // ---------------- LIVE CODING 2K CANVAS ENGINE ----------------
+  const screenCanvas = document.createElement('canvas');
+  screenCanvas.width = 1024;
+  screenCanvas.height = 680;
+  const sCtx = screenCanvas.getContext('2d');
+
+  // Real syntax code lines that stream continuously
+  const codeLines = [
+    { type: 'comment', text: '# future_tech_dynamics/engine.py — Hazrat Ali' },
+    { type: 'import',  text: 'from django.db import models, transaction' },
+    { type: 'import',  text: 'from rest_framework.response import Response' },
+    { type: 'import',  text: 'from sehatyar.ehr import ClinicalCluster' },
+    { type: 'import',  text: 'import torch, transformers' },
+    { type: 'empty',   text: '' },
+    { type: 'class',   text: 'class ProductionArchitecture(APIView):' },
+    { type: 'doc',     text: '    """High-Throughput Distributed Microservices"""' },
+    { type: 'func',    text: '    async def dispatch_cluster(self, payload):' },
+    { type: 'body',    text: '        cluster = await ClinicalCluster.init(' },
+    { type: 'arg',     text: '            nodes="ftdynamics.pk",' },
+    { type: 'arg',     text: '            uptime=0.9999,' },
+    { type: 'arg',     text: '            status="200 OK — Ready to Ship"' },
+    { type: 'body',    text: '        )' },
+    { type: 'body',    text: '        return Response({"status": "healthy", "latency": "11ms"})' },
+    { type: 'empty',   text: '' },
+    { type: 'comment', text: '# [AI Pipeline] Clustering Social Trends with TF-IDF' },
+    { type: 'func',    text: 'def execute_trend_sphere(raw_stream):' },
+    { type: 'body',    text: '    vectorizer = TfidfVectorizer(max_features=5000)' },
+    { type: 'body',    text: '    embeddings = vectorizer.fit_transform(raw_stream)' },
+    { type: 'body',    text: '    clusters = DBSCAN(eps=0.35).fit(embeddings)' },
+    { type: 'return',  text: '    return summarize_clusters_with_llm(clusters)' }
+  ];
+
+  let visibleLines = 4;
+  let charInLastLine = 0;
+  let lineStepTimer = 0;
+
+  function renderLiveIDE() {
+    sCtx.fillStyle = "#0A1712";
+    sCtx.fillRect(0, 0, 1024, 680);
+
+    // IDE Header Bar
+    sCtx.fillStyle = "#06100C";
+    sCtx.fillRect(0, 0, 1024, 48);
+
+    // Window Dots
+    sCtx.fillStyle = "#EF4444"; sCtx.beginPath(); sCtx.arc(26, 24, 6, 0, Math.PI*2); sCtx.fill();
+    sCtx.fillStyle = "#F59E0B"; sCtx.beginPath(); sCtx.arc(46, 24, 6, 0, Math.PI*2); sCtx.fill();
+    sCtx.fillStyle = "#10B981"; sCtx.beginPath(); sCtx.arc(66, 24, 6, 0, Math.PI*2); sCtx.fill();
+
+    // Tab title
+    sCtx.fillStyle = "#0E7B5F";
+    sCtx.fillRect(94, 8, 260, 40);
+    sCtx.fillStyle = "#E8F2EC";
+    sCtx.font = "bold 15px 'JetBrains Mono', monospace";
+    sCtx.fillText("● architecture.py", 112, 33);
+
+    sCtx.fillStyle = "#51655B";
+    sCtx.font = "14px 'JetBrains Mono', monospace";
+    sCtx.fillText("UTF-8 | Python 3.12 | Git: main*", 720, 33);
+
+    // Code lines rendering with syntax colors
+    let startY = 86;
+    const lineHeight = 26;
+
+    for (let i = 0; i < Math.min(visibleLines, codeLines.length); i++) {
+      const lineObj = codeLines[i];
+      let lineText = lineObj.text;
+
+      // Line number
+      sCtx.fillStyle = "#334D41";
+      sCtx.font = "14px 'JetBrains Mono', monospace";
+      const lineNumStr = String(i + 1).padStart(2, ' ');
+      sCtx.fillText(lineNumStr, 24, startY + (i * lineHeight));
+
+      // Syntax color picking
+      if (lineObj.type === 'comment') sCtx.fillStyle = "#5E8573";
+      else if (lineObj.type === 'import') sCtx.fillStyle = "#38BDF8";
+      else if (lineObj.type === 'class') sCtx.fillStyle = "#FCD34D";
+      else if (lineObj.type === 'doc') sCtx.fillStyle = "#6EE7B7";
+      else if (lineObj.type === 'func') sCtx.fillStyle = "#34D399";
+      else if (lineObj.type === 'arg') sCtx.fillStyle = "#A7F3D0";
+      else if (lineObj.type === 'return') sCtx.fillStyle = "#F472B6";
+      else sCtx.fillStyle = "#E8F2EC";
+
+      sCtx.font = "16px 'JetBrains Mono', monospace";
+      sCtx.fillText(lineText, 66, startY + (i * lineHeight));
+    }
+
+    // Blinking Live Cursor
+    const cursorY = startY + ((visibleLines - 1) * lineHeight) - 14;
+    const currentLineWidth = sCtx.measureText(codeLines[Math.min(visibleLines - 1, codeLines.length - 1)].text).width;
+    if (Math.floor(Date.now() / 400) % 2 === 0) {
+      sCtx.fillStyle = "#34D399";
+      sCtx.fillRect(68 + currentLineWidth, cursorY, 9, 18);
+    }
+
+    // Bottom Terminal Status Bar
+    sCtx.fillStyle = "#050C09";
+    sCtx.fillRect(0, 636, 1024, 44);
+    sCtx.fillStyle = "#34D399";
+    sCtx.font = "bold 14px 'JetBrains Mono', monospace";
+    sCtx.fillText("➜ [LIVE BUILD] Future Tech Dynamics • 0 errors • 100% test coverage", 24, 663);
+  }
+  renderLiveIDE();
+
+  const screenTex = new THREE.CanvasTexture(screenCanvas);
+  const screenMat = new THREE.MeshBasicMaterial({ map: screenTex });
+  const screenGeo = new THREE.PlaneGeometry(3.65, 2.3);
+  const screenMesh = new THREE.Mesh(screenGeo, screenMat);
+  screenMesh.position.set(0, 1.25, 0.015);
+  lidHinge.add(screenMesh);
+
+  // Smooth Lid Opening
+  lidHinge.rotation.x = 1.35;
+  let targetLid = 0.18;
+
+  // Mouse Tracking
+  let mouseTargetX = 0, mouseTargetY = 0;
+  window.addEventListener('mousemove', (e) => {
+    mouseTargetX = (e.clientX / window.innerWidth - 0.5) * 0.22;
+    mouseTargetY = (e.clientY / window.innerHeight - 0.5) * 0.16;
+  });
+
+  function handleResize() {
+    camera.aspect = stage.clientWidth / stage.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(stage.clientWidth, stage.clientHeight);
+  }
+  window.addEventListener('resize', handleResize);
+
+  // Continuous Live Code Typing Animation Loop
+  setInterval(() => {
+    visibleLines++;
+    if (visibleLines > codeLines.length) {
+      visibleLines = 3; // loop smoothly
+    }
+    renderLiveIDE();
+    screenTex.needsUpdate = true;
+  }, 450);
+
+  // Render Loop
+  let clock = new THREE.Clock();
+  function render3DHero() {
+    requestAnimationFrame(render3DHero);
+    const t = clock.getElapsedTime();
+
+    lidHinge.rotation.x += (targetLid - lidHinge.rotation.x) * 0.05;
+
+    // Gentle floating in the hero stage
+    laptopGroup.position.y = -0.35 + Math.sin(t * 1.5) * 0.04;
+    laptopGroup.rotation.y = -0.28 + Math.sin(t * 0.6) * 0.08 + mouseTargetX;
+    laptopGroup.rotation.x = 0.12 + mouseTargetY;
+
+    renderer.render(scene, camera);
+  }
+  render3DHero();
+})();
 </script>
 
 <script>
