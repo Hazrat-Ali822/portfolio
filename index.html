@@ -1008,105 +1008,102 @@ window.closeDeepDive = function() {
   screenCanvas.height = 680;
   const sCtx = screenCanvas.getContext('2d');
 
-  const channels = ['sehatyar', 'trend', 'pos'];
-  let channelIdx = 0;
+  // Real syntax-highlighted Python / Django backend & AI code
+  const codeLines = [
+    { type: 'comment', text: '# future_tech_dynamics/engine.py — Hazrat Ali' },
+    { type: 'import',  text: 'from django.db import models, transaction' },
+    { type: 'import',  text: 'from rest_framework.response import Response' },
+    { type: 'import',  text: 'from sehatyar.ehr import ClinicalCluster' },
+    { type: 'import',  text: 'import torch, transformers' },
+    { type: 'empty',   text: '' },
+    { type: 'class',   text: 'class ProductionArchitecture(APIView):' },
+    { type: 'doc',     text: '    """High-Throughput Distributed Microservices"""' },
+    { type: 'func',    text: '    async def dispatch_cluster(self, payload):' },
+    { type: 'body',    text: '        cluster = await ClinicalCluster.init(' },
+    { type: 'arg',     text: '            nodes="ftdynamics.pk",' },
+    { type: 'arg',     text: '            uptime=0.9999,' },
+    { type: 'arg',     text: '            status="200 OK — Ready to Ship"' },
+    { type: 'body',    text: '        )' },
+    { type: 'body',    text: '        return Response({"status": "healthy", "latency": "11ms"})' },
+    { type: 'empty',   text: '' },
+    { type: 'comment', text: '# [AI Engine] Clustering Trends with TF-IDF' },
+    { type: 'func',    text: 'def execute_trend_sphere(raw_stream):' },
+    { type: 'body',    text: '    vectorizer = TfidfVectorizer(max_features=5000)' },
+    { type: 'body',    text: '    embeddings = vectorizer.fit_transform(raw_stream)' },
+    { type: 'body',    text: '    clusters = DBSCAN(eps=0.35).fit(embeddings)' },
+    { type: 'return',  text: '    return summarize_clusters_with_llm(clusters)' }
+  ];
 
-  function renderDynamicScreen(channel) {
-    sCtx.fillStyle = "#0B1A14";
+  let visibleLines = 4;
+
+  function renderLiveIDE() {
+    sCtx.fillStyle = "#0A1712";
     sCtx.fillRect(0, 0, 1024, 680);
 
-    // Screen Top Tab Bar
-    sCtx.fillStyle = "#07120D";
-    sCtx.fillRect(0, 0, 1024, 52);
-    sCtx.fillStyle = "#34D399";
-    sCtx.font = "bold 20px 'JetBrains Mono', monospace";
-    sCtx.fillText("● hazrat.dev | Future Tech Dynamics (ftdynamics.pk)", 24, 34);
-    sCtx.fillStyle = "#9DB8AB";
-    sCtx.font = "16px 'JetBrains Mono', monospace";
-    sCtx.fillText("200 OK | Python 3.12 · Django", 680, 34);
+    // IDE Header Bar
+    sCtx.fillStyle = "#06100C";
+    sCtx.fillRect(0, 0, 1024, 48);
 
-    if (channel === 'sehatyar') {
-      sCtx.fillStyle = "rgba(18, 40, 32, 0.95)";
-      sCtx.fillRect(40, 80, 944, 550);
-      sCtx.strokeStyle = "#34D399";
-      sCtx.lineWidth = 2;
-      sCtx.strokeRect(40, 80, 944, 550);
+    // Window Dots
+    sCtx.fillStyle = "#EF4444"; sCtx.beginPath(); sCtx.arc(26, 24, 6, 0, Math.PI*2); sCtx.fill();
+    sCtx.fillStyle = "#F59E0B"; sCtx.beginPath(); sCtx.arc(46, 24, 6, 0, Math.PI*2); sCtx.fill();
+    sCtx.fillStyle = "#10B981"; sCtx.beginPath(); sCtx.arc(66, 24, 6, 0, Math.PI*2); sCtx.fill();
 
-      sCtx.fillStyle = "#34D399";
-      sCtx.font = "bold 18px 'JetBrains Mono', monospace";
-      sCtx.fillText("FLAGSHIP PLATFORM // HEALTHCARE MANAGEMENT", 70, 130);
+    // Tab title
+    sCtx.fillStyle = "#0E7B5F";
+    sCtx.fillRect(94, 8, 250, 40);
+    sCtx.fillStyle = "#E8F2EC";
+    sCtx.font = "bold 15px 'JetBrains Mono', monospace";
+    sCtx.fillText("● architecture.py", 112, 33);
 
-      sCtx.fillStyle = "#FFFFFF";
-      sCtx.font = "bold 32px 'Sora', sans-serif";
-      sCtx.fillText("SehatYar.online — Clinic & EHR Suite", 70, 180);
+    sCtx.fillStyle = "#51655B";
+    sCtx.font = "14px 'JetBrains Mono', monospace";
+    sCtx.fillText("UTF-8 | Python 3.12 | Git: main*", 720, 33);
 
-      sCtx.fillStyle = "#9DB8AB";
-      sCtx.font = "18px 'Inter', sans-serif";
-      sCtx.fillText("• Electronic Health Records (EHR) & Patient Queue System", 70, 240);
-      sCtx.fillText("• Automated Doctor Scheduling & Pharmacy Batch Stocks", 70, 280);
-      sCtx.fillText("• High-Throughput REST APIs with PostgreSQL & React Interface", 70, 320);
+    // Code lines rendering with syntax colors
+    let startY = 86;
+    const lineHeight = 26;
 
-      sCtx.fillStyle = "#6EE7B7";
-      sCtx.font = "bold 22px 'JetBrains Mono', monospace";
-      sCtx.fillText("Live System URL: https://sehatyar.online", 70, 390);
+    for (let i = 0; i < Math.min(visibleLines, codeLines.length); i++) {
+      const lineObj = codeLines[i];
+      let lineText = lineObj.text;
 
-      sCtx.fillStyle = "rgba(52,211,153,0.15)";
-      sCtx.fillRect(70, 440, 400, 80);
-      sCtx.strokeRect(70, 440, 400, 80);
-      sCtx.fillStyle = "#34D399";
-      sCtx.font = "bold 20px 'JetBrains Mono', monospace";
-      sCtx.fillText("Latency: 11ms  |  Status: ACTIVE", 95, 490);
-    } else if (channel === 'trend') {
-      sCtx.fillStyle = "rgba(18, 40, 32, 0.95)";
-      sCtx.fillRect(40, 80, 944, 550);
-      sCtx.strokeStyle = "#38BDF8";
-      sCtx.lineWidth = 2;
-      sCtx.strokeRect(40, 80, 944, 550);
+      // Line number
+      sCtx.fillStyle = "#334D41";
+      sCtx.font = "14px 'JetBrains Mono', monospace";
+      const lineNumStr = String(i + 1).padStart(2, ' ');
+      sCtx.fillText(lineNumStr, 24, startY + (i * lineHeight));
 
-      sCtx.fillStyle = "#38BDF8";
-      sCtx.font = "bold 18px 'JetBrains Mono', monospace";
-      sCtx.fillText("AI ENGINE // FINAL YEAR ENGINEERING PROJECT", 70, 130);
+      // Syntax color picking
+      if (lineObj.type === 'comment') sCtx.fillStyle = "#5E8573";
+      else if (lineObj.type === 'import') sCtx.fillStyle = "#38BDF8";
+      else if (lineObj.type === 'class') sCtx.fillStyle = "#FCD34D";
+      else if (lineObj.type === 'doc') sCtx.fillStyle = "#6EE7B7";
+      else if (lineObj.type === 'func') sCtx.fillStyle = "#34D399";
+      else if (lineObj.type === 'arg') sCtx.fillStyle = "#A7F3D0";
+      else if (lineObj.type === 'return') sCtx.fillStyle = "#F472B6";
+      else sCtx.fillStyle = "#E8F2EC";
 
-      sCtx.fillStyle = "#FFFFFF";
-      sCtx.font = "bold 32px 'Sora', sans-serif";
-      sCtx.fillText("Trend Sphere — NLP & LLM Clustering", 70, 180);
-
-      sCtx.fillStyle = "#9DB8AB";
-      sCtx.font = "18px 'Inter', sans-serif";
-      sCtx.fillText("• Ingests 2,400+ real-time social & search data streams", 70, 240);
-      sCtx.fillText("• TF-IDF Vectorization, noise filtration & DBSCAN algorithms", 70, 280);
-      sCtx.fillText("• Generates structured LLM summaries on Django backend", 70, 320);
-
-      sCtx.fillStyle = "#34D399";
-      sCtx.font = "bold 22px 'JetBrains Mono', monospace";
-      sCtx.fillText("Active Clusters: 14 High-Impact Trends", 70, 390);
-    } else if (channel === 'pos') {
-      sCtx.fillStyle = "rgba(18, 40, 32, 0.95)";
-      sCtx.fillRect(40, 80, 944, 550);
-      sCtx.strokeStyle = "#F59E0B";
-      sCtx.lineWidth = 2;
-      sCtx.strokeRect(40, 80, 944, 550);
-
-      sCtx.fillStyle = "#F59E0B";
-      sCtx.font = "bold 18px 'JetBrains Mono', monospace";
-      sCtx.fillText("RETAIL AUTOMATION // MULTI-STORE PLATFORM", 70, 130);
-
-      sCtx.fillStyle = "#FFFFFF";
-      sCtx.font = "bold 32px 'Sora', sans-serif";
-      sCtx.fillText("Retail & Wholesale Commercial POS", 70, 180);
-
-      sCtx.fillStyle = "#9DB8AB";
-      sCtx.font = "18px 'Inter', sans-serif";
-      sCtx.fillText("• Live in multiple retail branches and wholesale stores", 70, 240);
-      sCtx.fillText("• Thermal receipt printing & barcode scanning integration", 70, 280);
-      sCtx.fillText("• Real-time cash ledger and date-filtered analytical sales", 70, 320);
-
-      sCtx.fillStyle = "#34D399";
-      sCtx.font = "bold 22px 'JetBrains Mono', monospace";
-      sCtx.fillText("Multi-Branch Status: SYNCED & LIVE", 70, 390);
+      sCtx.font = "16px 'JetBrains Mono', monospace";
+      sCtx.fillText(lineText, 66, startY + (i * lineHeight));
     }
+
+    // Blinking Live Cursor
+    const cursorY = startY + ((visibleLines - 1) * lineHeight) - 14;
+    const currentLineWidth = sCtx.measureText(codeLines[Math.min(visibleLines - 1, codeLines.length - 1)].text).width;
+    if (Math.floor(Date.now() / 400) % 2 === 0) {
+      sCtx.fillStyle = "#34D399";
+      sCtx.fillRect(68 + currentLineWidth, cursorY, 9, 18);
+    }
+
+    // Bottom Terminal Status Bar
+    sCtx.fillStyle = "#050C09";
+    sCtx.fillRect(0, 636, 1024, 44);
+    sCtx.fillStyle = "#34D399";
+    sCtx.font = "bold 14px 'JetBrains Mono', monospace";
+    sCtx.fillText("➜ [LIVE BUILD] Future Tech Dynamics • 0 errors • 100% test coverage", 24, 663);
   }
-  renderDynamicScreen('sehatyar');
+  renderLiveIDE();
 
   const screenTex = new THREE.CanvasTexture(screenCanvas);
   const screenMat = new THREE.MeshBasicMaterial({ map: screenTex });
@@ -1115,12 +1112,15 @@ window.closeDeepDive = function() {
   screenMesh.position.set(0, 1.22, 0.015);
   lidHinge.add(screenMesh);
 
-  // Automatic Dynamic Screen Cycle
+  // Continuous Live Code Typing Animation Loop
   setInterval(() => {
-    channelIdx = (channelIdx + 1) % channels.length;
-    renderDynamicScreen(channels[channelIdx]);
+    visibleLines++;
+    if (visibleLines > codeLines.length) {
+      visibleLines = 3;
+    }
+    renderLiveIDE();
     screenTex.needsUpdate = true;
-  }, 4200);
+  }, 440);
 
   // Smooth Lid Opening
   lidHinge.rotation.x = 1.35;
