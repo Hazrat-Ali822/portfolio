@@ -92,44 +92,36 @@ nav{
 .endpoint .path{color:var(--muted);word-break:break-all}
 
 /* -------------------------------------------------------------
-   HERO SECTION (Large 3D Laptop + Crisp Mobile View)
+   HERO SECTION (Centered Grand Architecture with Center 3D Laptop)
 ------------------------------------------------------------- */
 header.hero{
-  min-height:86vh;
+  position:relative;
+  padding:50px 0 40px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  position:relative;
-  padding:35px 0 45px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr 0.95fr;
-  gap:32px;
   align-items:center;
-  width:100%;
+  text-align:center;
 }
-@media(max-width:980px){
-  .hero-grid{
-    grid-template-columns:1fr;
-    gap:28px;
-    text-align:left;
-  }
+.hero-content{
+  max-width:840px;
+  margin:0 auto 32px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
-
-.hero-left{display:flex;flex-direction:column;gap:18px;position:relative;z-index:5}
 
 .hero h1{
   font-family:var(--font-display);
-  font-size:clamp(2.1rem, 4.4vw, 3.4rem);
-  font-weight:800;line-height:1.14;letter-spacing:-.03em;
+  font-size:clamp(2.3rem, 5.2vw, 3.8rem);
+  font-weight:800;line-height:1.12;letter-spacing:-.03em;
   color:var(--ink);
+  margin:10px 0 16px;
 }
 .hero h1 .dot{color:var(--accent)}
-.hero p.lede{color:var(--muted);font-size:1.02rem;line-height:1.75;max-width:52ch}
+.hero p.lede{color:var(--muted);font-size:1.08rem;line-height:1.75;max-width:62ch;margin:0 auto 24px}
 .hero p.lede strong{color:var(--ink);font-weight:600}
 
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:28px}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   font-weight:600;font-size:.88rem;border-radius:10px;
@@ -155,29 +147,39 @@ header.hero{
 
 /* Impact Metrics Row */
 .hero-metrics-row{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-  margin-top:14px;padding-top:18px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  padding:18px 32px;border:1px solid var(--line);border-radius:16px;
+  background:var(--card);box-shadow:0 4px 18px rgba(18,40,32,0.03);
+  max-width:640px;margin:0 auto 36px;
 }
-@media(max-width:480px){
-  .hero-metrics-row{grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:540px){
+  .hero-metrics-row{grid-template-columns:1fr;gap:14px;padding:16px;}
 }
 .metric-val{font-family:var(--font-display);font-size:1.45rem;font-weight:800;color:var(--accent)}
-.metric-lbl{font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+.metric-lbl{font-family:var(--font-mono);font-size:.74rem;color:var(--muted)}
 
-/* Hero Right: PROMINENT LARGE 3D STAGE */
+/* -------------------------------------------------------------
+   GRAND CENTER 3D MACBOOK STAGE (FULL VIEWPORT PROMINENCE)
+------------------------------------------------------------- */
+.hero-3d-center-wrapper{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  position:relative;
+}
 .hero-3d-stage{
   width:100%;
-  height:490px;
+  height:540px;
   position:relative;
-  border-radius:22px;
-  background:radial-gradient(circle at 50% 50%, rgba(227, 240, 234, 0.85) 0%, rgba(246, 248, 245, 0) 70%);
+  border-radius:24px;
+  background:radial-gradient(circle at 50% 55%, rgba(227, 240, 234, 0.9) 0%, rgba(246, 248, 245, 0) 72%);
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
 }
-@media(max-width:980px){.hero-3d-stage{height:360px;}}
-@media(max-width:480px){.hero-3d-stage{height:280px;}}
+@media(max-width:980px){.hero-3d-stage{height:420px;}}
+@media(max-width:540px){.hero-3d-stage{height:320px;}}
 
 #macbook-hero-canvas{
   width:100%;
@@ -185,11 +187,20 @@ header.hero{
   display:block;
 }
 
+.stage-badge{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:999px;
+  padding:5px 16px;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);
+  display:flex;align-items:center;gap:6px;pointer-events:none;
+}
+.stage-badge-dot{width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 8px #10B981;}
+
 /* -------------------------------------------------------------
    SECTIONS COMMON STYLING
 ------------------------------------------------------------- */
-section{padding:75px 0;position:relative;z-index:2;background:var(--bg)}
-@media(max-width:600px){section{padding:50px 0}}
+section{padding:80px 0;position:relative;z-index:2;background:var(--bg)}
+@media(max-width:600px){section{padding:54px 0}}
 .section-head{margin-bottom:36px}
 .section-head h2{
   font-family:var(--font-display);font-weight:800;
@@ -440,12 +451,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </div>
 </nav>
 
-<!-- 1. Hero Section -->
+<!-- 1. Hero Section (Centered Grand Architecture) -->
 <header class="hero" id="top">
-  <div class="wrap hero-grid">
+  <div class="wrap">
     
-    <!-- Hero Left Column -->
-    <div class="hero-left">
+    <div class="hero-content">
       <div class="endpoint">
         <span class="verb">GET</span>
         <span class="path">/api/v1/founder/hazrat-ali</span>
@@ -489,9 +499,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       </div>
     </div>
 
-    <!-- Hero Right: PROMINENT LARGE 3D MACBOOK WITH LIVE CODE STREAMING -->
-    <div class="hero-3d-stage">
-      <canvas id="macbook-hero-canvas"></canvas>
+    <!-- GRAND CENTER 3D MACBOOK STAGE -->
+    <div class="hero-3d-center-wrapper">
+      <div class="hero-3d-stage">
+        <canvas id="macbook-hero-canvas"></canvas>
+        <div class="stage-badge">
+          <span class="stage-badge-dot"></span>
+          <span>Interactive 3D Workspace • Live Code &amp; Build Output</span>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -771,7 +787,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         </div>
         <div class="growth-service-item">
           <div class="growth-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="21" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h4>Enterprise ERP &amp; POS</h4>
           <p>Multi-branch point-of-sale systems, thermal receipts, cash ledgers, and Odoo enterprise module implementations.</p>
@@ -841,7 +857,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </footer>
 
 <!-- -------------------------------------------------------------
-     THREE.JS 3D MACBOOK (PROMINENT LARGE + LIVE CODE STREAMING)
+     THREE.JS 3D MACBOOK (CENTERED, AUTO-OPENING ON LOAD, LIVE IDE + RUNNING LOGS)
 ------------------------------------------------------------- -->
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -924,7 +940,7 @@ window.closeDeepDive = function() {
   document.getElementById('project-modal').classList.remove('active');
 };
 
-// ---------------- 3D MACBOOK STAGE WITH CONTINUOUS LIVE CODING ----------------
+// ---------------- CENTERED 3D MACBOOK WITH AUTO-OPENING & LIVE CODING + TERMINAL ----------------
 (function init3DMacBookViewer() {
   const canvas = document.getElementById('macbook-hero-canvas');
   if (!canvas || !window.THREE) return;
@@ -932,56 +948,60 @@ window.closeDeepDive = function() {
   const stage = canvas.parentElement;
   const scene = new THREE.Scene();
 
-  const camera = new THREE.PerspectiveCamera(34, stage.clientWidth / stage.clientHeight, 0.1, 1000);
-  camera.position.set(0, 1.1, 5.8); // Closer camera for bigger laptop size
+  // Perfectly framed Perspective Camera
+  const camera = new THREE.PerspectiveCamera(32, stage.clientWidth / stage.clientHeight, 0.1, 1000);
+  camera.position.set(0, 0.9, 6.2);
 
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
   renderer.setSize(stage.clientWidth, stage.clientHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   // Studio Lighting
-  const ambLight = new THREE.AmbientLight(0xFFFFFF, 2.0);
+  const ambLight = new THREE.AmbientLight(0xFFFFFF, 2.2);
   scene.add(ambLight);
 
   const mainLight = new THREE.DirectionalLight(0xFFFFFF, 2.6);
-  mainLight.position.set(5, 9, 7);
+  mainLight.position.set(0, 8, 8);
   scene.add(mainLight);
 
-  const fillLight = new THREE.DirectionalLight(0x0E7B5F, 1.4);
-  fillLight.position.set(-5, 4, -3);
-  scene.add(fillLight);
+  const fillLeft = new THREE.DirectionalLight(0x0E7B5F, 1.4);
+  fillLeft.position.set(-6, 3, -2);
+  scene.add(fillLeft);
 
-  // 3D Laptop Group (Larger scale)
+  const fillRight = new THREE.DirectionalLight(0x38BDF8, 0.8);
+  fillRight.position.set(6, 3, -2);
+  scene.add(fillRight);
+
+  // 3D Laptop Group — Perfectly Centered in View
   const laptopGroup = new THREE.Group();
-  laptopGroup.position.set(0, -0.35, 0);
-  laptopGroup.rotation.set(0.12, -0.28, 0);
-  laptopGroup.scale.set(1.15, 1.15, 1.15); // Scaled larger
+  laptopGroup.position.set(0, -0.42, 0);
+  laptopGroup.rotation.set(0.14, 0, 0);
   scene.add(laptopGroup);
 
-  // Space-Gray / Obsidian Metallic Aluminum Material
+  // Metallic Aluminum Chassis
   const aluminumMat = new THREE.MeshStandardMaterial({
-    color: 0x1B2E26,
-    metalness: 0.88,
-    roughness: 0.22,
+    color: 0x1A2D25,
+    metalness: 0.9,
+    roughness: 0.2,
     envMapIntensity: 1.5
   });
 
   // Base Chassis
-  const baseGeo = new THREE.BoxGeometry(3.9, 0.15, 2.6);
+  const baseGeo = new THREE.BoxGeometry(3.9, 0.14, 2.6);
   const baseMesh = new THREE.Mesh(baseGeo, aluminumMat);
   laptopGroup.add(baseMesh);
 
   // Keyboard Bed
   const kbGeo = new THREE.PlaneGeometry(3.2, 1.35);
   const kbMat = new THREE.MeshStandardMaterial({
-    color: 0x0A1410,
+    color: 0x091410,
     emissive: 0x0E3B2E,
-    emissiveIntensity: 0.6,
+    emissiveIntensity: 0.5,
     roughness: 0.4
   });
   const kbMesh = new THREE.Mesh(kbGeo, kbMat);
   kbMesh.rotation.x = -Math.PI / 2;
-  kbMesh.position.set(0, 0.08, -0.25);
+  kbMesh.position.set(0, 0.075, -0.25);
   laptopGroup.add(kbMesh);
 
   // Trackpad Glass
@@ -993,131 +1013,148 @@ window.closeDeepDive = function() {
   });
   const tpMesh = new THREE.Mesh(tpGeo, tpMat);
   tpMesh.rotation.x = -Math.PI / 2;
-  tpMesh.position.set(0, 0.08, 0.78);
+  tpMesh.position.set(0, 0.075, 0.78);
   laptopGroup.add(tpMesh);
 
   // Lid Hinge
   const lidHinge = new THREE.Group();
-  lidHinge.position.set(0, 0.075, -1.3);
+  lidHinge.position.set(0, 0.07, -1.3);
   laptopGroup.add(lidHinge);
 
+  // Auto-Open Animation: starts closed (1.57 rad = 90 deg down flat) and smoothly lifts open to 0.18
+  lidHinge.rotation.x = 1.55;
+  const targetLidAngle = 0.18;
+
   // Lid Top Back Cover
-  const lidCoverGeo = new THREE.BoxGeometry(3.9, 2.5, 0.09);
+  const lidCoverGeo = new THREE.BoxGeometry(3.9, 2.5, 0.08);
   const lidCoverMesh = new THREE.Mesh(lidCoverGeo, aluminumMat);
-  lidCoverMesh.position.set(0, 1.25, -0.045);
+  lidCoverMesh.position.set(0, 1.25, -0.04);
   lidHinge.add(lidCoverMesh);
 
   // Screen Bezel
   const bezelGeo = new THREE.PlaneGeometry(3.8, 2.4);
-  const bezelMat = new THREE.MeshBasicMaterial({ color: 0x08120E });
+  const bezelMat = new THREE.MeshBasicMaterial({ color: 0x07110D });
   const bezelMesh = new THREE.Mesh(bezelGeo, bezelMat);
   bezelMesh.position.set(0, 1.25, 0.005);
   lidHinge.add(bezelMesh);
 
-  // ---------------- LIVE CODING 2K CANVAS ENGINE ----------------
+  // ---------------- 2K DUAL-PANE LIVE IDE & REALTIME RUNNING TERMINAL ENGINE ----------------
   const screenCanvas = document.createElement('canvas');
   screenCanvas.width = 1024;
   screenCanvas.height = 680;
   const sCtx = screenCanvas.getContext('2d');
 
-  // Real syntax code lines that stream continuously
-  const codeLines = [
+  const codeSnippets = [
     { type: 'comment', text: '# future_tech_dynamics/engine.py — Hazrat Ali' },
     { type: 'import',  text: 'from django.db import models, transaction' },
-    { type: 'import',  text: 'from rest_framework.response import Response' },
-    { type: 'import',  text: 'from sehatyar.ehr import ClinicalCluster' },
-    { type: 'import',  text: 'import torch, transformers' },
+    { type: 'import',  text: 'from rest_framework.views import APIView' },
+    { type: 'import',  text: 'from sehatyar.ehr import ClinicalEngine' },
     { type: 'empty',   text: '' },
     { type: 'class',   text: 'class ProductionArchitecture(APIView):' },
-    { type: 'doc',     text: '    """High-Throughput Distributed Microservices"""' },
-    { type: 'func',    text: '    async def dispatch_cluster(self, payload):' },
-    { type: 'body',    text: '        cluster = await ClinicalCluster.init(' },
-    { type: 'arg',     text: '            nodes="ftdynamics.pk",' },
-    { type: 'arg',     text: '            uptime=0.9999,' },
-    { type: 'arg',     text: '            status="200 OK — Ready to Ship"' },
+    { type: 'func',    text: '    async def dispatch_payload(self, request):' },
+    { type: 'body',    text: '        cluster = await ClinicalEngine.sync(' },
+    { type: 'arg',     text: '            host="sehatyar.online", latency_ms=11' },
     { type: 'body',    text: '        )' },
-    { type: 'body',    text: '        return Response({"status": "healthy", "latency": "11ms"})' },
-    { type: 'empty',   text: '' },
-    { type: 'comment', text: '# [AI Pipeline] Clustering Social Trends with TF-IDF' },
-    { type: 'func',    text: 'def execute_trend_sphere(raw_stream):' },
-    { type: 'body',    text: '    vectorizer = TfidfVectorizer(max_features=5000)' },
-    { type: 'body',    text: '    embeddings = vectorizer.fit_transform(raw_stream)' },
-    { type: 'body',    text: '    clusters = DBSCAN(eps=0.35).fit(embeddings)' },
-    { type: 'return',  text: '    return summarize_clusters_with_llm(clusters)' }
+    { type: 'return',  text: '        return Response({"status": 200, "live": True})' }
   ];
 
-  let visibleLines = 4;
-  let charInLastLine = 0;
-  let lineStepTimer = 0;
+  const terminalOutputs = [
+    '➜  git:(main) python manage.py runserver 0.0.0.0:8000',
+    '[OK] Django 5.1 & DRF initialized in 0.042s',
+    '[SEHATYAR] Clinical EHR database connected: 11ms latency',
+    '[TREND SPHERE] TF-IDF vectors updated: 14 active clusters',
+    '[RETAIL POS] Multi-branch ledger sync: 100% operational',
+    '[HTTP 200 OK] GET /api/v1/projects 200 in 8ms'
+  ];
 
-  function renderLiveIDE() {
+  let currentCodeLines = 4;
+  let termStep = 1;
+
+  function renderIDEWithLiveLogs() {
+    // Canvas background
     sCtx.fillStyle = "#0A1712";
     sCtx.fillRect(0, 0, 1024, 680);
 
-    // IDE Header Bar
+    // Header title bar
     sCtx.fillStyle = "#06100C";
-    sCtx.fillRect(0, 0, 1024, 48);
+    sCtx.fillRect(0, 0, 1024, 46);
 
-    // Window Dots
-    sCtx.fillStyle = "#EF4444"; sCtx.beginPath(); sCtx.arc(26, 24, 6, 0, Math.PI*2); sCtx.fill();
-    sCtx.fillStyle = "#F59E0B"; sCtx.beginPath(); sCtx.arc(46, 24, 6, 0, Math.PI*2); sCtx.fill();
-    sCtx.fillStyle = "#10B981"; sCtx.beginPath(); sCtx.arc(66, 24, 6, 0, Math.PI*2); sCtx.fill();
+    // Window control dots
+    sCtx.fillStyle = "#EF4444"; sCtx.beginPath(); sCtx.arc(24, 23, 6, 0, Math.PI*2); sCtx.fill();
+    sCtx.fillStyle = "#F59E0B"; sCtx.beginPath(); sCtx.arc(44, 23, 6, 0, Math.PI*2); sCtx.fill();
+    sCtx.fillStyle = "#10B981"; sCtx.beginPath(); sCtx.arc(64, 23, 6, 0, Math.PI*2); sCtx.fill();
 
-    // Tab title
+    // Editor tab
     sCtx.fillStyle = "#0E7B5F";
-    sCtx.fillRect(94, 8, 260, 40);
+    sCtx.fillRect(90, 6, 240, 40);
     sCtx.fillStyle = "#E8F2EC";
     sCtx.font = "bold 15px 'JetBrains Mono', monospace";
-    sCtx.fillText("● architecture.py", 112, 33);
+    sCtx.fillText("● core_engine.py", 108, 31);
 
     sCtx.fillStyle = "#51655B";
     sCtx.font = "14px 'JetBrains Mono', monospace";
-    sCtx.fillText("UTF-8 | Python 3.12 | Git: main*", 720, 33);
+    sCtx.fillText("Python 3.12 · Django REST | Git: main*", 690, 31);
 
-    // Code lines rendering with syntax colors
-    let startY = 86;
-    const lineHeight = 26;
+    // --- CODE PANE (Top 420px) ---
+    let startY = 82;
+    const lineHeight = 28;
 
-    for (let i = 0; i < Math.min(visibleLines, codeLines.length); i++) {
-      const lineObj = codeLines[i];
-      let lineText = lineObj.text;
-
-      // Line number
+    for (let i = 0; i < Math.min(currentCodeLines, codeSnippets.length); i++) {
+      const item = codeSnippets[i];
+      
+      // Line numbers
       sCtx.fillStyle = "#334D41";
       sCtx.font = "14px 'JetBrains Mono', monospace";
-      const lineNumStr = String(i + 1).padStart(2, ' ');
-      sCtx.fillText(lineNumStr, 24, startY + (i * lineHeight));
+      sCtx.fillText(String(i + 1).padStart(2, ' '), 24, startY + (i * lineHeight));
 
-      // Syntax color picking
-      if (lineObj.type === 'comment') sCtx.fillStyle = "#5E8573";
-      else if (lineObj.type === 'import') sCtx.fillStyle = "#38BDF8";
-      else if (lineObj.type === 'class') sCtx.fillStyle = "#FCD34D";
-      else if (lineObj.type === 'doc') sCtx.fillStyle = "#6EE7B7";
-      else if (lineObj.type === 'func') sCtx.fillStyle = "#34D399";
-      else if (lineObj.type === 'arg') sCtx.fillStyle = "#A7F3D0";
-      else if (lineObj.type === 'return') sCtx.fillStyle = "#F472B6";
+      // Syntax Highlight Colors
+      if (item.type === 'comment') sCtx.fillStyle = "#5E8573";
+      else if (item.type === 'import') sCtx.fillStyle = "#38BDF8";
+      else if (item.type === 'class') sCtx.fillStyle = "#FCD34D";
+      else if (item.type === 'func') sCtx.fillStyle = "#34D399";
+      else if (item.type === 'arg') sCtx.fillStyle = "#A7F3D0";
+      else if (item.type === 'return') sCtx.fillStyle = "#F472B6";
       else sCtx.fillStyle = "#E8F2EC";
 
       sCtx.font = "16px 'JetBrains Mono', monospace";
-      sCtx.fillText(lineText, 66, startY + (i * lineHeight));
+      sCtx.fillText(item.text, 68, startY + (i * lineHeight));
     }
 
-    // Blinking Live Cursor
-    const cursorY = startY + ((visibleLines - 1) * lineHeight) - 14;
-    const currentLineWidth = sCtx.measureText(codeLines[Math.min(visibleLines - 1, codeLines.length - 1)].text).width;
-    if (Math.floor(Date.now() / 400) % 2 === 0) {
+    // Blinking Cursor in Editor
+    const lastLineWidth = sCtx.measureText(codeSnippets[Math.min(currentCodeLines - 1, codeSnippets.length - 1)].text).width;
+    const cursorY = startY + ((currentCodeLines - 1) * lineHeight) - 15;
+    if (Math.floor(Date.now() / 350) % 2 === 0) {
       sCtx.fillStyle = "#34D399";
-      sCtx.fillRect(68 + currentLineWidth, cursorY, 9, 18);
+      sCtx.fillRect(70 + lastLineWidth, cursorY, 9, 18);
     }
 
-    // Bottom Terminal Status Bar
-    sCtx.fillStyle = "#050C09";
-    sCtx.fillRect(0, 636, 1024, 44);
+    // --- SPLIT TERMINAL / RUNNING OUTPUT PANE (Bottom 230px) ---
+    sCtx.fillStyle = "#040907";
+    sCtx.fillRect(0, 440, 1024, 240);
+    sCtx.strokeStyle = "#0E3B2E";
+    sCtx.lineWidth = 2;
+    sCtx.beginPath();
+    sCtx.moveTo(0, 440);
+    sCtx.lineTo(1024, 440);
+    sCtx.stroke();
+
+    // Terminal Header
+    sCtx.fillStyle = "#0C241B";
+    sCtx.fillRect(0, 440, 1024, 30);
     sCtx.fillStyle = "#34D399";
-    sCtx.font = "bold 14px 'JetBrains Mono', monospace";
-    sCtx.fillText("➜ [LIVE BUILD] Future Tech Dynamics • 0 errors • 100% test coverage", 24, 663);
+    sCtx.font = "bold 13px 'JetBrains Mono', monospace";
+    sCtx.fillText("⚡ TERMINAL — LIVE SERVER OUTPUT (ftdynamics.pk)", 24, 461);
+
+    // Terminal Output Lines
+    let termY = 496;
+    const termLineH = 26;
+    for (let t = 0; t < Math.min(termStep, terminalOutputs.length); t++) {
+      sCtx.fillStyle = t === 0 ? "#38BDF8" : (t === terminalOutputs.length - 1 ? "#34D399" : "#9DB8AB");
+      sCtx.font = "14px 'JetBrains Mono', monospace";
+      sCtx.fillText(terminalOutputs[t], 24, termY + (t * termLineH));
+    }
   }
-  renderLiveIDE();
+  renderIDEWithLiveLogs();
 
   const screenTex = new THREE.CanvasTexture(screenCanvas);
   const screenMat = new THREE.MeshBasicMaterial({ map: screenTex });
@@ -1126,15 +1163,22 @@ window.closeDeepDive = function() {
   screenMesh.position.set(0, 1.25, 0.015);
   lidHinge.add(screenMesh);
 
-  // Smooth Lid Opening
-  lidHinge.rotation.x = 1.35;
-  let targetLid = 0.18;
+  // Dynamic Typing & Running Server Logs Interval
+  setInterval(() => {
+    currentCodeLines++;
+    if (currentCodeLines > codeSnippets.length) {
+      currentCodeLines = 3;
+    }
+    termStep = (termStep % terminalOutputs.length) + 1;
+    renderIDEWithLiveLogs();
+    screenTex.needsUpdate = true;
+  }, 420);
 
-  // Mouse Tracking
+  // Mouse & Scroll Dynamic Tracking
   let mouseTargetX = 0, mouseTargetY = 0;
   window.addEventListener('mousemove', (e) => {
-    mouseTargetX = (e.clientX / window.innerWidth - 0.5) * 0.22;
-    mouseTargetY = (e.clientY / window.innerHeight - 0.5) * 0.16;
+    mouseTargetX = (e.clientX / window.innerWidth - 0.5) * 0.3;
+    mouseTargetY = (e.clientY / window.innerHeight - 0.5) * 0.18;
   });
 
   function handleResize() {
@@ -1144,28 +1188,19 @@ window.closeDeepDive = function() {
   }
   window.addEventListener('resize', handleResize);
 
-  // Continuous Live Code Typing Animation Loop
-  setInterval(() => {
-    visibleLines++;
-    if (visibleLines > codeLines.length) {
-      visibleLines = 3; // loop smoothly
-    }
-    renderLiveIDE();
-    screenTex.needsUpdate = true;
-  }, 450);
-
-  // Render Loop
+  // Render Loop with Auto-Open Smoothing
   let clock = new THREE.Clock();
   function render3DHero() {
     requestAnimationFrame(render3DHero);
     const t = clock.getElapsedTime();
 
-    lidHinge.rotation.x += (targetLid - lidHinge.rotation.x) * 0.05;
+    // Smooth Keynote Auto-Opening of the Lid
+    lidHinge.rotation.x += (targetLidAngle - lidHinge.rotation.x) * 0.045;
 
-    // Gentle floating in the hero stage
-    laptopGroup.position.y = -0.35 + Math.sin(t * 1.5) * 0.04;
-    laptopGroup.rotation.y = -0.28 + Math.sin(t * 0.6) * 0.08 + mouseTargetX;
-    laptopGroup.rotation.x = 0.12 + mouseTargetY;
+    // Gentle floating & mouse parallax in center
+    laptopGroup.position.y = -0.42 + Math.sin(t * 1.6) * 0.035;
+    laptopGroup.rotation.y = Math.sin(t * 0.6) * 0.06 + mouseTargetX;
+    laptopGroup.rotation.x = 0.14 + mouseTargetY;
 
     renderer.render(scene, camera);
   }
