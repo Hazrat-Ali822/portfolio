@@ -3,1198 +3,1654 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hazrat Ali — Software Engineer &amp; Founder</title>
-<meta name="description" content="Hazrat Ali — Software Engineer & Founder at Future Tech Dynamics (ftdynamics.pk). Architect behind SehatYar.online. Specialized in Python, Django, DRF, React, and AI systems.">
+<title>Hazrat Ali — Full-Stack Python, Django &amp; AI Developer, Islamabad</title>
+<meta name="description" content="Hazrat Ali is a full-stack Python, Django and React developer in Islamabad, Pakistan, building REST APIs, web apps, AI / LLM integrations and web scraping.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Hazrat Ali">
+<link rel="canonical" href="https://hazratali.is-a.dev/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta name="theme-color" content="#F7F8F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1210" media="(prefers-color-scheme: dark)">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Hazrat Ali">
+<meta property="og:locale" content="en_US">
+<meta property="profile:first_name" content="Hazrat">
+<meta property="profile:last_name" content="Ali">
+<meta property="og:url" content="https://hazratali.is-a.dev/">
+<meta property="og:title" content="Hazrat Ali — Full-Stack Python, Django &amp; AI Developer, Islamabad">
+<meta property="og:description" content="Full-stack Python, Django, FastAPI and React developer in Islamabad, Pakistan. AI / LLM integration, web scraping and React. Creator of SehatYar.">
+<meta property="og:image" content="https://hazratali.is-a.dev/images/hazrat-ali.jpg">
+<meta property="og:image:alt" content="Portrait of Hazrat Ali">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hazratali.is-a.dev/images/hazrat-ali.jpg">
+<meta name="twitter:title" content="Hazrat Ali — Full-Stack Python, Django &amp; AI Developer, Islamabad">
+<meta name="twitter:description" content="Full-stack Python, Django, FastAPI and React developer in Islamabad, Pakistan. AI / LLM integration, web scraping and React. Creator of SehatYar.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hazrat Ali",
+  "url": "https://hazratali.is-a.dev/",
+  "image": "https://hazratali.is-a.dev/images/hazrat-ali.jpg",
+  "jobTitle": "Software Engineer",
+  "description": "Full-stack Python, Django and React developer based in Islamabad, Pakistan, working on REST APIs, full-stack web applications, AI / LLM integration and web scraping.",
+  "worksFor": { "@type": "Organization", "name": "MUST Services" },
+  "email": "mailto:Hazratali.bse@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Islamabad", "addressCountry": "PK" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "COMSATS University Islamabad, Abbottabad Campus" },
+  "knowsAbout": ["Python", "Django", "Django REST Framework", "FastAPI", "REST API Development", "Backend Development", "Full-Stack Development", "React", "JavaScript", "Tailwind CSS", "PostgreSQL", "MySQL", "Odoo ERP", "Artificial Intelligence", "LLM Integration", "Claude API", "Claude Code", "Natural Language Processing", "Web Scraping", "Data Pipelines", "Docker", "Git"],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "Claude Code in Action", "credentialCategory": "Certificate of Completion", "recognizedBy": { "@type": "Organization", "name": "Anthropic" }, "url": "https://hazratali.is-a.dev/certificates/claude-code-in-action.pdf" },
+    { "@type": "EducationalOccupationalCredential", "name": "Claude Code 101", "credentialCategory": "Certificate of Completion", "recognizedBy": { "@type": "Organization", "name": "Anthropic" }, "url": "https://hazratali.is-a.dev/certificates/claude-code-101.pdf" },
+    { "@type": "EducationalOccupationalCredential", "name": "Claude Platform 101", "credentialCategory": "Certificate of Completion", "recognizedBy": { "@type": "Organization", "name": "Anthropic" }, "url": "https://hazratali.is-a.dev/certificates/claude-platform-101.pdf" }
+  ],
+  "sameAs": [
+    "https://github.com/Hazrat-Ali822",
+    "https://www.linkedin.com/in/hazrat-ali-49a0aa267/",
+    "https://sehatyar.online"
+  ]
+}
+</script>
+
+<!-- Apply the saved theme before first paint to avoid a flash -->
+<script>
+  document.documentElement.classList.add('js');
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  } catch (e) {}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Three.js 3D Graphics Engine -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* -------------------------------------------------------------
-   SIGNATURE HAZRAT.DEV SAGE & EMERALD COLOR PALETTE
+   DESIGN TOKENS
 ------------------------------------------------------------- */
 :root{
-  --bg:#F6F8F5;
-  --card:#FFFFFF;
-  --ink:#122820;
-  --muted:#51655B;
-  --accent:#0E7B5F;
-  --accent-soft:#E3F0EA;
-  --line:#DCE5DE;
-  --dark:#0F1F19;
-  --dark-2:#16352A;
-  --on-dark:#E8F2EC;
-  --on-dark-muted:#9DB8AB;
-  --radius:14px;
-  --font-display:'Sora',sans-serif;
-  --font-body:'Inter',sans-serif;
-  --font-mono:'JetBrains Mono',monospace;
+  --bg:#F7F8F6;
+  --surface:#FFFFFF;
+  --surface-2:#F0F3F1;
+  --ink:#0F1A15;
+  --muted:#4A5A52;
+  --line:#E1E7E3;
+  --line-strong:#CAD4CE;
+  --accent:#0B7A5C;
+  --accent-hover:#08634A;
+  --accent-soft:#E6F2EC;
+  --on-accent:#FFFFFF;
+  --post:#1D4ED8;
+  --post-soft:#E8EEFD;
+  --code-bg:#0E1916;
+  --code-bar:#13211D;
+  --code-line:#22332D;
+  --code-ink:#D7E4DE;
+  --code-muted:#8AA197;
+  --code-key:#7DD3FC;
+  --code-str:#86EFAC;
+  --code-bool:#F9A8D4;
+  --wa:#25D366;
+  --on-wa:#052E16;
+  --shadow-sm:0 1px 2px rgba(15,26,21,.05);
+  --shadow:0 1px 2px rgba(15,26,21,.04),0 12px 32px -16px rgba(15,26,21,.18);
+  --radius:12px;
+  --radius-lg:16px;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,'Cascadia Code',monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1210;
+    --surface:#111A17;
+    --surface-2:#16211D;
+    --ink:#E6EEEA;
+    --muted:#9AADA4;
+    --line:#1F2B27;
+    --line-strong:#2C3B35;
+    --accent:#34D399;
+    --accent-hover:#6EE7B7;
+    --accent-soft:rgba(52,211,153,.12);
+    --on-accent:#04130D;
+    --post:#60A5FA;
+    --post-soft:rgba(96,165,250,.14);
+    --code-bg:#08100D;
+    --code-bar:#0E1714;
+    --code-line:#1A2622;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 40px -20px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1210;
+  --surface:#111A17;
+  --surface-2:#16211D;
+  --ink:#E6EEEA;
+  --muted:#9AADA4;
+  --line:#1F2B27;
+  --line-strong:#2C3B35;
+  --accent:#34D399;
+  --accent-hover:#6EE7B7;
+  --accent-soft:rgba(52,211,153,.12);
+  --on-accent:#04130D;
+  --post:#60A5FA;
+  --post-soft:rgba(96,165,250,.14);
+  --code-bg:#08100D;
+  --code-bar:#0E1714;
+  --code-line:#1A2622;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 40px -20px rgba(0,0,0,.6);
+  color-scheme:dark;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
+/* -------------------------------------------------------------
+   BASE
+------------------------------------------------------------- */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;background:var(--bg)}
 body{
   background:var(--bg);
   color:var(--ink);
   font-family:var(--font-body);
-  font-size:15.5px;
+  font-size:16px;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
-  width:100%;
+  transition:background-color .25s ease,color .25s ease;
+}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+code,pre{font-family:var(--font-mono)}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.skip-link{
+  position:absolute;left:16px;top:-60px;z-index:300;
+  background:var(--accent);color:var(--on-accent);
+  padding:10px 16px;border-radius:8px;font-weight:600;font-size:.9rem;
+}
+.skip-link:focus{top:12px}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;width:100%}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+.text-link{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.text-link:hover{color:var(--accent-hover)}
+
+/* -------------------------------------------------------------
+   ENDPOINT SIGNATURE (API ROUTE THEME)
+------------------------------------------------------------- */
+.endpoint{
+  display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:.78rem;font-weight:500;
+  margin-bottom:14px;
+}
+.verb{
+  font-weight:700;letter-spacing:.04em;font-size:.7rem;
+  padding:3px 8px;border-radius:6px;
+}
+.verb-get{color:var(--accent);background:var(--accent-soft)}
+.verb-post{color:var(--post);background:var(--post-soft)}
+.endpoint .path{color:var(--ink);word-break:break-all}
+.status{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--muted);font-size:.72rem;
+}
+.status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* -------------------------------------------------------------
+   BUTTONS
+------------------------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-mono);font-weight:600;font-size:.84rem;
+  min-height:44px;padding:10px 18px;border-radius:10px;
+  border:1px solid transparent;
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+  white-space:nowrap;
+}
+.btn svg{flex-shrink:0}
+.btn[hidden]{display:none}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.btn .verb-inline{
+  font-size:.68rem;padding:2px 6px;border-radius:5px;
+  background:rgba(255,255,255,.18);
 }
 
-::selection{background:var(--accent);color:#fff}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:2;width:100%}
-@media(max-width:600px){.wrap{padding:0 16px}}
-
-/* Navigation */
-nav{
+/* -------------------------------------------------------------
+   NAVIGATION
+------------------------------------------------------------- */
+.site-header{
   position:sticky;top:0;z-index:100;
-  background:rgba(246, 248, 245, 0.92);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
 .logo{
-  font-family:var(--font-mono);font-weight:700;font-size:1.02rem;
-  letter-spacing:-.02em;display:flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-weight:700;font-size:1rem;letter-spacing:-.02em;
+  display:inline-flex;align-items:center;gap:6px;
 }
-.logo .tld{color:var(--accent)}
-.nav-links{display:flex;gap:24px;font-size:.88rem;font-weight:500;color:var(--muted)}
-.nav-links a{transition:color .2s ease;padding:4px 0}
-.nav-links a:hover{color:var(--accent)}
+.logo .prompt{color:var(--accent)}
+.logo .tld{color:var(--muted)}
 
-.btn-nav-hire{
-  font-family:var(--font-mono);font-size:.78rem;font-weight:600;
-  border:1px solid var(--ink);border-radius:999px;padding:6px 16px;
-  transition:all .2s ease;
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{
+  font-size:.9rem;font-weight:500;color:var(--muted);
+  padding:8px 12px;border-radius:8px;transition:color .2s ease,background-color .2s ease;
 }
-.btn-nav-hire:hover{
-  background:var(--ink);color:#FFF;
-}
-@media(max-width:820px){.nav-links{display:none}}
+.nav-links a:hover{color:var(--ink);background:var(--surface-2)}
 
-/* Endpoint Signature Verb Badge */
-.endpoint{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--font-mono);font-size:.76rem;font-weight:500;
-  margin-bottom:12px;flex-wrap:wrap;
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:40px;height:40px;border-radius:10px;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);color:var(--muted);background:var(--surface);
+  transition:color .2s ease,border-color .2s ease;
 }
-.endpoint .verb{
-  color:var(--accent);background:var(--accent-soft);
-  padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.02em;
+.icon-btn:hover{color:var(--accent);border-color:var(--accent)}
+.theme-toggle .icon-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:block}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
 }
-.endpoint .path{color:var(--muted);word-break:break-all}
+
+.btn-hire{
+  display:inline-flex;align-items:center;gap:6px;min-height:40px;
+  font-family:var(--font-mono);font-size:.8rem;font-weight:600;
+  padding:8px 14px;border-radius:10px;
+  background:var(--ink);color:var(--bg);
+  transition:transform .2s ease,opacity .2s ease;
+}
+.btn-hire:hover{transform:translateY(-1px);opacity:.9}
+.btn-hire .verb-inline{font-size:.66rem;opacity:.75}
+
+.nav-toggle{display:none}
+
+@media (max-width:860px){
+  .nav-toggle{display:inline-flex}
+  .nav-links{
+    position:absolute;left:0;right:0;top:64px;
+    flex-direction:column;align-items:stretch;gap:2px;
+    padding:10px 16px 16px;
+    background:var(--bg);border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow);
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px;font-size:1rem}
+}
+@media (max-width:420px){
+  .btn-hire .verb-inline{display:none}
+}
 
 /* -------------------------------------------------------------
-   HERO SECTION (Mobile-First Fluid Stack)
+   HERO
 ------------------------------------------------------------- */
-header.hero{
-  min-height:84vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  position:relative;
-  padding:28px 0 40px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:24px;
-  align-items:center;
-  width:100%;
-}
-@media(min-width:920px){
-  .hero-grid{
-    grid-template-columns:1.15fr 0.85fr;
-    gap:36px;
-  }
-}
+.hero{padding:72px 0 64px}
+@media (max-width:600px){.hero{padding:40px 0 48px}}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media (min-width:960px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}}
+.hero-grid > *{min-width:0}
 
-.hero-left{display:flex;flex-direction:column;gap:16px;position:relative;z-index:5}
+.availability{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.82rem;font-weight:500;color:var(--ink);
+  background:var(--surface);border:1px solid var(--line);
+  padding:6px 12px 6px 10px;border-radius:999px;margin-bottom:20px;
+  box-shadow:var(--shadow-sm);
+}
+.pulse{position:relative;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.pulse::after{
+  content:"";position:absolute;inset:0;border-radius:50%;background:var(--accent);
+  animation:pulse 2s ease-out infinite;
+}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
 
-.hero h1{
-  font-family:var(--font-display);
-  font-size:clamp(1.95rem, 5.2vw, 3.3rem);
-  font-weight:800;line-height:1.14;letter-spacing:-.03em;
-  color:var(--ink);
-  word-break:break-word;
+.hero-id{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+.hero-id-text{min-width:0}
+.hero-id .availability{margin-bottom:10px}
+.hero-id .endpoint{margin-bottom:0}
+.avatar-wrap{position:relative;flex-shrink:0}
+.avatar{
+  width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:50% 20%;
+  border:3px solid var(--surface);
+  box-shadow:0 0 0 2px color-mix(in srgb, var(--accent) 55%, transparent),var(--shadow);
+  background:var(--surface-2);
+}
+.avatar-status{
+  position:absolute;right:4px;bottom:6px;width:18px;height:18px;border-radius:50%;
+  background:var(--accent);border:3px solid var(--bg);
+}
+@media (max-width:520px){
+  .hero-id{display:grid;grid-template-columns:auto 1fr;gap:16px 14px}
+  .hero-id-text{display:contents}
+  .hero-id .endpoint{grid-column:2;grid-row:1;align-self:center}
+  .hero-id .availability{grid-column:1 / -1;grid-row:2;justify-self:start;margin-bottom:0}
+  .avatar{width:76px;height:76px}
+  .avatar-status{width:16px;height:16px;right:2px;bottom:4px}
+}
+.hero h1{letter-spacing:-.035em;line-height:1.08}
+.hero h1 .h1-name{
+  display:block;font-size:clamp(2.5rem,6.2vw,4rem);font-weight:800;color:var(--ink);
+}
+.hero h1 .h1-role{
+  display:block;margin-top:10px;
+  font-size:clamp(1.3rem,2.8vw,1.85rem);font-weight:600;line-height:1.3;
+  letter-spacing:-.02em;color:var(--muted);
 }
 .hero h1 .dot{color:var(--accent)}
-.hero p.lede{color:var(--muted);font-size:1.02rem;line-height:1.7;max-width:54ch}
-.hero p.lede strong{color:var(--ink);font-weight:600}
+.lede{margin-top:20px;color:var(--muted);font-size:1.05rem;line-height:1.7;max-width:58ch}
+.lede strong{color:var(--ink);font-weight:600}
 
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-weight:600;font-size:.86rem;border-radius:10px;
-  padding:10px 20px;transition:all .2s ease;
-  font-family:var(--font-mono);cursor:pointer;
-}
-.btn-primary{
-  background:var(--accent);color:#FFF;
-  box-shadow:0 6px 20px -4px rgba(14, 123, 95, 0.4);
-}
-.btn-primary:hover{
-  background:#0B634D;transform:translateY(-2px);
-  box-shadow:0 10px 25px -4px rgba(14, 123, 95, 0.5);
-}
-.btn-ghost{
-  border:1px solid var(--line);background:var(--card);
-  color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,0.03);
-}
-.btn-ghost:hover{
-  border-color:var(--accent);color:var(--accent);
-  transform:translateY(-2px);
-}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 
-/* Impact Metrics Row */
-.hero-metrics-row{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-  margin-top:10px;padding-top:16px;border-top:1px solid var(--line);
+.hero-facts{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  margin-top:36px;padding-top:24px;border-top:1px solid var(--line);
 }
-@media(max-width:540px){
-  .hero-metrics-row{grid-template-columns:1fr 1fr;gap:12px;}
-}
-.metric-val{font-family:var(--font-display);font-size:1.38rem;font-weight:800;color:var(--accent)}
-.metric-lbl{font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
-
-/* Hero Right: 3D MacBook Pro Stage */
-.hero-3d-stage{
-  width:100%;
-  height:320px;
-  position:relative;
-  border-radius:18px;
-  background:radial-gradient(circle at 50% 50%, rgba(227, 240, 234, 0.85) 0%, rgba(246, 248, 245, 0) 70%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-@media(min-width:600px){.hero-3d-stage{height:380px;}}
-@media(min-width:920px){.hero-3d-stage{height:440px;}}
-
-#macbook-hero-canvas{
-  width:100%;
-  height:100%;
-  display:block;
-}
+@media (max-width:520px){.hero-facts{grid-template-columns:1fr 1fr}}
+.hero-facts dt{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.hero-facts dd{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);line-height:1.5;margin-top:2px}
 
 /* -------------------------------------------------------------
-   SECTIONS COMMON STYLING
+   CODE WINDOW (API REQUEST / RESPONSE CARD)
 ------------------------------------------------------------- */
-section{padding:70px 0;position:relative;z-index:2;background:var(--bg)}
-@media(max-width:600px){section{padding:46px 0}}
-.section-head{margin-bottom:34px}
+.code-window{
+  background:var(--code-bg);color:var(--code-ink);
+  border:1px solid var(--code-line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);overflow:hidden;min-width:0;
+}
+.code-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:12px 14px;background:var(--code-bar);border-bottom:1px solid var(--code-line);
+  font-family:var(--font-mono);font-size:.76rem;
+}
+.code-bar .dots{display:flex;gap:6px;margin-right:4px}
+.code-bar .dots span{width:10px;height:10px;border-radius:50%;background:#2F403A}
+.code-bar .req{display:flex;align-items:center;gap:8px;flex:1;min-width:0}
+.code-bar .req .m{color:#6EE7B7;font-weight:700}
+.code-bar .req .m.post{color:#93C5FD}
+.code-bar .req .u{color:var(--code-ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.send-btn{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:700;
+  color:#04130D;background:#34D399;padding:5px 12px;border-radius:6px;min-height:28px;
+}
+.send-btn:hover{background:#6EE7B7}
+.send-btn:focus-visible{outline-color:#6EE7B7}
+.code-meta{
+  display:flex;gap:14px;flex-wrap:wrap;padding:10px 16px 0;
+  font-family:var(--font-mono);font-size:.72rem;color:var(--code-muted);
+}
+.code-meta .ok{color:#6EE7B7;font-weight:700}
+.code-window pre{
+  padding:12px 16px 18px;font-size:.8rem;line-height:1.75;
+  overflow-x:auto;tab-size:2;
+}
+@media (min-width:600px){.code-window pre{padding:14px 20px 22px;font-size:.84rem}}
+.code-window .k{color:var(--code-key)}
+.code-window .s{color:var(--code-str)}
+.code-window .b{color:var(--code-bool)}
+.code-window .p{color:var(--code-muted)}
+.code-window .c{color:var(--code-muted);font-style:italic}
+.code-window a.s{text-decoration:underline;text-decoration-color:rgba(134,239,172,.4);text-underline-offset:3px}
+.code-window a.s:hover{text-decoration-color:currentColor}
+.code-window a.s:focus-visible{outline-color:#6EE7B7}
+
+html.js .ln{opacity:0;transition:opacity .35s ease}
+html.js .ln.show{opacity:1;transition-delay:calc(var(--i, 0) * 45ms)}
+
+/* -------------------------------------------------------------
+   SECTIONS
+------------------------------------------------------------- */
+.section{padding:88px 0;border-top:1px solid var(--line)}
+@media (max-width:600px){.section{padding:56px 0}}
+.section-head{margin-bottom:36px;max-width:720px}
 .section-head h2{
-  font-family:var(--font-display);font-weight:800;
-  font-size:clamp(1.75rem,3.4vw,2.4rem);letter-spacing:-.025em;
-  color:var(--ink);
+  font-size:clamp(1.65rem,3.2vw,2.25rem);font-weight:800;letter-spacing:-.03em;line-height:1.2;
 }
-.section-head p{color:var(--muted);margin-top:6px;max-width:62ch;font-size:.96rem}
+.section-head p{color:var(--muted);margin-top:10px;font-size:1rem}
+
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips li{
+  font-family:var(--font-mono);font-size:.72rem;color:var(--muted);
+  background:var(--surface-2);border:1px solid var(--line);
+  padding:3px 9px;border-radius:6px;
+}
+
+.badge{
+  display:inline-block;font-family:var(--font-mono);font-size:.66rem;font-weight:700;letter-spacing:.05em;
+  color:var(--accent);background:var(--accent-soft);
+  padding:3px 8px;border-radius:6px;white-space:nowrap;
+}
+.badge-solid{background:var(--accent);color:var(--on-accent)}
 
 /* -------------------------------------------------------------
-   PROJECTS SECTION (MOBILE-FIRST 100% FLUID FULL-WIDTH STACK)
+   PROJECTS
 ------------------------------------------------------------- */
-.project-filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.proj-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
 .filter-btn{
   font-family:var(--font-mono);font-size:.76rem;font-weight:600;
-  background:var(--card);border:1px solid var(--line);
-  color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer;
+  color:var(--muted);background:var(--surface);border:1px solid var(--line);
+  padding:8px 14px;border-radius:999px;min-height:36px;
   transition:all .2s ease;
 }
-.filter-btn:hover, .filter-btn.active{
-  border-color:var(--accent);color:#FFF;background:var(--accent);
-}
+.filter-btn:hover{color:var(--ink);border-color:var(--line-strong)}
+.filter-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.result-count{font-family:var(--font-mono);font-size:.74rem;color:var(--muted)}
 
-/* Mobile-First: 1 Column on Mobile, 2 Columns on Tablets/Desktop */
-.proj-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
-  width:100%;
-}
-@media(min-width:768px){
-  .proj-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:24px;
-  }
-}
+.proj-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media (min-width:768px){.proj-grid{grid-template-columns:repeat(2,1fr);gap:24px}}
+.proj-grid > *{min-width:0}
 
 .proj-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:22px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  position:relative;
-  overflow:hidden;
-  transition:all .3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow:0 4px 18px rgba(18, 40, 32, 0.04);
-  cursor:pointer;
-  width:100%;
+  display:flex;flex-direction:column;gap:14px;padding:24px;
+  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
 }
-@media(max-width:540px){
-  .proj-card{padding:18px 16px;}
+@media (max-width:540px){.proj-card{padding:20px 18px}}
+.proj-card:hover{border-color:var(--line-strong);box-shadow:var(--shadow);transform:translateY(-2px)}
+.proj-card[hidden]{display:none}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.proj-card h3{font-size:1.15rem;font-weight:700;letter-spacing:-.015em;line-height:1.35}
+.proj-desc{color:var(--muted);font-size:.94rem;flex:1}
+.proj-desc strong{color:var(--ink);font-weight:600}
+.proj-foot{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+  padding-top:14px;border-top:1px solid var(--line);margin-top:4px;
 }
-.proj-card:hover{
-  border-color:var(--accent);
-  box-shadow:0 14px 35px -8px rgba(14, 123, 95, 0.16);
-  transform:translateY(-3px);
-}
-
-.proj-card.flagship{
-  border-color:var(--accent);
-  background:linear-gradient(145deg, #FFFFFF 0%, #F3F8F5 100%);
-}
-@media(min-width:768px){
-  .proj-card.flagship{grid-column:span 2;}
-}
-
-.proj-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;}
-.proj-card h3{font-family:var(--font-display);font-size:1.18rem;font-weight:700;color:var(--ink);flex:1;min-width:200px}
-.proj-badge{
-  font-family:var(--font-mono);font-size:.66rem;
-  color:var(--accent);background:var(--accent-soft);
-  padding:3px 8px;border-radius:6px;font-weight:700;white-space:nowrap;
-}
-.proj-desc{color:var(--muted);font-size:.92rem;line-height:1.65;flex:1}
-.proj-stack{display:flex;flex-wrap:wrap;gap:6px;font-family:var(--font-mono);font-size:.70rem;color:var(--muted)}
-.proj-stack span{
-  border:1px solid var(--line);border-radius:6px;padding:3px 8px;
-  background:var(--bg);
-}
-.proj-footer{display:flex;justify-content:space-between;align-items:center;margin-top:2px;flex-wrap:wrap;gap:8px}
 .proj-link{
-  font-family:var(--font-mono);font-size:.78rem;font-weight:600;
-  color:var(--accent);display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:.8rem;font-weight:600;color:var(--accent);
+  display:inline-flex;align-items:center;gap:6px;padding:6px 0;
 }
+.proj-link:hover{color:var(--accent-hover);text-decoration:underline;text-underline-offset:3px}
+.details-btn{
+  margin-left:auto;
+  font-family:var(--font-mono);font-size:.76rem;font-weight:600;color:var(--muted);
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border:1px solid var(--line);border-radius:8px;min-height:36px;
+  transition:all .2s ease;
+}
+.details-btn:hover{color:var(--ink);border-color:var(--line-strong);background:var(--surface-2)}
 
-/* Modal Deep-Dive */
-.modal-backdrop{
-  position:fixed;inset:0;background:rgba(18, 40, 32, 0.65);backdrop-filter:blur(8px);
-  z-index:200;display:flex;align-items:center;justify-content:center;padding:16px;
-  opacity:0;pointer-events:none;transition:opacity .25s ease;
+/* Featured project */
+.proj-card.featured{
+  border-color:color-mix(in srgb, var(--accent) 45%, var(--line));
+  background:linear-gradient(160deg, var(--surface) 55%, var(--accent-soft) 140%);
 }
-.modal-backdrop.active{opacity:1;pointer-events:auto}
-.modal-card{
-  background:var(--card);
-  border:1px solid var(--line);border-radius:20px;
-  width:100%;max-width:660px;padding:26px;position:relative;
-  box-shadow:0 24px 60px -15px rgba(18, 40, 32, 0.3);
-  transform:scale(0.95);transition:transform .25s ease;
-  max-height:88vh;overflow-y:auto;
+@media (min-width:768px){.proj-card.featured{grid-column:span 2}}
+.featured-body{display:grid;grid-template-columns:1fr;gap:24px}
+@media (min-width:900px){.featured-body{grid-template-columns:1.25fr 1fr;gap:36px}}
+.featured-body > *{min-width:0}
+.featured h3{font-size:clamp(1.25rem,2.4vw,1.55rem)}
+.feature-list{
+  display:grid;gap:10px;padding:18px;border-radius:10px;
+  background:var(--surface);border:1px solid var(--line);
 }
-.modal-backdrop.active .modal-card{transform:scale(1)}
-.modal-close-btn{
-  position:absolute;top:16px;right:16px;
-  background:var(--bg);border:1px solid var(--line);
-  color:var(--ink);width:32px;height:32px;border-radius:50%;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;font-weight:700;
-  transition:all .15s;
+.feature-list .fl-title{font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.06em}
+.feature-list li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--ink)}
+.feature-list li svg{color:var(--accent);margin-top:4px;flex-shrink:0}
+
+/* Project dialog */
+.proj-dialog{
+  margin:auto;width:calc(100% - 32px);max-width:640px;max-height:88vh;
+  background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.45);
+  padding:28px;overflow-y:auto;
 }
-.modal-close-btn:hover{background:var(--accent);color:#FFF}
+@media (max-width:540px){.proj-dialog{padding:22px 18px}}
+.proj-dialog::backdrop{background:rgba(8,16,13,.6);backdrop-filter:blur(6px)}
+.proj-dialog[open]{animation:dialogIn .22s ease}
+@keyframes dialogIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.dialog-close{
+  position:absolute;top:14px;right:14px;
+  width:40px;height:40px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+}
+.dialog-close:hover{border-color:var(--accent);color:var(--accent)}
+.dialog-tag{margin-bottom:10px}
+.proj-dialog h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-bottom:12px;padding-right:44px}
+.proj-dialog p{color:var(--muted);margin-bottom:20px}
+.dialog-label{font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.06em;margin-bottom:8px}
+.dialog-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
 
 /* -------------------------------------------------------------
-   EXPERIENCE SECTION (Mobile-First Responsive)
+   EXPERIENCE TIMELINE
 ------------------------------------------------------------- */
-.xp-list{display:grid;gap:16px;width:100%}
+.timeline{position:relative;display:grid;gap:20px;padding-left:28px;list-style:none}
+.timeline::before{
+  content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--line);
+}
+.tl-item{position:relative}
+.tl-item::before{
+  content:"";position:absolute;left:-28px;top:28px;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--line-strong);
+}
+.tl-item.current::before{border-color:var(--accent);background:var(--accent-soft)}
 .xp-card{
-  background:var(--card);border:1px solid var(--line);
-  border-radius:var(--radius);padding:20px;
-  display:grid;grid-template-columns:1fr;gap:12px;
-  box-shadow:0 4px 18px rgba(18, 40, 32, 0.03);transition:all .25s ease;
+  display:grid;grid-template-columns:1fr;gap:12px;padding:22px 24px;
+  transition:border-color .25s ease,box-shadow .25s ease;
 }
-@media(min-width:768px){
-  .xp-card{
-    padding:24px 28px;
-    grid-template-columns:200px 1fr;
-    gap:24px;
-  }
-}
-.xp-card:hover{
-  border-color:var(--accent);
-  box-shadow:0 12px 30px -8px rgba(14, 123, 95, 0.15);
-  transform:translateY(-2px);
-}
-.xp-time{font-family:var(--font-mono);font-size:.78rem;color:var(--muted)}
-.xp-founder-badge{
-  display:inline-block;margin-top:4px;
-  color:#FFF;background:var(--accent);
-  padding:2px 8px;border-radius:6px;font-weight:700;
-}
-.xp-body h3{font-family:var(--font-display);font-size:1.12rem;font-weight:700;color:var(--ink)}
-.xp-body .org{color:var(--accent);font-weight:600;font-size:.92rem;margin:3px 0 8px}
-.xp-body ul{list-style:none;color:var(--muted);font-size:.90rem;display:grid;gap:6px}
-.xp-body li{padding-left:18px;position:relative}
-.xp-body li::before{content:"▹";position:absolute;left:0;color:var(--accent);font-size:1.05rem;top:-1px}
+.xp-card:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
+@media (min-width:768px){.xp-card{grid-template-columns:190px 1fr;gap:28px;padding:26px 28px}}
+@media (max-width:540px){.xp-card{padding:20px 18px}}
+.xp-meta{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.xp-body h3{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.xp-org{color:var(--accent);font-weight:600;font-size:.94rem;margin:2px 0 12px}
+.xp-org a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.xp-org a:hover{color:var(--accent-hover)}
+.xp-body ul{display:grid;gap:8px;color:var(--muted);font-size:.94rem}
+.xp-body li{position:relative;padding-left:20px}
+.xp-body li::before{content:"";position:absolute;left:2px;top:.72em;width:8px;height:2px;background:var(--accent);border-radius:2px}
+.xp-body li strong{color:var(--ink);font-weight:600}
 
 /* -------------------------------------------------------------
-   SKILLS SECTION (Mobile-First Fluid Grid)
+   SKILLS
 ------------------------------------------------------------- */
-.skills-grid{display:grid;grid-template-columns:1fr;gap:14px;width:100%}
-@media(min-width:580px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:920px){.skills-grid{grid-template-columns:repeat(3,1fr);gap:18px}}
-
-.skill-card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:20px;box-shadow:0 4px 18px rgba(18, 40, 32, 0.03);transition:all .25s ease;
+.core-stack{padding:24px;margin-bottom:20px}
+@media (max-width:540px){.core-stack{padding:20px 18px}}
+.group-title{
+  font-family:var(--font-mono);font-size:.74rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:14px;
 }
-.skill-card:hover{
-  border-color:var(--accent);transform:translateY(-2px);
-  box-shadow:0 10px 25px -6px rgba(14, 123, 95, 0.14);
+.core-chips{display:flex;flex-wrap:wrap;gap:8px}
+.core-chips li{
+  font-size:.92rem;font-weight:600;color:var(--ink);
+  background:var(--accent-soft);border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  padding:7px 14px;border-radius:8px;
 }
-.skill-card h3{
-  font-family:var(--font-mono);font-size:.76rem;font-weight:700;
-  color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;
-}
-.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-.skill-tags span{
-  font-size:.82rem;font-weight:500;color:var(--ink);
-  background:var(--bg);border:1px solid var(--line);
-  border-radius:7px;padding:4px 10px;
-  transition:all .15s ease;
-}
-.skill-tags span:hover{
-  border-color:var(--accent);color:var(--accent);
-  background:var(--accent-soft);
-}
+.skills-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:580px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.skills-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+.skill-card{padding:20px}
+.skill-card .group-title{color:var(--muted)}
+.skill-card .chips li{font-family:var(--font-body);font-size:.84rem;color:var(--ink);padding:4px 10px}
 
 /* -------------------------------------------------------------
-   VENTURE STUDIO BANNER (Future Tech Dynamics)
+   CONTACT
 ------------------------------------------------------------- */
-.growth-banner{
-  background:linear-gradient(145deg, var(--dark) 0%, var(--dark-2) 100%);
-  border:1px solid var(--dark-2);border-radius:20px;
-  padding:36px 22px;color:var(--on-dark);
-  box-shadow:0 24px 60px -15px rgba(15, 31, 25, 0.35);
-  margin-bottom:30px;
-}
-@media(min-width:768px){.growth-banner{padding:48px 36px;}}
-.growth-header{text-align:center;max-width:680px;margin:0 auto 30px}
-.growth-title{
-  font-family:var(--font-display);font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;
-  letter-spacing:-.025em;margin:12px 0 10px;color:#FFF;
-}
-.growth-lede{color:var(--on-dark-muted);font-size:.98rem;line-height:1.7}
-.growth-services-grid{
-  display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:28px;
-}
-@media(min-width:580px){.growth-services-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:980px){.growth-services-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
-
-.growth-service-item{
-  background:rgba(255, 255, 255, 0.05);border:1px solid rgba(255, 255, 255, 0.08);border-radius:14px;
-  padding:18px;transition:all .25s ease;
-}
-.growth-service-item:hover{
-  border-color:var(--accent);transform:translateY(-3px);
-  background:rgba(255, 255, 255, 0.09);
-}
-.growth-icon{
-  width:40px;height:40px;border-radius:10px;
-  background:rgba(14, 123, 95, 0.25);border:1px solid rgba(14, 123, 95, 0.5);
-  display:flex;align-items:center;justify-content:center;
-  color:#6EE7B7;margin-bottom:12px;
-}
-.growth-service-item h4{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#FFF;margin-bottom:4px}
-.growth-service-item p{color:var(--on-dark-muted);font-size:.84rem;line-height:1.6}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media (min-width:960px){.contact-grid{grid-template-columns:1fr 1fr;gap:56px}}
+.contact-grid > *{min-width:0}
+.contact-grid h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.15}
+.contact-grid .lead{color:var(--muted);margin-top:14px;font-size:1.05rem;max-width:48ch}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.copy-feedback{font-family:var(--font-mono);font-size:.76rem;color:var(--accent);margin-top:12px;min-height:1.2em}
 
 /* -------------------------------------------------------------
-   CONTACT SECTION & FLOATING WHATSAPP
+   FLOATING WHATSAPP + FOOTER
 ------------------------------------------------------------- */
-.contact-panel{
-  background:linear-gradient(145deg, var(--dark) 0%, var(--dark-2) 100%);
-  border:1px solid var(--dark-2);border-radius:20px;
-  padding:44px 20px;text-align:center;color:var(--on-dark);
-  box-shadow:0 24px 60px -15px rgba(15, 31, 25, 0.3);
-}
-@media(min-width:768px){.contact-panel{padding:54px 36px;}}
-.contact-panel h2{
-  font-family:var(--font-display);font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:10px;
-  color:#FFF;
-}
-.contact-panel p{color:var(--on-dark-muted);max-width:50ch;margin:0 auto 24px;font-size:.98rem}
-.contact-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.contact-meta-links{margin-top:24px;font-family:var(--font-mono);font-size:.80rem;color:var(--on-dark-muted);display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-.contact-meta-links a:hover{color:#6EE7B7}
-
-/* Floating WhatsApp Launcher */
 .floating-wa{
-  position:fixed;bottom:20px;right:20px;z-index:99;
-  background:#25D366;color:#FFFFFF;border-radius:999px;
-  padding:10px 18px;display:flex;align-items:center;gap:8px;
-  font-family:var(--font-mono);font-size:.80rem;font-weight:700;
-  box-shadow:0 8px 25px rgba(37,211,102,0.35);
-  transition:all .25s ease;
+  position:fixed;right:20px;bottom:20px;z-index:90;
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--wa);color:var(--on-wa);
+  box-shadow:0 10px 28px -8px rgba(37,211,102,.55);
+  transition:transform .2s ease;
 }
-.floating-wa:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 12px 30px rgba(37,211,102,0.5);
-  color:#FFFFFF;
+.floating-wa:hover{transform:translateY(-2px) scale(1.04)}
+@media (max-width:480px){.floating-wa{right:14px;bottom:14px;width:48px;height:48px}}
+
+.site-footer{border-top:1px solid var(--line);padding:28px 0 88px}
+@media (min-width:600px){.site-footer{padding-bottom:28px}}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:.76rem;color:var(--muted);
 }
-@media(max-width:480px){
-  .floating-wa{bottom:14px;right:14px;padding:8px 14px;font-size:.76rem;}
+.footer-inner a:hover{color:var(--accent)}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+
+/* -------------------------------------------------------------
+   FOCUS AREAS + CERTIFICATIONS
+------------------------------------------------------------- */
+.focus-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:600px){.focus-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.focus-grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.focus-card{padding:22px}
+.focus-icon,.cert-icon{
+  width:42px;height:42px;border-radius:11px;margin-bottom:14px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);background:var(--accent-soft);
+}
+.focus-card h3{font-size:1.02rem;font-weight:700;margin-bottom:6px}
+.focus-card p{color:var(--muted);font-size:.9rem;line-height:1.6}
+
+.cert-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:768px){.cert-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media (min-width:1000px){.cert-grid{grid-template-columns:repeat(3,1fr)}}
+.cert-card{display:flex;gap:16px;align-items:flex-start;padding:22px}
+.cert-card .cert-icon{margin-bottom:0;flex-shrink:0}
+.cert-body{min-width:0}
+.cert-body h3{font-size:1.02rem;font-weight:700;line-height:1.4}
+.cert-issuer{color:var(--accent);font-weight:600;font-size:.9rem;margin-top:2px}
+.cert-date{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);margin:4px 0 6px}
+
+/* -------------------------------------------------------------
+   MODERN POLISH: BACKDROP, MARQUEE, PROGRESS, SPOTLIGHT
+------------------------------------------------------------- */
+.scroll-progress{
+  position:fixed;top:0;left:0;height:2px;width:100%;z-index:200;
+  background:var(--accent);transform-origin:0 50%;transform:scaleX(0);
 }
 
-footer{border-top:1px solid var(--line);padding:22px 0;font-family:var(--font-mono);font-size:.74rem;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.hero{position:relative;overflow:hidden}
+.hero > .wrap{position:relative;z-index:1}
+.hero-backdrop{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-backdrop::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%);
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%);
+  opacity:.7;
+}
+.hero-backdrop::after{
+  content:"";position:absolute;width:560px;height:560px;right:-120px;top:-160px;border-radius:50%;
+  background:radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent) 0%, transparent 65%);
+  filter:blur(10px);
+}
+.hero h1 .accent{color:var(--accent)}
+
+.hero .code-window{position:relative}
+.hero .code-window::before{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(140deg, color-mix(in srgb, var(--accent) 70%, transparent), transparent 45%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+
+/* Tech marquee */
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--surface);overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee ul{display:flex;align-items:center;gap:40px;padding:18px 20px 18px 0}
+.marquee li{
+  font-family:var(--font-mono);font-size:.88rem;font-weight:600;color:var(--muted);
+  display:flex;align-items:center;gap:40px;white-space:nowrap;
+}
+.marquee li::after{content:"/";color:var(--line-strong)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+.marquee + .section{border-top:0}
+
+/* Card spotlight on hover (pointer devices only) */
+@media (hover:hover) and (pointer:fine){
+  .spot{position:relative;isolation:isolate}
+  .spot::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+    opacity:0;transition:opacity .3s ease;
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%);
+  }
+  .spot:hover::after{opacity:1}
+}
+
+/* Project icon tile */
+.proj-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);background:var(--accent-soft);
+  border:1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.proj-route{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);word-break:break-all}
+.proj-route b{color:var(--accent);font-weight:700;margin-right:6px}
+.proj-id{display:flex;align-items:center;gap:12px;min-width:0}
+
+/* Active nav link */
+.nav-links a.active{color:var(--ink);background:var(--surface-2)}
+
+/* Contact CTA panel */
+.contact-panel{
+  position:relative;overflow:hidden;
+  padding:40px 24px;border-radius:24px;
+  background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);
+}
+@media (min-width:768px){.contact-panel{padding:56px 48px}}
+.contact-panel::before{
+  content:"";position:absolute;width:520px;height:520px;left:-160px;bottom:-260px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 65%);
+}
+.contact-panel > *{position:relative}
+
+/* Compact hero facts on small phones */
+@media (max-width:520px){
+  .hero-facts{grid-template-columns:repeat(3,1fr);gap:12px}
+  .hero-facts dt{font-size:1.15rem}
+  .hero-facts dd{font-size:.68rem}
+}
+
+/* -------------------------------------------------------------
+   SCROLL REVEAL + REDUCED MOTION
+------------------------------------------------------------- */
+html.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+html.js .reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .marquee-track{flex-wrap:wrap;width:auto}
+  .marquee-track ul[aria-hidden="true"]{display:none}
+  .marquee ul{flex-wrap:wrap;justify-content:center;padding:18px 20px}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html.js .reveal,html.js .ln{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
 <!-- Navigation -->
-<nav>
-  <div class="wrap nav-inner">
-    <a class="logo" href="#top">
-      <span>hazrat<span class="tld">.dev</span></span>
+<header class="site-header">
+  <nav class="wrap nav-inner" aria-label="Primary">
+    <a class="logo" href="#top" aria-label="Hazrat Ali — home">
+      <span class="prompt" aria-hidden="true">~/</span><span>hazrat<span class="tld">.dev</span></span>
     </a>
-    <div class="nav-links">
+
+    <div class="nav-links" id="nav-links">
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Tech Stack</a>
-      <a href="#build-with-us">Venture Studio</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
-    </div>
-    <a class="btn-nav-hire" href="#contact">POST /hire</a>
-  </div>
-</nav>
-
-<!-- 1. Hero Section -->
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-    
-    <!-- Hero Left Column -->
-    <div class="hero-left">
-      <div class="endpoint">
-        <span class="verb">GET</span>
-        <span class="path">/api/v1/founder/hazrat-ali</span>
-      </div>
-      
-      <h1>Software Engineer &amp; Founder building systems that ship<span class="dot">.</span></h1>
-      
-      <p class="lede">
-        Founder of <strong><a href="https://ftdynamics.pk" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">Future Tech Dynamics</a></strong> &amp; Creator of <strong><a href="https://sehatyar.online" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">SehatYar.online</a></strong>. I build high-throughput backends with Python, Django &amp; DRF, modern React web applications, and AI-integrated systems.
-      </p>
-      
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="mailto:Hazratali.bse@gmail.com">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          Get in Touch
-        </a>
-        <a class="btn btn-ghost" href="https://ftdynamics.pk" target="_blank" rel="noopener">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
-          ftdynamics.pk ↗
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/Hazrat-Ali822" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.05.78 2.13v3.16c0 .31.2.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-          GitHub
-        </a>
-      </div>
-
-      <!-- Impact Metrics -->
-      <div class="hero-metrics-row">
-        <div>
-          <div class="metric-val">10+</div>
-          <div class="metric-lbl">Production Apps Shipped</div>
-        </div>
-        <div>
-          <div class="metric-val">99.9%</div>
-          <div class="metric-lbl">High-Availability Uptime</div>
-        </div>
-        <div>
-          <div class="metric-val">2 Live</div>
-          <div class="metric-lbl">SaaS Ventures (SehatYar)</div>
-        </div>
-      </div>
+      <!-- TODO: add resume link once the PDF is available, e.g. <a href="/Hazrat-Ali-Resume.pdf">Resume</a> -->
     </div>
 
-    <!-- Hero Right: Cleanly Framed 3D Stage -->
-    <div class="hero-3d-stage">
-      <canvas id="macbook-hero-canvas"></canvas>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" type="button" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="btn-hire" href="#contact"><span class="verb-inline">POST</span>/hire</a>
+      <button class="icon-btn nav-toggle" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-
-  </div>
+  </nav>
 </header>
 
-<!-- 2. Projects Section -->
-<section id="projects">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="endpoint">
-        <span class="verb">GET</span>
-        <span class="path">/api/v1/projects</span>
+<main id="main">
+
+<!-- 1. Hero -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero-backdrop" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+
+    <div class="hero-left">
+      <div class="hero-id">
+        <div class="avatar-wrap">
+          <img class="avatar" src="images/hazrat-ali.jpg" alt="Portrait of Hazrat Ali" width="400" height="400" fetchpriority="high" decoding="async">
+          <span class="avatar-status" aria-hidden="true"></span>
+        </div>
+        <div class="hero-id-text">
+          <p class="availability"><span class="pulse" aria-hidden="true"></span>Open to full-time backend &amp; full-stack roles</p>
+          <p class="endpoint">
+            <span class="verb verb-get">GET</span>
+            <code class="path">/api/v1/engineers/hazrat-ali</code>
+          </p>
+        </div>
       </div>
-      <h2>Flagship Products &amp; Production Platforms</h2>
-      <p>HealthTech suites, AI trend clustering engines, and enterprise business applications developed under Future Tech Dynamics.</p>
+
+      <h1 id="hero-title">
+        <span class="h1-name">Hazrat Ali</span>
+        <span class="h1-role">Full-Stack Python &amp; AI Engineer building <span class="accent">systems that ship</span><span class="dot">.</span></span>
+      </h1>
+
+      <p class="lede">
+        Creator of <a class="text-link" href="https://sehatyar.online" target="_blank" rel="noopener">SehatYar.online</a>. I build high-throughput backends with <strong>Python, Django &amp; DRF</strong>, modern React web applications, <strong>AI / LLM integrations</strong>, and <strong>web scraping pipelines</strong> — based in Islamabad, Pakistan.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">
+          <span class="verb-inline">POST</span>/hire
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/Hazrat-Ali822" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.05.78 2.13v3.16c0 .31.2.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/hazrat-ali-49a0aa267/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <dl class="hero-facts">
+        <div>
+          <dt>10+</dt>
+          <dd>Production apps shipped</dd>
+        </div>
+        <div>
+          <dt>Live</dt>
+          <dd>SehatYar HealthTech platform</dd>
+        </div>
+        <div>
+          <dt>Multi-shop</dt>
+          <dd>POS running in retail &amp; wholesale</dd>
+        </div>
+      </dl>
     </div>
 
-    <!-- Category Filters -->
-    <div class="project-filters">
-      <button class="filter-btn active" onclick="filterCategory('all')">All Projects (5)</button>
-      <button class="filter-btn" onclick="filterCategory('flagship')">HealthTech &amp; AI</button>
-      <button class="filter-btn" onclick="filterCategory('enterprise')">Enterprise ERP &amp; POS</button>
-      <button class="filter-btn" onclick="filterCategory('ecommerce')">E-Commerce</button>
+    <!-- API response card -->
+    <div class="code-window" role="group" aria-label="Profile as an API response">
+      <div class="code-bar">
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="req"><span class="m">GET</span><span class="u">/api/v1/engineers/hazrat-ali</span></div>
+        <button class="send-btn" type="button" id="send-request" aria-label="Replay the API request">Send</button>
+      </div>
+      <div class="code-meta" aria-hidden="true">
+        <span class="ok">200 OK</span><span>application/json</span>
+      </div>
+<pre id="profile-json"><code><span class="ln" style="--i:0"><span class="p">{</span></span>
+<span class="ln" style="--i:1">  <span class="k">"name"</span><span class="p">:</span> <span class="s">"Hazrat Ali"</span><span class="p">,</span></span>
+<span class="ln" style="--i:2">  <span class="k">"role"</span><span class="p">:</span> <span class="s">"Software Engineer"</span><span class="p">,</span></span>
+<span class="ln" style="--i:3">  <span class="k">"focus"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Full-Stack"</span><span class="p">,</span> <span class="s">"AI"</span><span class="p">,</span> <span class="s">"Web Scraping"</span><span class="p">],</span></span>
+<span class="ln" style="--i:4">  <span class="k">"core_stack"</span><span class="p">:</span> <span class="p">[</span></span>
+<span class="ln" style="--i:5">    <span class="s">"Python"</span><span class="p">,</span> <span class="s">"Django"</span><span class="p">,</span> <span class="s">"DRF"</span><span class="p">,</span> <span class="s">"FastAPI"</span><span class="p">,</span></span>
+<span class="ln" style="--i:6">    <span class="s">"React"</span><span class="p">,</span> <span class="s">"PostgreSQL"</span><span class="p">,</span> <span class="s">"Docker"</span></span>
+<span class="ln" style="--i:7">  <span class="p">],</span></span>
+<span class="ln" style="--i:8">  <span class="k">"flagship"</span><span class="p">:</span> <a class="s" href="https://sehatyar.online" target="_blank" rel="noopener">"sehatyar.online"</a><span class="p">,</span></span>
+<span class="ln" style="--i:9">  <span class="k">"education"</span><span class="p">:</span> <span class="s">"BSE, COMSATS University"</span><span class="p">,</span></span>
+<span class="ln" style="--i:10">  <span class="k">"location"</span><span class="p">:</span> <span class="s">"Islamabad, Pakistan"</span><span class="p">,</span></span>
+<span class="ln" style="--i:11">  <span class="k">"open_to_work"</span><span class="p">:</span> <span class="b">true</span></span>
+<span class="ln" style="--i:12"><span class="p">}</span></span></code></pre>
     </div>
 
-    <div class="proj-grid">
-      
-      <!-- Flagship 1: SehatYar.online -->
-      <div class="proj-card flagship" onclick="openDeepDive('sehatyar')">
-        <div class="proj-header">
-          <h3>SehatYar — Comprehensive Digital Health &amp; Clinic Suite</h3>
-          <span class="proj-badge">FLAGSHIP PRODUCT</span>
-        </div>
-        <p class="proj-desc">
-          Complete healthcare management ecosystem engineered and launched at <strong>sehatyar.online</strong>. Features electronic health records (EHR), automated doctor appointment scheduling, smart pharmacy batch inventory tracking, clinical billing, and telemedicine workflows.
-        </p>
-        <div class="proj-stack">
-          <span>Python</span><span>Django</span><span>DRF</span><span>React</span><span>MySQL</span><span>HealthTech APIs</span>
-        </div>
-        <div class="proj-footer">
-          <a class="proj-link" href="https://sehatyar.online" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit sehatyar.online Live ↗</a>
-          <span style="font-family:var(--font-mono);font-size:.74rem;color:var(--muted);">Click card for deep-dive</span>
-        </div>
-      </div>
-
-      <!-- Flagship 2: Trend Sphere -->
-      <div class="proj-card flagship" onclick="openDeepDive('trends')">
-        <div class="proj-header">
-          <h3>Trend Sphere — AI Trend Aggregation &amp; Analysis</h3>
-          <span class="proj-badge">FINAL YEAR PROJECT</span>
-        </div>
-        <p class="proj-desc">
-          AI-powered platform aggregating real-time social and search trends. Features asynchronous scraping pipelines, noise filtering, TF-IDF / vector embeddings clustering, and LLM-generated summaries on a scalable, high-throughput Django backend.
-        </p>
-        <div class="proj-stack">
-          <span>Python</span><span>Django</span><span>LLMs</span><span>TF-IDF</span><span>Vector Embeddings</span><span>Web Scraping</span>
-        </div>
-        <div class="proj-footer">
-          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Explore Future Tech Dynamics ↗</a>
-          <span style="font-family:var(--font-mono);font-size:.74rem;color:var(--muted);">Click card for deep-dive</span>
-        </div>
-      </div>
-
-      <!-- Project 3: Retail & Wholesale POS -->
-      <div class="proj-card" onclick="openDeepDive('pos')">
-        <div class="proj-header">
-          <h3>Retail &amp; Wholesale Commercial POS System</h3>
-          <span class="proj-badge" style="background:var(--accent-soft);color:var(--accent);">LIVE IN MULTIPLE SHOPS</span>
-        </div>
-        <p class="proj-desc">
-          Production point-of-sale and retail store operations platform <strong>running live across multiple retail shops &amp; wholesale outlets</strong>. Features thermal receipt printing, barcode support, cashier shift logs, cash ledgers, real-time inventory tracking, and date-filtered analytical sales reporting.
-        </p>
-        <div class="proj-stack">
-          <span>PWA</span><span>JavaScript</span><span>POS Engine</span><span>Thermal Receipts</span><span>Multi-Store Sync</span>
-        </div>
-        <div class="proj-footer">
-          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Future Tech Dynamics POS ↗</a>
-        </div>
-      </div>
-
-      <!-- Project 4: School ERP -->
-      <div class="proj-card" onclick="openDeepDive('school')">
-        <div class="proj-header">
-          <h3>School Management ERP System</h3>
-          <span class="proj-badge">EDUCATION ERP</span>
-        </div>
-        <p class="proj-desc">
-          Enterprise role-based web portal for school administration, teachers, students, and parents with live attendance tracking, grading workflows, and automated fee processing.
-        </p>
-        <div class="proj-stack">
-          <span>Django</span><span>DRF</span><span>Role-Based Access</span><span>PostgreSQL</span>
-        </div>
-        <div class="proj-footer">
-          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Enterprise Portal Overview ↗</a>
-        </div>
-      </div>
-
-      <!-- Project 5: Valora Beauty -->
-      <div class="proj-card" onclick="openDeepDive('valora')">
-        <div class="proj-header">
-          <h3>Valora Beauty Storefront</h3>
-          <span class="proj-badge">E-COMMERCE</span>
-        </div>
-        <p class="proj-desc">
-          Full-scale online retail application — multi-category catalog, dynamic cart &amp; checkout drawer, JWT session authentication, and modular UI powered by Django REST APIs.
-        </p>
-        <div class="proj-stack">
-          <span>Django</span><span>DRF</span><span>React</span><span>JWT Auth</span><span>Payment Flow</span>
-        </div>
-        <div class="proj-footer">
-          <a class="proj-link" href="https://ftdynamics.pk" target="_blank" rel="noopener" onclick="event.stopPropagation()">Full-Stack Storefront ↗</a>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
 
-<!-- Interactive Project Deep-Dive Modal -->
-<div class="modal-backdrop" id="project-modal" onclick="closeDeepDive(event)">
-  <div class="modal-card" onclick="event.stopPropagation()">
-    <button class="modal-close-btn" onclick="closeDeepDive()">✕</button>
-    <div id="modal-body-content"></div>
+<!-- Tech marquee -->
+<div class="marquee" role="region" aria-label="Core technologies">
+  <div class="marquee-track">
+    <ul>
+      <li>Python</li><li>Django</li><li>Django REST Framework</li><li>FastAPI</li><li>React.js</li><li>JavaScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>MySQL</li><li>Odoo ERP</li><li>LLM Integration</li><li>Web Scraping</li><li>Docker</li><li>Git</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>Python</li><li>Django</li><li>Django REST Framework</li><li>FastAPI</li><li>React.js</li><li>JavaScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>MySQL</li><li>Odoo ERP</li><li>LLM Integration</li><li>Web Scraping</li><li>Docker</li><li>Git</li>
+    </ul>
   </div>
 </div>
 
-<!-- 3. Experience Section -->
-<section id="experience">
+<!-- What I work on -->
+<section class="section" id="focus" aria-labelledby="focus-title">
   <div class="wrap">
-    <div class="section-head">
-      <div class="endpoint">
-        <span class="verb">GET</span>
-        <span class="path">/api/v1/experience</span>
-      </div>
-      <h2>Professional Engineering Experience</h2>
+    <div class="section-head reveal">
+      <p class="endpoint">
+        <span class="verb verb-get">GET</span>
+        <code class="path">/api/v1/focus</code>
+        <span class="status">200 OK</span>
+      </p>
+      <h2 id="focus-title">What I Work On</h2>
+      <p>Python backend development, AI and LLM integration, web scraping, and full-stack web applications.</p>
     </div>
 
-    <div class="xp-list">
-      <!-- Future Tech Dynamics -->
-      <div class="xp-card" style="border-color:var(--accent);">
-        <div class="xp-time">
-          Founder &amp; Lead<br>
-          <span class="xp-founder-badge">FOUNDER</span>
+    <div class="focus-grid">
+      <article class="card spot focus-card reveal">
+        <div class="focus-icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
         </div>
-        <div class="xp-body">
-          <h3>Founder &amp; Lead Software Engineer</h3>
-          <div class="org"><a href="https://ftdynamics.pk" target="_blank" rel="noopener" style="text-decoration:underline;">Future Tech Dynamics (ftdynamics.pk)</a></div>
-          <ul>
-            <li>Founded Future Tech Dynamics, architecting and shipping custom enterprise software, HealthTech platforms, and SaaS web solutions.</li>
-            <li>Engineered <strong>SehatYar (sehatyar.online)</strong> — a full-scale clinical management platform with doctor appointments, electronic health records, and pharmacy stock automation.</li>
-            <li>Led technical architecture, database schemas (PostgreSQL / MySQL), DRF API design, and client production deployments.</li>
-          </ul>
+        <h3>Backend &amp; REST APIs</h3>
+        <p>REST APIs with Django, Django REST Framework and FastAPI, backed by PostgreSQL and MySQL, with JWT authentication and role-based access.</p>
+      </article>
+      <article class="card spot focus-card reveal">
+        <div class="focus-icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/><path d="M19 17l.7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7z"/></svg>
         </div>
-      </div>
-
-      <!-- MUST Services -->
-      <div class="xp-card">
-        <div class="xp-time">
-          Mar 2026 — Present<br>
-          <span style="color:var(--accent);font-weight:700;">CURRENT</span>
+        <h3>AI &amp; LLM Integration</h3>
+        <p>LLM integration, NLP, TF-IDF and vector embeddings for clustering, summarization and AI-powered product features.</p>
+      </article>
+      <article class="card spot focus-card reveal">
+        <div class="focus-icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <div class="xp-body">
-          <h3>Software Engineer</h3>
-          <div class="org">MUST Services</div>
-          <ul>
-            <li>Engineered and customized full-scale Odoo ERP business modules to streamline operations across sales, inventory, and accounting end-to-end.</li>
-            <li>Architected robust Django &amp; DRF backends including Valora Beauty e-commerce platform with catalog, cart, checkout and user management.</li>
-            <li>Designed high-performance REST APIs, normalized SQL database schemas, and delivered maintainable full-stack integrations.</li>
-          </ul>
+        <h3>Web Scraping &amp; Data Pipelines</h3>
+        <p>Asynchronous web scraping pipelines, noise filtering and data cleaning with Python and Pandas to turn unstructured web data into structured datasets.</p>
+      </article>
+      <article class="card spot focus-card reveal">
+        <div class="focus-icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
-      </div>
-
-      <!-- Education -->
-      <div class="xp-card">
-        <div class="xp-time">
-          2022 — Jan 2026<br>
-          <span>Abbottabad, KP</span>
-        </div>
-        <div class="xp-body">
-          <h3>Bachelor of Software Engineering (BSE)</h3>
-          <div class="org">COMSATS University Islamabad, Abbottabad Campus</div>
-          <ul>
-            <li>Graduated with strong foundation in Software Architecture, Algorithms, Database Systems, and Distributed Computing.</li>
-          </ul>
-        </div>
-      </div>
+        <h3>Full-Stack &amp; ERP</h3>
+        <p>React.js and Tailwind CSS front ends, plus Odoo ERP modules for sales, inventory and accounting workflows.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- 4. Tech Capabilities -->
-<section id="skills">
+<!-- 2. Projects -->
+<section class="section" id="projects" aria-labelledby="projects-title">
   <div class="wrap">
-    <div class="section-head">
-      <div class="endpoint">
-        <span class="verb">GET</span>
-        <span class="path">/api/v1/skills</span>
+    <div class="section-head reveal">
+      <p class="endpoint">
+        <span class="verb verb-get">GET</span>
+        <code class="path">/api/v1/projects</code>
+        <span class="status">200 OK</span>
+      </p>
+      <h2 id="projects-title">Flagship Products &amp; Production Platforms</h2>
+      <p>HealthTech suites, AI trend clustering engines, and enterprise business applications.</p>
+    </div>
+
+    <div class="proj-toolbar">
+      <div class="filters" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All Projects (5)</button>
+        <button class="filter-btn" type="button" data-filter="flagship" aria-pressed="false">HealthTech &amp; AI</button>
+        <button class="filter-btn" type="button" data-filter="enterprise" aria-pressed="false">Enterprise ERP &amp; POS</button>
+        <button class="filter-btn" type="button" data-filter="ecommerce" aria-pressed="false">E-Commerce</button>
       </div>
-      <h2>Core Engineering Tech Stack</h2>
+      <p class="result-count" id="result-count" aria-live="polite">5 results</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- Featured: SehatYar -->
+      <article class="card spot proj-card featured reveal" data-cat="flagship">
+        <div class="featured-body">
+          <div>
+            <div class="proj-top">
+              <div class="proj-id">
+                <span class="proj-icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>
+                <span class="proj-route"><b>GET</b>/projects/sehatyar</span>
+              </div>
+              <span class="badge badge-solid">FLAGSHIP PRODUCT</span>
+            </div>
+            <h3 style="margin-top:14px">SehatYar — Comprehensive Digital Health &amp; Clinic Suite</h3>
+            <p class="proj-desc" style="margin-top:10px">
+              Complete healthcare management ecosystem engineered and launched at <strong>sehatyar.online</strong>. Features electronic health records (EHR), automated doctor appointment scheduling, smart pharmacy batch inventory tracking, clinical billing, and telemedicine workflows.
+            </p>
+            <ul class="chips" style="margin-top:16px" aria-label="Tech stack">
+              <li>Python</li><li>Django</li><li>DRF</li><li>React</li><li>MySQL</li><li>HealthTech APIs</li>
+            </ul>
+          </div>
+          <ul class="feature-list" aria-label="Key modules">
+            <li class="fl-title">KEY MODULES</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Electronic health records (EHR)</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Automated doctor appointment scheduling</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pharmacy batch inventory tracking</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Clinical billing</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Telemedicine workflows</li>
+          </ul>
+        </div>
+        <div class="proj-foot">
+          <a class="proj-link" href="https://sehatyar.online" target="_blank" rel="noopener">Visit sehatyar.online Live ↗</a>
+          <button class="details-btn" type="button" data-project="sehatyar">View details</button>
+        </div>
+      </article>
+
+      <!-- Trend Sphere -->
+      <article class="card spot proj-card reveal" data-cat="flagship">
+        <div class="proj-top">
+          <div class="proj-id">
+            <span class="proj-icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+            <span class="proj-route"><b>GET</b>/projects/trend-sphere</span>
+          </div>
+          <span class="badge">FINAL YEAR PROJECT</span>
+        </div>
+        <h3>Trend Sphere — AI Trend Aggregation &amp; Analysis</h3>
+        <p class="proj-desc">
+          AI-powered platform aggregating real-time social and search trends. Features asynchronous scraping pipelines, noise filtering, TF-IDF / vector embeddings clustering, and LLM-generated summaries on a scalable, high-throughput Django backend.
+        </p>
+        <ul class="chips" aria-label="Tech stack">
+          <li>Python</li><li>Django</li><li>LLMs</li><li>TF-IDF</li><li>Vector Embeddings</li><li>Web Scraping</li>
+        </ul>
+        <div class="proj-foot">
+          <button class="details-btn" type="button" data-project="trends">View details</button>
+        </div>
+      </article>
+
+      <!-- Retail & Wholesale POS -->
+      <article class="card spot proj-card reveal" data-cat="enterprise">
+        <div class="proj-top">
+          <div class="proj-id">
+            <span class="proj-icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg></span>
+            <span class="proj-route"><b>GET</b>/projects/retail-pos</span>
+          </div>
+          <span class="badge">LIVE IN MULTIPLE SHOPS</span>
+        </div>
+        <h3>Retail &amp; Wholesale Commercial POS System</h3>
+        <p class="proj-desc">
+          Production point-of-sale and retail store operations platform <strong>running live across multiple retail shops &amp; wholesale outlets</strong>. Features thermal receipt printing, barcode support, cashier shift logs, cash ledgers, real-time inventory tracking, and date-filtered analytical sales reporting.
+        </p>
+        <ul class="chips" aria-label="Tech stack">
+          <li>PWA</li><li>JavaScript</li><li>POS Engine</li><li>Thermal Receipts</li><li>Multi-Store Sync</li>
+        </ul>
+        <div class="proj-foot">
+          <button class="details-btn" type="button" data-project="pos">View details</button>
+        </div>
+      </article>
+
+      <!-- School ERP -->
+      <article class="card spot proj-card reveal" data-cat="enterprise">
+        <div class="proj-top">
+          <div class="proj-id">
+            <span class="proj-icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+            <span class="proj-route"><b>GET</b>/projects/school-erp</span>
+          </div>
+          <span class="badge">EDUCATION ERP</span>
+        </div>
+        <h3>School Management ERP System</h3>
+        <p class="proj-desc">
+          Enterprise role-based web portal for school administration, teachers, students, and parents with live attendance tracking, grading workflows, and automated fee processing.
+        </p>
+        <ul class="chips" aria-label="Tech stack">
+          <li>Django</li><li>DRF</li><li>Role-Based Access</li><li>PostgreSQL</li>
+        </ul>
+        <div class="proj-foot">
+          <button class="details-btn" type="button" data-project="school">View details</button>
+        </div>
+      </article>
+
+      <!-- Valora Beauty -->
+      <article class="card spot proj-card reveal" data-cat="ecommerce">
+        <div class="proj-top">
+          <div class="proj-id">
+            <span class="proj-icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+            <span class="proj-route"><b>GET</b>/projects/valora-beauty</span>
+          </div>
+          <span class="badge">E-COMMERCE</span>
+        </div>
+        <h3>Valora Beauty Storefront</h3>
+        <p class="proj-desc">
+          Full-scale online retail application — multi-category catalog, dynamic cart &amp; checkout drawer, JWT session authentication, and modular UI powered by Django REST APIs.
+        </p>
+        <ul class="chips" aria-label="Tech stack">
+          <li>Django</li><li>DRF</li><li>React</li><li>JWT Auth</li><li>Payment Flow</li>
+        </ul>
+        <div class="proj-foot">
+          <button class="details-btn" type="button" data-project="valora">View details</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3. Experience -->
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="endpoint">
+        <span class="verb verb-get">GET</span>
+        <code class="path">/api/v1/experience</code>
+        <span class="status">200 OK</span>
+      </p>
+      <h2 id="experience-title">Professional Experience</h2>
+      <p>Full-stack engineering and business development experience since 2025.</p>
+    </div>
+
+    <ol class="timeline">
+      <!-- MUST Services -->
+      <li class="tl-item current reveal">
+        <article class="card spot xp-card">
+          <div class="xp-meta">
+            <span>Mar 2026 — Present</span>
+            <span class="badge">CURRENT</span>
+          </div>
+          <div class="xp-body">
+            <h3>Software Engineer (Full-Stack)</h3>
+            <p class="xp-org">MUST Services</p>
+            <ul>
+              <li>Working as a full-stack engineer across multiple production websites, from backend APIs to front-end delivery.</li>
+              <li>Building and integrating AI-powered features into client applications.</li>
+              <li>Engineered and customized full-scale Odoo ERP business modules to streamline operations across sales, inventory, and accounting end-to-end.</li>
+              <li>Architected robust Django &amp; DRF backends including Valora Beauty e-commerce platform with catalog, cart, checkout and user management.</li>
+              <li>Designed high-performance REST APIs, normalized SQL database schemas, and delivered maintainable full-stack integrations.</li>
+            </ul>
+          </div>
+        </article>
+      </li>
+
+      <!-- Khabir Consultant -->
+      <li class="tl-item current reveal">
+        <article class="card spot xp-card">
+          <div class="xp-meta">
+            <span>Jul 2026 — Present</span>
+            <span class="badge">CURRENT</span>
+          </div>
+          <div class="xp-body">
+            <h3>Business Developer</h3>
+            <p class="xp-org">Khabir Consultant</p>
+            <ul>
+              <li>Identifying and reaching out to potential clients through LinkedIn, email and direct outreach.</li>
+              <li>Understanding client requirements and coordinating with the team to prepare proposals and service offerings.</li>
+              <li>Managing leads and follow-ups through the sales pipeline and maintaining long-term client relationships.</li>
+            </ul>
+          </div>
+        </article>
+      </li>
+
+      <!-- MMALL -->
+      <li class="tl-item reveal">
+        <article class="card spot xp-card">
+          <div class="xp-meta">
+            <span>Mar 2026 — Jun 2026</span>
+          </div>
+          <div class="xp-body">
+            <h3>Business Developer</h3>
+            <p class="xp-org">MMALL</p>
+            <ul>
+              <li>Generated and qualified new business leads and presented offerings to prospective clients.</li>
+              <li>Supported partner and client onboarding, and handled communication from first contact to closing.</li>
+              <li>Researched the market and competitors to help shape outreach and growth strategies.</li>
+            </ul>
+          </div>
+        </article>
+      </li>
+
+      <!-- Hifaah Technologies -->
+      <li class="tl-item reveal">
+        <article class="card spot xp-card">
+          <div class="xp-meta">
+            <span>Jun 2025 — Oct 2025</span>
+          </div>
+          <div class="xp-body">
+            <h3>Python Developer</h3>
+            <p class="xp-org">Hifaah Technologies</p>
+            <ul>
+              <li>Developed and maintained backend features in Python and Django for client-facing web applications.</li>
+              <li>Built and integrated REST API endpoints and worked with relational databases for data storage and queries.</li>
+              <li>Wrote automation and data-processing scripts, and debugged, tested and fixed issues in production code.</li>
+            </ul>
+          </div>
+        </article>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4. Education -->
+<section class="section" id="education" aria-labelledby="education-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="endpoint">
+        <span class="verb verb-get">GET</span>
+        <code class="path">/api/v1/education</code>
+        <span class="status">200 OK</span>
+      </p>
+      <h2 id="education-title">Education</h2>
+    </div>
+
+    <article class="card spot xp-card reveal">
+      <div class="xp-meta">
+        <span>2022 — Jan 2026</span>
+        <span>Abbottabad, KP</span>
+      </div>
+      <div class="xp-body">
+        <h3>Bachelor of Software Engineering (BSE)</h3>
+        <p class="xp-org">COMSATS University Islamabad, Abbottabad Campus</p>
+        <ul>
+          <li>Graduated with strong foundation in Software Architecture, Algorithms, Database Systems, and Distributed Computing.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section class="section" id="certifications" aria-labelledby="certifications-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="endpoint">
+        <span class="verb verb-get">GET</span>
+        <code class="path">/api/v1/certifications</code>
+        <span class="status">200 OK</span>
+      </p>
+      <h2 id="certifications-title">Certifications</h2>
+      <p>AI engineering and Claude certifications from Anthropic.</p>
+    </div>
+
+    <div class="cert-grid">
+      <article class="card spot cert-card reveal">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg>
+        </div>
+        <div class="cert-body">
+          <h3>Claude Code in Action</h3>
+          <p class="cert-issuer">Anthropic</p>
+          <p class="cert-date">Certificate of Completion</p>
+          <a class="proj-link" href="certificates/claude-code-in-action.pdf" target="_blank" rel="noopener">View certificate (PDF) ↗<span class="sr-only"> — Claude Code in Action</span></a>
+        </div>
+      </article>
+      <article class="card spot cert-card reveal">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg>
+        </div>
+        <div class="cert-body">
+          <h3>Claude Code 101</h3>
+          <p class="cert-issuer">Anthropic</p>
+          <p class="cert-date">Certificate of Completion</p>
+          <a class="proj-link" href="certificates/claude-code-101.pdf" target="_blank" rel="noopener">View certificate (PDF) ↗<span class="sr-only"> — Claude Code 101</span></a>
+        </div>
+      </article>
+      <article class="card spot cert-card reveal">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg>
+        </div>
+        <div class="cert-body">
+          <h3>Claude Platform 101</h3>
+          <p class="cert-issuer">Anthropic</p>
+          <p class="cert-date">Certificate of Completion</p>
+          <a class="proj-link" href="certificates/claude-platform-101.pdf" target="_blank" rel="noopener">View certificate (PDF) ↗<span class="sr-only"> — Claude Platform 101</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Tech Stack -->
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="endpoint">
+        <span class="verb verb-get">GET</span>
+        <code class="path">/api/v1/skills</code>
+        <span class="status">200 OK</span>
+      </p>
+      <h2 id="skills-title">Core Engineering Tech Stack</h2>
+    </div>
+
+    <div class="card spot core-stack reveal">
+      <h3 class="group-title">Primary stack</h3>
+      <ul class="core-chips">
+        <li>Python</li><li>Django</li><li>Django REST Framework</li><li>FastAPI</li><li>React.js</li><li>JavaScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>MySQL</li><li>Odoo ERP</li><li>LLM Integration</li><li>Web Scraping</li><li>Docker</li><li>Git</li>
+      </ul>
     </div>
 
     <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Backend &amp; APIs</h3>
-        <div class="skill-tags">
-          <span>Python</span><span>Django</span><span>Django REST Framework</span><span>FastAPI</span><span>JWT Auth</span><span>REST Design</span>
-        </div>
+      <div class="card spot skill-card reveal">
+        <h3 class="group-title">Backend &amp; APIs</h3>
+        <ul class="chips">
+          <li>Python</li><li>Django</li><li>Django REST Framework</li><li>FastAPI</li><li>JWT Auth</li><li>REST Design</li>
+        </ul>
       </div>
-
-      <div class="skill-card">
-        <h3>Frontend &amp; Interactive</h3>
-        <div class="skill-tags">
-          <span>React.js</span><span>JavaScript</span><span>HTML5</span><span>CSS3 / Tailwind</span><span>Component Systems</span>
-        </div>
+      <div class="card spot skill-card reveal">
+        <h3 class="group-title">Frontend &amp; Interactive</h3>
+        <ul class="chips">
+          <li>React.js</li><li>JavaScript</li><li>HTML5</li><li>CSS3 / Tailwind</li><li>Component Systems</li>
+        </ul>
       </div>
-
-      <div class="skill-card">
-        <h3>ERP &amp; Enterprise</h3>
-        <div class="skill-tags">
-          <span>Odoo ERP</span><span>POS Engines</span><span>ORM Models</span><span>Workflow Automation</span><span>Business Logic</span>
-        </div>
+      <div class="card spot skill-card reveal">
+        <h3 class="group-title">ERP &amp; Enterprise</h3>
+        <ul class="chips">
+          <li>Odoo ERP</li><li>POS Engines</li><li>ORM Models</li><li>Workflow Automation</li><li>Business Logic</li>
+        </ul>
       </div>
-
-      <div class="skill-card">
-        <h3>AI &amp; Data Engineering</h3>
-        <div class="skill-tags">
-          <span>LLM Integration</span><span>NLP</span><span>TF-IDF</span><span>Vector Embeddings</span><span>Pandas</span><span>Scraping</span>
-        </div>
+      <div class="card spot skill-card reveal">
+        <h3 class="group-title">AI &amp; Data Engineering</h3>
+        <ul class="chips">
+          <li>LLM Integration</li><li>Claude API</li><li>Claude Code</li><li>NLP</li><li>TF-IDF</li><li>Vector Embeddings</li><li>Pandas</li><li>Web Scraping</li><li>Data Pipelines</li>
+        </ul>
       </div>
-
-      <div class="skill-card">
-        <h3>Databases</h3>
-        <div class="skill-tags">
-          <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>SQLite</span>
-        </div>
+      <div class="card spot skill-card reveal">
+        <h3 class="group-title">Databases</h3>
+        <ul class="chips">
+          <li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>SQLite</li>
+        </ul>
       </div>
-
-      <div class="skill-card">
-        <h3>Tools &amp; Languages</h3>
-        <div class="skill-tags">
-          <span>Git &amp; GitHub</span><span>Docker</span><span>C#</span><span>Java</span><span>C++</span><span>SQL</span>
-        </div>
+      <div class="card spot skill-card reveal">
+        <h3 class="group-title">Tools &amp; Languages</h3>
+        <ul class="chips">
+          <li>Git &amp; GitHub</li><li>Docker</li><li>C#</li><li>Java</li><li>C++</li><li>SQL</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. Future Tech Dynamics Venture Studio -->
-<section id="build-with-us" style="padding-top:20px;">
+<!-- 6. Contact -->
+<section class="section" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <div class="growth-banner">
-      <div class="growth-header">
-        <div class="endpoint" style="justify-content:center;">
-          <span class="verb" style="background:rgba(255,255,255,0.15);color:#FFF;">STUDIO</span>
-          <span class="path" style="color:var(--on-dark-muted);">FUTURE TECH DYNAMICS (ftdynamics.pk)</span>
-        </div>
-        <h2 class="growth-title">Ready to Build, Scale, or Automate Your Business?</h2>
-        <p class="growth-lede">
-          From concept to live production software — whether you need high-throughput Django backends, full-scale clinical ERPs (like <strong>SehatYar</strong>), custom web apps, or AI integrations.
-        </p>
-      </div>
+  <div class="contact-panel contact-grid">
+    <div class="reveal">
+      <p class="endpoint">
+        <span class="verb verb-post">POST</span>
+        <code class="path">/api/v1/contact</code>
+      </p>
+      <h2 id="contact-title">Let's Engineer Something Exceptional.</h2>
+      <p class="lead">Available for full-time engineering roles, backend architecture, ERP integrations, and custom full-stack solutions.</p>
 
-      <div class="growth-services-grid">
-        <div class="growth-service-item">
-          <div class="growth-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h4>Full-Stack Web &amp; SaaS</h4>
-          <p>Python, Django REST Framework, React.js &amp; component architectures tailored for high speed and security.</p>
-        </div>
-        <div class="growth-service-item">
-          <div class="growth-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h4>Healthcare &amp; Clinic Suites</h4>
-          <p>Custom health tech systems inspired by SehatYar.online — EHR records, doctor queues, and pharmacy inventory.</p>
-        </div>
-        <div class="growth-service-item">
-          <div class="growth-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h4>Enterprise ERP &amp; POS</h4>
-          <p>Multi-branch point-of-sale systems, thermal receipts, cash ledgers, and Odoo enterprise module implementations.</p>
-        </div>
-        <div class="growth-service-item">
-          <div class="growth-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><rect x="4" y="10" width="16" height="12" rx="3"/><line x1="9" y1="15" x2="9" y2="17"/><line x1="15" y1="15" x2="15" y2="17"/></svg>
-          </div>
-          <h4>AI &amp; Data Processing</h4>
-          <p>LLM integrations, automated web scraping, TF-IDF / vector clustering, and intelligent analytics pipelines.</p>
-        </div>
-      </div>
-
-      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-        <a href="https://wa.me/923499001990?text=Hi%20Hazrat,%20I%20am%20interested%20in%20building%20a%20project%20with%20Future%20Tech%20Dynamics." target="_blank" rel="noopener" class="btn btn-primary" style="background:#25D366;color:#FFF;box-shadow:0 6px 20px rgba(37,211,102,0.35);">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          Chat on WhatsApp (Direct)
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:Hazratali.bse@gmail.com">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me
         </a>
-        <a href="mailto:Hazratali.bse@gmail.com?subject=Project%20Inquiry%20via%20Future%20Tech%20Dynamics" class="btn btn-ghost" style="background:rgba(255,255,255,0.08);color:#FFF;border-color:rgba(255,255,255,0.15);">
-          Hazratali.bse@gmail.com
-        </a>
-        <a href="https://ftdynamics.pk" target="_blank" rel="noopener" class="btn btn-ghost" style="background:rgba(255,255,255,0.08);color:#FFF;border-color:rgba(255,255,255,0.15);">
-          Visit ftdynamics.pk ↗
+        <button class="btn btn-ghost" type="button" id="copy-email" data-email="Hazratali.bse@gmail.com">Copy email</button>
+        <a class="btn btn-ghost" href="tel:+923499001990">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +92 349 9001990
         </a>
       </div>
+      <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
     </div>
+
+    <div class="code-window reveal" role="group" aria-label="Contact details as an API request">
+      <div class="code-bar">
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="req"><span class="m post">POST</span><span class="u">/api/v1/contact</span></div>
+      </div>
+      <div class="code-meta" aria-hidden="true">
+        <span>Content-Type: application/json</span>
+      </div>
+<pre><code><span class="p">{</span>
+  <span class="k">"email"</span><span class="p">:</span> <a class="s" href="mailto:Hazratali.bse@gmail.com">"Hazratali.bse@gmail.com"</a><span class="p">,</span>
+  <span class="k">"phone"</span><span class="p">:</span> <a class="s" href="tel:+923499001990">"+92 349 9001990"</a><span class="p">,</span>
+  <span class="k">"linkedin"</span><span class="p">:</span> <a class="s" href="https://www.linkedin.com/in/hazrat-ali-49a0aa267/" target="_blank" rel="noopener">"in/hazrat-ali"</a><span class="p">,</span>
+  <span class="k">"github"</span><span class="p">:</span> <a class="s" href="https://github.com/Hazrat-Ali822" target="_blank" rel="noopener">"Hazrat-Ali822"</a><span class="p">,</span>
+  <span class="k">"product"</span><span class="p">:</span> <a class="s" href="https://sehatyar.online" target="_blank" rel="noopener">"sehatyar.online"</a><span class="p">,</span>
+  <span class="k">"location"</span><span class="p">:</span> <span class="s">"Islamabad, Pakistan"</span>
+<span class="p">}</span></code></pre>
+    </div>
+  </div>
   </div>
 </section>
 
-<!-- 6. Contact Section -->
-<section id="contact">
-  <div class="wrap">
-    <div class="contact-panel">
-      <div class="endpoint" style="justify-content:center;">
-        <span class="verb" style="background:rgba(255,255,255,0.15);color:#FFF;">POST</span>
-        <span class="path" style="color:var(--on-dark-muted);">/api/v1/contact</span>
-      </div>
-      <h2>Let's Engineer Something Exceptional.</h2>
-      <p>Available for full-time engineering roles, backend architecture, ERP integrations, and custom full-stack solutions.</p>
-      
-      <div class="contact-btns">
-        <a class="btn btn-primary" href="mailto:Hazratali.bse@gmail.com">Hazratali.bse@gmail.com</a>
-        <a class="btn btn-ghost" href="tel:+923499001990" style="background:rgba(255,255,255,0.08);color:#FFF;border-color:rgba(255,255,255,0.15);">+92 349 9001990</a>
-      </div>
+</main>
 
-      <div class="contact-meta-links">
-        <a href="https://ftdynamics.pk" target="_blank" rel="noopener">ftdynamics.pk</a>
-        <a href="https://sehatyar.online" target="_blank" rel="noopener">sehatyar.online</a>
-        <a href="https://github.com/Hazrat-Ali822" target="_blank" rel="noopener">github.com/Hazrat-Ali822</a>
-        <a href="https://www.linkedin.com/in/hazrat-ali-49a0aa267" target="_blank" rel="noopener">linkedin.com/in/hazrat-ali</a>
-      </div>
-    </div>
+<!-- Project details dialog -->
+<dialog class="proj-dialog" id="project-dialog" aria-labelledby="dialog-title">
+  <button class="dialog-close" type="button" id="dialog-close" aria-label="Close project details">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="dialog-tag"><span class="badge" id="dialog-tag"></span></div>
+  <h2 id="dialog-title"></h2>
+  <p id="dialog-desc"></p>
+  <p class="dialog-label">TECHNOLOGY STACK</p>
+  <ul class="chips" id="dialog-tech"></ul>
+  <div class="dialog-actions">
+    <a class="btn btn-primary" id="dialog-link" href="#" target="_blank" rel="noopener"></a>
+    <button class="btn btn-ghost" type="button" id="dialog-dismiss">Close</button>
   </div>
-</section>
+</dialog>
 
-<!-- Floating WhatsApp Action -->
-<a href="https://wa.me/923499001990?text=Hi%20Hazrat,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="floating-wa" title="Direct WhatsApp Chat">
-  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  <span>WhatsApp</span>
+<!-- Floating WhatsApp -->
+<a class="floating-wa" href="https://wa.me/923499001990?text=Hi%20Hazrat,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat with Hazrat Ali on WhatsApp">
+  <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 </a>
 
-<footer>
-  <div class="wrap">
-    <span>© <span id="year"></span> Hazrat Ali — Founder @ <a href="https://ftdynamics.pk" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">Future Tech Dynamics</a></span>
-    <span>Mardan &amp; Abbottabad · Pakistan</span>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Hazrat Ali</span>
+    <div class="footer-links">
+      <span>Islamabad · Pakistan</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </div>
 </footer>
 
-<!-- -------------------------------------------------------------
-     THREE.JS 3D MACBOOK HERO STAGE
-------------------------------------------------------------- -->
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-// Project Filter Tabs
-window.filterCategory = function(cat) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  document.querySelectorAll('.proj-card').forEach(card => {
-    if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-};
+  // ---------------- Theme toggle ----------------
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Deep-Dive Modal Data
-const deepDiveData = {
-  sehatyar: {
-    tag: "FLAGSHIP HEALTHCARE PLATFORM",
-    title: "SehatYar — Comprehensive Digital Health Suite",
-    desc: "SehatYar is a full-scale HealthTech platform engineered by Hazrat Ali at Future Tech Dynamics to digitize medical clinics, patient electronic health records (EHR), automated appointment queues, and pharmacy stock batches.",
-    tech: ["Python", "Django", "DRF", "React", "MySQL", "HealthTech APIs"],
-    url: "https://sehatyar.online"
-  },
-  trends: {
-    tag: "FINAL YEAR ENGINEERING PROJECT",
-    title: "Trend Sphere — AI Trend Aggregation & Analysis",
-    desc: "An AI-powered intelligence platform collecting live social & search trends, cleaning unstructured text, clustering vector embeddings with TF-IDF, and generating LLM per-cluster insights on a scalable Django backend.",
-    tech: ["Python", "Django", "LLMs", "TF-IDF", "Vector Embeddings", "Scraping"],
-    url: "https://ftdynamics.pk"
-  },
-  pos: {
-    tag: "LIVE IN MULTIPLE SHOPS",
-    title: "Retail & Wholesale Commercial POS System",
-    desc: "Commercial point-of-sale and store operations suite running live across multiple retail branches and wholesale stores. Engineered with thermal receipt printing, cashier shift management, daily cash ledgers, and analytical sales reporting.",
-    tech: ["PWA", "JavaScript", "POS Engine", "Thermal Receipt Printing", "Retail Automation"],
-    url: "https://ftdynamics.pk"
-  },
-  school: {
-    tag: "EDUCATION ERP",
-    title: "School Management System",
-    desc: "Multi-role ERP web application engineered for school administration, teachers, parents, and students with real-time class attendance, fee collection ledgers, and academic results.",
-    tech: ["Django", "Django REST Framework", "PostgreSQL", "RBAC"],
-    url: "https://ftdynamics.pk"
-  },
-  valora: {
-    tag: "E-COMMERCE",
-    title: "Valora Beauty Storefront",
-    desc: "High-performance full-stack e-commerce online store with category filters, dynamic cart drawer, JWT authentication, and secure checkout workflows.",
-    tech: ["Django", "DRF", "React", "JWT Auth", "REST APIs"],
-    url: "https://ftdynamics.pk"
+  function currentTheme() {
+    var attr = root.getAttribute('data-theme');
+    if (attr) return attr;
+    return systemDark.matches ? 'dark' : 'light';
   }
-};
-
-window.openDeepDive = function(key) {
-  const d = deepDiveData[key];
-  if (!d) return;
-  const html = `
-    <div style="font-family:var(--font-mono);font-size:.76rem;color:var(--accent);font-weight:700;margin-bottom:8px;">${d.tag}</div>
-    <h2 style="font-family:var(--font-display);font-size:1.55rem;font-weight:700;color:var(--ink);margin-bottom:12px;">${d.title}</h2>
-    <p style="color:var(--muted);font-size:.98rem;line-height:1.7;margin-bottom:18px;">${d.desc}</p>
-    <div style="margin-bottom:24px;">
-      <div style="font-family:var(--font-mono);font-size:.74rem;color:var(--muted);margin-bottom:8px;font-weight:600;">TECHNOLOGY STACK:</div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        ${d.tech.map(t => `<span style="font-family:var(--font-mono);font-size:.76rem;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:6px;font-weight:600;">${t}</span>`).join('')}
-      </div>
-    </div>
-    <div style="display:flex;gap:12px;">
-      <a href="${d.url}" target="_blank" rel="noopener" class="btn btn-primary">Open Live Platform ↗</a>
-      <button class="btn btn-ghost" onclick="closeDeepDive()">Close</button>
-    </div>
-  `;
-  document.getElementById('modal-body-content').innerHTML = html;
-  document.getElementById('project-modal').classList.add('active');
-};
-
-window.closeDeepDive = function() {
-  document.getElementById('project-modal').classList.remove('active');
-};
-
-// ---------------- 3D MACBOOK HERO STAGE (CENTERED & 100% FULLY VISIBLE) ----------------
-(function init3DMacBookViewer() {
-  const canvas = document.getElementById('macbook-hero-canvas');
-  if (!canvas || !window.THREE) return;
-
-  const stage = canvas.parentElement;
-  const scene = new THREE.Scene();
-
-  // Camera settings tailored for fluid stage dimensions
-  const camera = new THREE.PerspectiveCamera(31, stage.clientWidth / stage.clientHeight, 0.1, 1000);
-  camera.position.set(0, 0.95, 7.8);
-
-  const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-  renderer.setSize(stage.clientWidth, stage.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-  // Studio Lighting
-  const ambLight = new THREE.AmbientLight(0xFFFFFF, 2.2);
-  scene.add(ambLight);
-
-  const mainLight = new THREE.DirectionalLight(0xFFFFFF, 2.6);
-  mainLight.position.set(4, 9, 7);
-  scene.add(mainLight);
-
-  const fillLight = new THREE.DirectionalLight(0x0E7B5F, 1.4);
-  fillLight.position.set(-5, 4, -3);
-  scene.add(fillLight);
-
-  // 3D Laptop Group — Perfectly Centered
-  const laptopGroup = new THREE.Group();
-  laptopGroup.position.set(0, -0.42, 0);
-  laptopGroup.rotation.set(0.12, -0.20, 0);
-  scene.add(laptopGroup);
-
-  // Space-Gray Metallic Material
-  const aluminumMat = new THREE.MeshStandardMaterial({
-    color: 0x1A2D25,
-    metalness: 0.88,
-    roughness: 0.22,
-    envMapIntensity: 1.4
-  });
-
-  // Base Chassis
-  const baseGeo = new THREE.BoxGeometry(3.8, 0.14, 2.5);
-  const baseMesh = new THREE.Mesh(baseGeo, aluminumMat);
-  laptopGroup.add(baseMesh);
-
-  // Keyboard Bed
-  const kbGeo = new THREE.PlaneGeometry(3.1, 1.3);
-  const kbMat = new THREE.MeshStandardMaterial({
-    color: 0x091410,
-    emissive: 0x0E3B2E,
-    emissiveIntensity: 0.6,
-    roughness: 0.4
-  });
-  const kbMesh = new THREE.Mesh(kbGeo, kbMat);
-  kbMesh.rotation.x = -Math.PI / 2;
-  kbMesh.position.set(0, 0.075, -0.24);
-  laptopGroup.add(kbMesh);
-
-  // Trackpad Glass
-  const tpGeo = new THREE.PlaneGeometry(1.2, 0.72);
-  const tpMat = new THREE.MeshStandardMaterial({
-    color: 0x1E362C,
-    metalness: 0.8,
-    roughness: 0.15
-  });
-  const tpMesh = new THREE.Mesh(tpGeo, tpMat);
-  tpMesh.rotation.x = -Math.PI / 2;
-  tpMesh.position.set(0, 0.075, 0.75);
-  laptopGroup.add(tpMesh);
-
-  // Lid Hinge
-  const lidHinge = new THREE.Group();
-  lidHinge.position.set(0, 0.07, -1.25);
-  laptopGroup.add(lidHinge);
-
-  // Lid Top Back Cover
-  const lidCoverGeo = new THREE.BoxGeometry(3.8, 2.45, 0.08);
-  const lidCoverMesh = new THREE.Mesh(lidCoverGeo, aluminumMat);
-  lidCoverMesh.position.set(0, 1.22, -0.04);
-  lidHinge.add(lidCoverMesh);
-
-  // Screen Bezel
-  const bezelGeo = new THREE.PlaneGeometry(3.7, 2.35);
-  const bezelMat = new THREE.MeshBasicMaterial({ color: 0x08120E });
-  const bezelMesh = new THREE.Mesh(bezelGeo, bezelMat);
-  bezelMesh.position.set(0, 1.22, 0.005);
-  lidHinge.add(bezelMesh);
-
-  // Screen Canvas Texture (2K Resolution)
-  const screenCanvas = document.createElement('canvas');
-  screenCanvas.width = 1024;
-  screenCanvas.height = 680;
-  const sCtx = screenCanvas.getContext('2d');
-
-  // Real syntax-highlighted Python / Django backend & AI code
-  const codeLines = [
-    { type: 'comment', text: '# future_tech_dynamics/engine.py — Hazrat Ali' },
-    { type: 'import',  text: 'from django.db import models, transaction' },
-    { type: 'import',  text: 'from rest_framework.response import Response' },
-    { type: 'import',  text: 'from sehatyar.ehr import ClinicalCluster' },
-    { type: 'import',  text: 'import torch, transformers' },
-    { type: 'empty',   text: '' },
-    { type: 'class',   text: 'class ProductionArchitecture(APIView):' },
-    { type: 'doc',     text: '    """High-Throughput Distributed Microservices"""' },
-    { type: 'func',    text: '    async def dispatch_cluster(self, payload):' },
-    { type: 'body',    text: '        cluster = await ClinicalCluster.init(' },
-    { type: 'arg',     text: '            nodes="ftdynamics.pk",' },
-    { type: 'arg',     text: '            uptime=0.9999,' },
-    { type: 'arg',     text: '            status="200 OK — Ready to Ship"' },
-    { type: 'body',    text: '        )' },
-    { type: 'body',    text: '        return Response({"status": "healthy", "latency": "11ms"})' },
-    { type: 'empty',   text: '' },
-    { type: 'comment', text: '# [AI Engine] Clustering Trends with TF-IDF' },
-    { type: 'func',    text: 'def execute_trend_sphere(raw_stream):' },
-    { type: 'body',    text: '    vectorizer = TfidfVectorizer(max_features=5000)' },
-    { type: 'body',    text: '    embeddings = vectorizer.fit_transform(raw_stream)' },
-    { type: 'body',    text: '    clusters = DBSCAN(eps=0.35).fit(embeddings)' },
-    { type: 'return',  text: '    return summarize_clusters_with_llm(clusters)' }
-  ];
-
-  let visibleLines = 4;
-
-  function renderLiveIDE() {
-    sCtx.fillStyle = "#0A1712";
-    sCtx.fillRect(0, 0, 1024, 680);
-
-    // IDE Header Bar
-    sCtx.fillStyle = "#06100C";
-    sCtx.fillRect(0, 0, 1024, 48);
-
-    // Window Dots
-    sCtx.fillStyle = "#EF4444"; sCtx.beginPath(); sCtx.arc(26, 24, 6, 0, Math.PI*2); sCtx.fill();
-    sCtx.fillStyle = "#F59E0B"; sCtx.beginPath(); sCtx.arc(46, 24, 6, 0, Math.PI*2); sCtx.fill();
-    sCtx.fillStyle = "#10B981"; sCtx.beginPath(); sCtx.arc(66, 24, 6, 0, Math.PI*2); sCtx.fill();
-
-    // Tab title
-    sCtx.fillStyle = "#0E7B5F";
-    sCtx.fillRect(94, 8, 250, 40);
-    sCtx.fillStyle = "#E8F2EC";
-    sCtx.font = "bold 15px 'JetBrains Mono', monospace";
-    sCtx.fillText("● architecture.py", 112, 33);
-
-    sCtx.fillStyle = "#51655B";
-    sCtx.font = "14px 'JetBrains Mono', monospace";
-    sCtx.fillText("UTF-8 | Python 3.12 | Git: main*", 720, 33);
-
-    // Code lines rendering with syntax colors
-    let startY = 86;
-    const lineHeight = 26;
-
-    for (let i = 0; i < Math.min(visibleLines, codeLines.length); i++) {
-      const lineObj = codeLines[i];
-      let lineText = lineObj.text;
-
-      // Line number
-      sCtx.fillStyle = "#334D41";
-      sCtx.font = "14px 'JetBrains Mono', monospace";
-      const lineNumStr = String(i + 1).padStart(2, ' ');
-      sCtx.fillText(lineNumStr, 24, startY + (i * lineHeight));
-
-      // Syntax color picking
-      if (lineObj.type === 'comment') sCtx.fillStyle = "#5E8573";
-      else if (lineObj.type === 'import') sCtx.fillStyle = "#38BDF8";
-      else if (lineObj.type === 'class') sCtx.fillStyle = "#FCD34D";
-      else if (lineObj.type === 'doc') sCtx.fillStyle = "#6EE7B7";
-      else if (lineObj.type === 'func') sCtx.fillStyle = "#34D399";
-      else if (lineObj.type === 'arg') sCtx.fillStyle = "#A7F3D0";
-      else if (lineObj.type === 'return') sCtx.fillStyle = "#F472B6";
-      else sCtx.fillStyle = "#E8F2EC";
-
-      sCtx.font = "16px 'JetBrains Mono', monospace";
-      sCtx.fillText(lineText, 66, startY + (i * lineHeight));
-    }
-
-    // Blinking Live Cursor
-    const cursorY = startY + ((visibleLines - 1) * lineHeight) - 14;
-    const currentLineWidth = sCtx.measureText(codeLines[Math.min(visibleLines - 1, codeLines.length - 1)].text).width;
-    if (Math.floor(Date.now() / 400) % 2 === 0) {
-      sCtx.fillStyle = "#34D399";
-      sCtx.fillRect(68 + currentLineWidth, cursorY, 9, 18);
-    }
-
-    // Bottom Terminal Status Bar
-    sCtx.fillStyle = "#050C09";
-    sCtx.fillRect(0, 636, 1024, 44);
-    sCtx.fillStyle = "#34D399";
-    sCtx.font = "bold 14px 'JetBrains Mono', monospace";
-    sCtx.fillText("➜ [LIVE BUILD] Future Tech Dynamics • 0 errors • 100% test coverage", 24, 663);
+  function syncThemeLabel() {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    themeBtn.setAttribute('aria-label', 'Switch to ' + next + ' mode');
   }
-  renderLiveIDE();
-
-  const screenTex = new THREE.CanvasTexture(screenCanvas);
-  const screenMat = new THREE.MeshBasicMaterial({ map: screenTex });
-  const screenGeo = new THREE.PlaneGeometry(3.55, 2.25);
-  const screenMesh = new THREE.Mesh(screenGeo, screenMat);
-  screenMesh.position.set(0, 1.22, 0.015);
-  lidHinge.add(screenMesh);
-
-  // Continuous Live Code Typing Animation Loop
-  setInterval(() => {
-    visibleLines++;
-    if (visibleLines > codeLines.length) {
-      visibleLines = 3;
-    }
-    renderLiveIDE();
-    screenTex.needsUpdate = true;
-  }, 440);
-
-  // Smooth Lid Opening
-  lidHinge.rotation.x = 1.35;
-  let targetLid = 0.18;
-
-  // Mouse Tracking
-  let mouseTargetX = 0, mouseTargetY = 0;
-  window.addEventListener('mousemove', (e) => {
-    mouseTargetX = (e.clientX / window.innerWidth - 0.5) * 0.22;
-    mouseTargetY = (e.clientY / window.innerHeight - 0.5) * 0.15;
+  themeBtn.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeLabel();
   });
+  syncThemeLabel();
 
-  window.addEventListener('resize', () => {
-    if (!stage || !canvas) return;
-    camera.aspect = stage.clientWidth / stage.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(stage.clientWidth, stage.clientHeight);
-  });
+  // ---------------- Mobile navigation ----------------
+  var navToggle = document.getElementById('nav-toggle');
+  var navLinks = document.getElementById('nav-links');
 
-  // Render Loop
-  let clock = new THREE.Clock();
-  function render3DHero() {
-    requestAnimationFrame(render3DHero);
-    const t = clock.getElapsedTime();
-
-    lidHinge.rotation.x += (targetLid - lidHinge.rotation.x) * 0.05;
-
-    // Floating centered smoothly without touching any borders
-    laptopGroup.position.y = -0.42 + Math.sin(t * 1.5) * 0.03;
-    laptopGroup.rotation.y = -0.20 + Math.sin(t * 0.5) * 0.05 + mouseTargetX;
-    laptopGroup.rotation.x = 0.12 + mouseTargetY;
-
-    renderer.render(scene, camera);
+  function setMenu(open) {
+    navLinks.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
-  render3DHero();
+  navToggle.addEventListener('click', function () {
+    setMenu(!navLinks.classList.contains('open'));
+  });
+  navLinks.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+      setMenu(false);
+      navToggle.focus();
+    }
+  });
+
+  // ---------------- Project filters ----------------
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.proj-card');
+  var resultCount = document.getElementById('result-count');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var cat = btn.getAttribute('data-filter');
+      var shown = 0;
+      filterBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      cards.forEach(function (card) {
+        var match = cat === 'all' || card.getAttribute('data-cat') === cat;
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      resultCount.textContent = shown + (shown === 1 ? ' result' : ' results');
+    });
+  });
+
+  // ---------------- Project details dialog ----------------
+  var projects = {
+    sehatyar: {
+      tag: 'FLAGSHIP HEALTHCARE PLATFORM',
+      title: 'SehatYar — Comprehensive Digital Health Suite',
+      desc: 'SehatYar is a full-scale HealthTech platform engineered by Hazrat Ali to digitize medical clinics, patient electronic health records (EHR), automated appointment queues, and pharmacy stock batches.',
+      tech: ['Python', 'Django', 'DRF', 'React', 'MySQL', 'HealthTech APIs'],
+      url: 'https://sehatyar.online',
+      linkLabel: 'Open sehatyar.online ↗'
+    },
+    trends: {
+      tag: 'FINAL YEAR ENGINEERING PROJECT',
+      title: 'Trend Sphere — AI Trend Aggregation & Analysis',
+      desc: 'An AI-powered intelligence platform collecting live social & search trends, cleaning unstructured text, clustering vector embeddings with TF-IDF, and generating LLM per-cluster insights on a scalable Django backend.',
+      tech: ['Python', 'Django', 'LLMs', 'TF-IDF', 'Vector Embeddings', 'Scraping'],
+      url: null,
+      linkLabel: ''
+    },
+    pos: {
+      tag: 'LIVE IN MULTIPLE SHOPS',
+      title: 'Retail & Wholesale Commercial POS System',
+      desc: 'Commercial point-of-sale and store operations suite running live across multiple retail branches and wholesale stores. Engineered with thermal receipt printing, cashier shift management, daily cash ledgers, and analytical sales reporting.',
+      tech: ['PWA', 'JavaScript', 'POS Engine', 'Thermal Receipt Printing', 'Retail Automation'],
+      url: null,
+      linkLabel: ''
+    },
+    school: {
+      tag: 'EDUCATION ERP',
+      title: 'School Management System',
+      desc: 'Multi-role ERP web application engineered for school administration, teachers, parents, and students with real-time class attendance, fee collection ledgers, and academic results.',
+      tech: ['Django', 'Django REST Framework', 'PostgreSQL', 'RBAC'],
+      url: null,
+      linkLabel: ''
+    },
+    valora: {
+      tag: 'E-COMMERCE',
+      title: 'Valora Beauty Storefront',
+      desc: 'High-performance full-stack e-commerce online store with category filters, dynamic cart drawer, JWT authentication, and secure checkout workflows.',
+      tech: ['Django', 'DRF', 'React', 'JWT Auth', 'REST APIs'],
+      url: null,
+      linkLabel: ''
+    }
+  };
+
+  var dialog = document.getElementById('project-dialog');
+  var lastTrigger = null;
+
+  function openProject(key, trigger) {
+    var p = projects[key];
+    if (!p) return;
+    document.getElementById('dialog-tag').textContent = p.tag;
+    document.getElementById('dialog-title').textContent = p.title;
+    document.getElementById('dialog-desc').textContent = p.desc;
+    var link = document.getElementById('dialog-link');
+    link.hidden = !p.url;
+    if (p.url) {
+      link.href = p.url;
+      link.textContent = p.linkLabel;
+    }
+    var list = document.getElementById('dialog-tech');
+    list.innerHTML = '';
+    p.tech.forEach(function (t) {
+      var li = document.createElement('li');
+      li.textContent = t;
+      list.appendChild(li);
+    });
+    lastTrigger = trigger;
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+  }
+  function closeProject() {
+    if (typeof dialog.close === 'function') dialog.close();
+    else dialog.removeAttribute('open');
+  }
+
+  document.querySelectorAll('.details-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { openProject(btn.getAttribute('data-project'), btn); });
+  });
+  document.getElementById('dialog-close').addEventListener('click', closeProject);
+  document.getElementById('dialog-dismiss').addEventListener('click', closeProject);
+  dialog.addEventListener('click', function (e) {
+    if (e.target === dialog) closeProject();
+  });
+  dialog.addEventListener('close', function () {
+    if (lastTrigger) lastTrigger.focus();
+  });
+
+  // ---------------- Copy email ----------------
+  var copyBtn = document.getElementById('copy-email');
+  var copyFeedback = document.getElementById('copy-feedback');
+  copyBtn.addEventListener('click', function () {
+    var email = copyBtn.getAttribute('data-email');
+    if (!navigator.clipboard) {
+      copyFeedback.textContent = email;
+      return;
+    }
+    navigator.clipboard.writeText(email).then(function () {
+      copyFeedback.textContent = 'Email copied to clipboard.';
+    }, function () {
+      copyFeedback.textContent = email;
+    });
+  });
+
+  // ---------------- API response replay ----------------
+  var jsonLines = document.querySelectorAll('#profile-json .ln');
+  function playResponse() {
+    jsonLines.forEach(function (l) { l.classList.remove('show'); });
+    // Force reflow so the transition restarts
+    void document.getElementById('profile-json').offsetWidth;
+    jsonLines.forEach(function (l) { l.classList.add('show'); });
+  }
+  document.getElementById('send-request').addEventListener('click', playResponse);
+  requestAnimationFrame(playResponse);
+
+  // ---------------- Scroll progress bar ----------------
+  var progress = document.getElementById('scroll-progress');
+  var ticking = false;
+  function updateProgress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  updateProgress();
+
+  // ---------------- Active nav link ----------------
+  var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+  if ('IntersectionObserver' in window) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = '#' + entry.target.id;
+        navAnchors.forEach(function (a) {
+          var on = a.getAttribute('href') === id;
+          a.classList.toggle('active', on);
+          if (on) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navAnchors.forEach(function (a) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) sectionObserver.observe(target);
+    });
+  }
+
+  // ---------------- Card spotlight ----------------
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.addEventListener('pointermove', function (e) {
+      var card = e.target.closest && e.target.closest('.spot');
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+  }
+
+  // ---------------- Scroll reveal ----------------
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
 })();
 </script>
 
